@@ -1,4 +1,4 @@
-{% extends '::uniAdmin.html.twig' %}
+{% extends ':Admin:base.html.twig' %}
 
 {% block title %}{{ 'noticephotos'|trans }}{% endblock %}
 
@@ -40,15 +40,15 @@
                         <table class="records_list table table-striped table-hover">
                             <thead>
                                 <tr>
-                                    <th>{{ knp_pagination_sortable(pagination, 'path_photo'|trans, 'path_photo') }}{% if sort == 'path_photo' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
-                                    <th>{{ knp_pagination_sortable(pagination, 'file_photo'|trans, 'file_photo') }}{% if sort == 'file_photo' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(pagination, 'photo_path'|trans, 'photo_path') }}{% if sort == 'photo_path' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(pagination, 'photo_file'|trans, 'photo_file') }}{% if sort == 'photo_file' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                 </tr>
                             </thead>
                             <tbody>
                             {% for entity in pagination %}
                                 <tr class='clickableRow' href="{{ path('noticephoto_show', { 'id': entity.id }) }}">
-                                    <td>{% if entity.pathphoto %}{{ entity.pathphoto }}{% endif %}</td>
-                                    <td>{% if entity.filephoto %}{{ entity.filephoto }}{% endif %}</td>
+                                    <td>{% if entity.photopath %}{{ entity.photopath }}{% endif %}</td>
+                                    <td>{% if entity.photofile %}{{ entity.photofile }}{% endif %}</td>
                                 </tr>
                             {% endfor %}
                             </tbody>

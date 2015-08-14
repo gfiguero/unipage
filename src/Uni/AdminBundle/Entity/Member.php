@@ -17,47 +17,47 @@ class Member
     /**
      * @var string
      */
-    private $firstname;
+    private $member_firstname;
 
     /**
      * @var string
      */
-    private $lastname;
+    private $member_lastname;
 
     /**
      * @var string
      */
-    private $email;
+    private $member_email;
 
     /**
      * @var string
      */
-    private $phonenumber;
+    private $member_phonenumber;
 
     /**
      * @var \DateTime
      */
-    private $birthdate;
+    private $member_birthdate;
 
     /**
      * @var \DateTime
      */
-    private $admissiondate;
+    private $member_admissiondate;
 
     /**
      * @var boolean
      */
-    private $active;
+    private $member_active;
 
     /**
      * @var string
      */
-    private $path_photo;
+    private $member_photo_path;
 
     /**
      * @var string
      */
-    private $file_photo;
+    private $member_photo_file;
 
     /**
      * @var \DateTime
@@ -77,7 +77,7 @@ class Member
     /**
      * @var \Uni\AdminBundle\Entity\Role
      */
-    private $role;
+    private $member_role;
 
 
     /**
@@ -91,210 +91,210 @@ class Member
     }
 
     /**
-     * Set firstname
+     * Set member_firstname
      *
-     * @param string $firstname
+     * @param string $memberFirstname
      * @return Member
      */
-    public function setFirstname($firstname)
+    public function setMemberFirstname($memberFirstname)
     {
-        $this->firstname = $firstname;
+        $this->member_firstname = $memberFirstname;
 
         return $this;
     }
 
     /**
-     * Get firstname
+     * Get member_firstname
      *
      * @return string 
      */
-    public function getFirstname()
+    public function getMemberFirstname()
     {
-        return $this->firstname;
+        return $this->member_firstname;
     }
 
     /**
-     * Set lastname
+     * Set member_lastname
      *
-     * @param string $lastname
+     * @param string $memberLastname
      * @return Member
      */
-    public function setLastname($lastname)
+    public function setMemberLastname($memberLastname)
     {
-        $this->lastname = $lastname;
+        $this->member_lastname = $memberLastname;
 
         return $this;
     }
 
     /**
-     * Get lastname
+     * Get member_lastname
      *
      * @return string 
      */
-    public function getLastname()
+    public function getMemberLastname()
     {
-        return $this->lastname;
+        return $this->member_lastname;
     }
 
     /**
-     * Set email
+     * Set member_email
      *
-     * @param string $email
+     * @param string $memberEmail
      * @return Member
      */
-    public function setEmail($email)
+    public function setMemberEmail($memberEmail)
     {
-        $this->email = $email;
+        $this->member_email = $memberEmail;
 
         return $this;
     }
 
     /**
-     * Get email
+     * Get member_email
      *
      * @return string 
      */
-    public function getEmail()
+    public function getMemberEmail()
     {
-        return $this->email;
+        return $this->member_email;
     }
 
     /**
-     * Set phonenumber
+     * Set member_phonenumber
      *
-     * @param string $phonenumber
+     * @param string $memberPhonenumber
      * @return Member
      */
-    public function setPhonenumber($phonenumber)
+    public function setMemberPhonenumber($memberPhonenumber)
     {
-        $this->phonenumber = $phonenumber;
+        $this->member_phonenumber = $memberPhonenumber;
 
         return $this;
     }
 
     /**
-     * Get phonenumber
+     * Get member_phonenumber
      *
      * @return string 
      */
-    public function getPhonenumber()
+    public function getMemberPhonenumber()
     {
-        return $this->phonenumber;
+        return $this->member_phonenumber;
     }
 
     /**
-     * Set birthdate
+     * Set member_birthdate
      *
-     * @param \DateTime $birthdate
+     * @param \DateTime $memberBirthdate
      * @return Member
      */
-    public function setBirthdate($birthdate)
+    public function setMemberBirthdate($memberBirthdate)
     {
-        $this->birthdate = $birthdate;
+        $this->member_birthdate = $memberBirthdate;
 
         return $this;
     }
 
     /**
-     * Get birthdate
+     * Get member_birthdate
      *
      * @return \DateTime 
      */
-    public function getBirthdate()
+    public function getMemberBirthdate()
     {
-        return $this->birthdate;
+        return $this->member_birthdate;
     }
 
     /**
-     * Set admissiondate
+     * Set member_admissiondate
      *
-     * @param \DateTime $admissiondate
+     * @param \DateTime $memberAdmissiondate
      * @return Member
      */
-    public function setAdmissiondate($admissiondate)
+    public function setMemberAdmissiondate($memberAdmissiondate)
     {
-        $this->admissiondate = $admissiondate;
+        $this->member_admissiondate = $memberAdmissiondate;
 
         return $this;
     }
 
     /**
-     * Get admissiondate
+     * Get member_admissiondate
      *
      * @return \DateTime 
      */
-    public function getAdmissiondate()
+    public function getMemberAdmissiondate()
     {
-        return $this->admissiondate;
+        return $this->member_admissiondate;
     }
 
     /**
-     * Set active
+     * Set member_active
      *
-     * @param boolean $active
+     * @param boolean $memberActive
      * @return Member
      */
-    public function setActive($active)
+    public function setMemberActive($memberActive)
     {
-        $this->active = $active;
+        $this->member_active = $memberActive;
 
         return $this;
     }
 
     /**
-     * Get active
+     * Get member_active
      *
      * @return boolean 
      */
-    public function getActive()
+    public function getMemberActive()
     {
-        return $this->active;
+        return $this->member_active;
     }
 
     /**
-     * Set path_photo
+     * Set member_photo_path
      *
-     * @param string $pathPhoto
+     * @param string $memberPhotoPath
      * @return Member
      */
-    public function setPathPhoto($pathPhoto)
+    public function setMemberPhotoPath($memberPhotoPath)
     {
-        $this->path_photo = $pathPhoto;
+        $this->member_photo_path = $memberPhotoPath;
 
         return $this;
     }
 
     /**
-     * Get path_photo
+     * Get member_photo_path
      *
      * @return string 
      */
-    public function getPathPhoto()
+    public function getMemberPhotoPath()
     {
-        return $this->path_photo;
+        return $this->member_photo_path;
     }
 
     /**
-     * Set file_photo
+     * Set member_photo_file
      *
-     * @param string $filePhoto
+     * @param string $memberPhotoFile
      * @return Member
      */
-    public function setFilePhoto($filePhoto)
+    public function setMemberPhotoFile($memberPhotoFile)
     {
-        $this->file_photo = $filePhoto;
+        $this->member_photo_file = $memberPhotoFile;
 
         return $this;
     }
 
     /**
-     * Get file_photo
+     * Get member_photo_file
      *
      * @return string 
      */
-    public function getFilePhoto()
+    public function getMemberPhotoFile()
     {
-        return $this->file_photo;
+        return $this->member_photo_file;
     }
 
     /**
@@ -367,25 +367,25 @@ class Member
     }
 
     /**
-     * Set role
+     * Set member_role
      *
-     * @param \Uni\AdminBundle\Entity\Role $role
+     * @param \Uni\AdminBundle\Entity\Role $memberRole
      * @return Member
      */
-    public function setRole(\Uni\AdminBundle\Entity\Role $role = null)
+    public function setMemberRole(\Uni\AdminBundle\Entity\Role $memberRole = null)
     {
-        $this->role = $role;
+        $this->member_role = $memberRole;
 
         return $this;
     }
 
     /**
-     * Get role
+     * Get member_role
      *
      * @return \Uni\AdminBundle\Entity\Role 
      */
-    public function getRole()
+    public function getMemberRole()
     {
-        return $this->role;
+        return $this->member_role;
     }
 }

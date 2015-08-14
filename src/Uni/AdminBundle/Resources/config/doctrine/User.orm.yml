@@ -8,11 +8,11 @@ Uni\AdminBundle\Entity\User:
             generator:
                 strategy: AUTO
     fields:
-        firstname:
+        user_firstname:
             type: string
             length: '100'
             nullable: true
-        lastname:
+        user_lastname:
             type: string
             length: '100'
             nullable: true

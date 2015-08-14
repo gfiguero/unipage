@@ -15,14 +15,14 @@ class NoticePhotoType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('path_photo', null, array(
-                'label' =>  'path_photo',
+            ->add('photo_path', null, array(
+                'label' =>  'photo_path',
             ))
-            ->add('file_photo', null, array(
-                'label' =>  'file_photo',
+            ->add('photo_file', null, array(
+                'label' =>  'photo_file',
             ))
-            ->add('notice', null, array(
-                'label' =>  'notice',
+            ->add('photo_notice', null, array(
+                'label' =>  'photo_notice',
             ))
         ;
     }

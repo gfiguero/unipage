@@ -15,23 +15,23 @@ class NoticeType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('title', null, array(
-                'label' =>  'title',
+            ->add('notice_title', null, array(
+                'label' =>  'notice_title',
             ))
-            ->add('content', null, array(
-                'label' =>  'content',
+            ->add('notice_content', null, array(
+                'label' =>  'notice_content',
             ))
-            ->add('published', null, array(
-                'label' =>  'published',
+            ->add('notice_published', null, array(
+                'label' =>  'notice_published',
             ))
-            ->add('photos', 'bootstrap_collection', array(
-                'type'                  =>  new NoticePhotoType(),
-                'allow_add'             =>  true,
-                'allow_delete'          =>  true,
-                'add_button_text'       =>  'Agregar Foto',
-                'delete_button_text'    =>  'Eliminar Foto',
-                'sub_widget_col'        =>  3,
-                'button_col'            =>  2
+            ->add('createdAt', null, array(
+                'label' =>  'createdAt',
+            ))
+            ->add('updatedAt', null, array(
+                'label' =>  'updatedAt',
+            ))
+            ->add('deletedAt', null, array(
+                'label' =>  'deletedAt',
             ))
         ;
     }

@@ -1,4 +1,4 @@
-{% extends '::uniAdmin.html.twig' %}
+{% extends ':Admin:base.html.twig' %}
 
 {% block title %}{{ 'notices'|trans }}{% endblock %}
 
@@ -40,9 +40,9 @@
                         <table class="records_list table table-striped table-hover">
                             <thead>
                                 <tr>
-                                    <th>{{ knp_pagination_sortable(pagination, 'title'|trans, 'title') }}{% if sort == 'title' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
-                                    <th>{{ knp_pagination_sortable(pagination, 'content'|trans, 'content') }}{% if sort == 'content' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
-                                    <th>{{ knp_pagination_sortable(pagination, 'published'|trans, 'published') }}{% if sort == 'published' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(pagination, 'notice_title'|trans, 'notice_title') }}{% if sort == 'notice_title' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(pagination, 'notice_content'|trans, 'notice_content') }}{% if sort == 'notice_content' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(pagination, 'notice_published'|trans, 'notice_published') }}{% if sort == 'notice_published' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                     <th>{{ knp_pagination_sortable(pagination, 'createdAt'|trans, 'createdAt') }}{% if sort == 'createdAt' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                     <th>{{ knp_pagination_sortable(pagination, 'updatedAt'|trans, 'updatedAt') }}{% if sort == 'updatedAt' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                     <th>{{ knp_pagination_sortable(pagination, 'deletedAt'|trans, 'deletedAt') }}{% if sort == 'deletedAt' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
@@ -51,9 +51,9 @@
                             <tbody>
                             {% for entity in pagination %}
                                 <tr class='clickableRow' href="{{ path('notice_show', { 'id': entity.id }) }}">
-                                    <td>{% if entity.title %}{{ entity.title }}{% endif %}</td>
-                                    <td>{% if entity.content %}{{ entity.content }}{% endif %}</td>
-                                    <td>{% if entity.published %}{{ entity.published }}{% endif %}</td>
+                                    <td>{% if entity.noticetitle %}{{ entity.noticetitle }}{% endif %}</td>
+                                    <td>{% if entity.noticecontent %}{{ entity.noticecontent }}{% endif %}</td>
+                                    <td>{% if entity.noticepublished %}{{ entity.noticepublished }}{% endif %}</td>
                                     <td>{% if entity.createdAt %}{{ entity.createdAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd-LLL-Y - HH:mm") }}{% endif %}</td>
                                     <td>{% if entity.updatedAt %}{{ entity.updatedAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd-LLL-Y - HH:mm") }}{% endif %}</td>
                                     <td>{% if entity.deletedAt %}{{ entity.deletedAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd-LLL-Y - HH:mm") }}{% endif %}</td>

@@ -15,11 +15,20 @@ class RoleType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name', null, array(
-                'label' =>  'name',
+            ->add('role_name', null, array(
+                'label' =>  'role_name',
             ))
-            ->add('rank', null, array(
-                'label' =>  'rank',
+            ->add('role_rank', null, array(
+                'label' =>  'role_rank',
+            ))
+            ->add('createdAt', null, array(
+                'label' =>  'createdAt',
+            ))
+            ->add('updatedAt', null, array(
+                'label' =>  'updatedAt',
+            ))
+            ->add('deletedAt', null, array(
+                'label' =>  'deletedAt',
             ))
         ;
     }

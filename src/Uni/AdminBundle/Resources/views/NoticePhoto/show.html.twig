@@ -1,4 +1,4 @@
-{% extends '::uniAdmin.html.twig' %}
+{% extends ':Admin:base.html.twig' %}
 
 {% block title %}{{ app.request.attributes.get('_route')|trans }}{% endblock %}
 
@@ -39,8 +39,8 @@
                     </div>
                     <div class="panel-body">
                         <dl class="dl-horizontal dl-horizontal-sm dl-horizontal-md dl-horizontal-lg">
-                            <dt>{{ 'path_photo'|trans }}</dt><dd>{% if entity.pathphoto %}{{ entity.pathphoto }}{% endif %}</dd>
-                            <dt>{{ 'file_photo'|trans }}</dt><dd>{% if entity.filephoto %}{{ entity.filephoto }}{% endif %}</dd>
+                            <dt>{{ 'photo_path'|trans }}</dt><dd>{% if entity.photopath %}{{ entity.photopath }}{% endif %}</dd>
+                            <dt>{{ 'photo_file'|trans }}</dt><dd>{% if entity.photofile %}{{ entity.photofile }}{% endif %}</dd>
                         </dl>
                     </div>
                 </div>

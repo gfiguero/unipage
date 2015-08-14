@@ -1,4 +1,4 @@
-{% extends '::uniAdmin.html.twig' %}
+{% extends ':Admin:base.html.twig' %}
 
 {% block title %}{{ app.request.attributes.get('_route')|trans }}{% endblock %}
 
@@ -39,15 +39,15 @@
                     </div>
                     <div class="panel-body">
                         <dl class="dl-horizontal dl-horizontal-sm dl-horizontal-md dl-horizontal-lg">
-                            <dt>{{ 'firstname'|trans }}</dt><dd>{% if entity.firstname %}{{ entity.firstname }}{% endif %}</dd>
-                            <dt>{{ 'lastname'|trans }}</dt><dd>{% if entity.lastname %}{{ entity.lastname }}{% endif %}</dd>
-                            <dt>{{ 'email'|trans }}</dt><dd>{% if entity.email %}{{ entity.email }}{% endif %}</dd>
-                            <dt>{{ 'phonenumber'|trans }}</dt><dd>{% if entity.phonenumber %}{{ entity.phonenumber }}{% endif %}</dd>
-                            <dt>{{ 'birthdate'|trans }}</dt><dd>{% if entity.birthdate %}{{ entity.birthdate|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y - HH:mm") }}{% endif %}</dd>
-                            <dt>{{ 'admissiondate'|trans }}</dt><dd>{% if entity.admissiondate %}{{ entity.admissiondate|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y - HH:mm") }}{% endif %}</dd>
-                            <dt>{{ 'active'|trans }}</dt><dd>{% if entity.active %}{{ entity.active }}{% endif %}</dd>
-                            <dt>{{ 'path_photo'|trans }}</dt><dd>{% if entity.pathphoto %}{{ entity.pathphoto }}{% endif %}</dd>
-                            <dt>{{ 'file_photo'|trans }}</dt><dd>{% if entity.filephoto %}{{ entity.filephoto }}{% endif %}</dd>
+                            <dt>{{ 'member_firstname'|trans }}</dt><dd>{% if entity.memberfirstname %}{{ entity.memberfirstname }}{% endif %}</dd>
+                            <dt>{{ 'member_lastname'|trans }}</dt><dd>{% if entity.memberlastname %}{{ entity.memberlastname }}{% endif %}</dd>
+                            <dt>{{ 'member_email'|trans }}</dt><dd>{% if entity.memberemail %}{{ entity.memberemail }}{% endif %}</dd>
+                            <dt>{{ 'member_phonenumber'|trans }}</dt><dd>{% if entity.memberphonenumber %}{{ entity.memberphonenumber }}{% endif %}</dd>
+                            <dt>{{ 'member_birthdate'|trans }}</dt><dd>{% if entity.memberbirthdate %}{{ entity.memberbirthdate|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y - HH:mm") }}{% endif %}</dd>
+                            <dt>{{ 'member_admissiondate'|trans }}</dt><dd>{% if entity.memberadmissiondate %}{{ entity.memberadmissiondate|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y - HH:mm") }}{% endif %}</dd>
+                            <dt>{{ 'member_active'|trans }}</dt><dd>{% if entity.memberactive %}{{ entity.memberactive }}{% endif %}</dd>
+                            <dt>{{ 'member_photo_path'|trans }}</dt><dd>{% if entity.memberphotopath %}{{ entity.memberphotopath }}{% endif %}</dd>
+                            <dt>{{ 'member_photo_file'|trans }}</dt><dd>{% if entity.memberphotofile %}{{ entity.memberphotofile }}{% endif %}</dd>
                             <dt>{{ 'createdAt'|trans }}</dt><dd>{% if entity.createdAt %}{{ entity.createdAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y - HH:mm") }}{% endif %}</dd>
                             <dt>{{ 'updatedAt'|trans }}</dt><dd>{% if entity.updatedAt %}{{ entity.updatedAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y - HH:mm") }}{% endif %}</dd>
                             <dt>{{ 'deletedAt'|trans }}</dt><dd>{% if entity.deletedAt %}{{ entity.deletedAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y - HH:mm") }}{% endif %}</dd>

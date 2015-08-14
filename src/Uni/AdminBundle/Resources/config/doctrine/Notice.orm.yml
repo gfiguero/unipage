@@ -8,13 +8,13 @@ Uni\AdminBundle\Entity\Notice:
             generator:
                 strategy: AUTO
     fields:
-        title:
+        notice_title:
             type: string
             length: '200'
-        content:
+        notice_content:
             type: text
             nullable: true
-        published:
+        notice_published:
             type: boolean
             options:
                 default: false
@@ -32,10 +32,10 @@ Uni\AdminBundle\Entity\Notice:
             type: datetime
             nullable: true
     oneToMany:
-        photos:
+        notice_photos:
             targetEntity: NoticePhoto
             cascade: [persist]
-            mappedBy: notice
+            mappedBy: photo_notice
     gedmo:
         soft_deleteable:
             field_name: deletedAt

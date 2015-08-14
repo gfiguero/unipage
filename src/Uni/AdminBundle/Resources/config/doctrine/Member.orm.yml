@@ -8,35 +8,35 @@ Uni\AdminBundle\Entity\Member:
             generator:
                 strategy: AUTO
     fields:
-        firstname:
+        member_firstname:
             type: string
             length: '200'
-        lastname:
+        member_lastname:
             type: string
             length: '200'
             nullable: true
-        email:
+        member_email:
             type: string
             length: '100'
             nullable: true
-        phonenumber:
+        member_phonenumber:
             type: string
             length: '100'
             nullable: true
-        birthdate:
+        member_birthdate:
             type: datetime
             nullable: true
-        admissiondate:
+        member_admissiondate:
             type: datetime
-        active:
+        member_active:
             type: boolean
             options:
                 default: true
-        path_photo:
+        member_photo_path:
             type: string
             length: '300'
             nullable: true
-        file_photo:
+        member_photo_file:
             type: string
             length: '300'
             nullable: true
@@ -54,9 +54,9 @@ Uni\AdminBundle\Entity\Member:
             type: datetime
             nullable: true
     manyToOne:
-        role:
+        member_role:
             targetEntity: Role
-            inversedBy: member
+            inversedBy: role_member
     gedmo:
         soft_deleteable:
             field_name: deletedAt

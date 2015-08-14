@@ -17,12 +17,12 @@ class Role
     /**
      * @var string
      */
-    private $name;
+    private $role_name;
 
     /**
      * @var integer
      */
-    private $rank;
+    private $role_rank;
 
     /**
      * @var \DateTime
@@ -42,14 +42,14 @@ class Role
     /**
      * @var \Doctrine\Common\Collections\Collection
      */
-    private $member;
+    private $role_member;
 
     /**
      * Constructor
      */
     public function __construct()
     {
-        $this->member = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->role_member = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -63,49 +63,49 @@ class Role
     }
 
     /**
-     * Set name
+     * Set role_name
      *
-     * @param string $name
+     * @param string $roleName
      * @return Role
      */
-    public function setName($name)
+    public function setRoleName($roleName)
     {
-        $this->name = $name;
+        $this->role_name = $roleName;
 
         return $this;
     }
 
     /**
-     * Get name
+     * Get role_name
      *
      * @return string 
      */
-    public function getName()
+    public function getRoleName()
     {
-        return $this->name;
+        return $this->role_name;
     }
 
     /**
-     * Set rank
+     * Set role_rank
      *
-     * @param integer $rank
+     * @param integer $roleRank
      * @return Role
      */
-    public function setRank($rank)
+    public function setRoleRank($roleRank)
     {
-        $this->rank = $rank;
+        $this->role_rank = $roleRank;
 
         return $this;
     }
 
     /**
-     * Get rank
+     * Get role_rank
      *
      * @return integer 
      */
-    public function getRank()
+    public function getRoleRank()
     {
-        return $this->rank;
+        return $this->role_rank;
     }
 
     /**
@@ -178,35 +178,35 @@ class Role
     }
 
     /**
-     * Add member
+     * Add role_member
      *
-     * @param \Uni\AdminBundle\Entity\Member $member
+     * @param \Uni\AdminBundle\Entity\Member $roleMember
      * @return Role
      */
-    public function addMember(\Uni\AdminBundle\Entity\Member $member)
+    public function addRoleMember(\Uni\AdminBundle\Entity\Member $roleMember)
     {
-        $this->member[] = $member;
+        $this->role_member[] = $roleMember;
 
         return $this;
     }
 
     /**
-     * Remove member
+     * Remove role_member
      *
-     * @param \Uni\AdminBundle\Entity\Member $member
+     * @param \Uni\AdminBundle\Entity\Member $roleMember
      */
-    public function removeMember(\Uni\AdminBundle\Entity\Member $member)
+    public function removeRoleMember(\Uni\AdminBundle\Entity\Member $roleMember)
     {
-        $this->member->removeElement($member);
+        $this->role_member->removeElement($roleMember);
     }
 
     /**
-     * Get member
+     * Get role_member
      *
      * @return \Doctrine\Common\Collections\Collection 
      */
-    public function getMember()
+    public function getRoleMember()
     {
-        return $this->member;
+        return $this->role_member;
     }
 }

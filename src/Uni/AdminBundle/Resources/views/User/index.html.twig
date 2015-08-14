@@ -1,4 +1,4 @@
-{% extends '::uniAdmin.html.twig' %}
+{% extends ':Admin:base.html.twig' %}
 
 {% block title %}{{ 'users'|trans }}{% endblock %}
 
@@ -40,8 +40,8 @@
                         <table class="records_list table table-striped table-hover">
                             <thead>
                                 <tr>
-                                    <th>{{ knp_pagination_sortable(pagination, 'firstname'|trans, 'firstname') }}{% if sort == 'firstname' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
-                                    <th>{{ knp_pagination_sortable(pagination, 'lastname'|trans, 'lastname') }}{% if sort == 'lastname' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(pagination, 'user_firstname'|trans, 'user_firstname') }}{% if sort == 'user_firstname' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(pagination, 'user_lastname'|trans, 'user_lastname') }}{% if sort == 'user_lastname' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                     <th>{{ knp_pagination_sortable(pagination, 'createdAt'|trans, 'createdAt') }}{% if sort == 'createdAt' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                     <th>{{ knp_pagination_sortable(pagination, 'updatedAt'|trans, 'updatedAt') }}{% if sort == 'updatedAt' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                     <th>{{ knp_pagination_sortable(pagination, 'deletedAt'|trans, 'deletedAt') }}{% if sort == 'deletedAt' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
@@ -50,8 +50,8 @@
                             <tbody>
                             {% for entity in pagination %}
                                 <tr class='clickableRow' href="{{ path('user_show', { 'id': entity.id }) }}">
-                                    <td>{% if entity.firstname %}{{ entity.firstname }}{% endif %}</td>
-                                    <td>{% if entity.lastname %}{{ entity.lastname }}{% endif %}</td>
+                                    <td>{% if entity.userfirstname %}{{ entity.userfirstname }}{% endif %}</td>
+                                    <td>{% if entity.userlastname %}{{ entity.userlastname }}{% endif %}</td>
                                     <td>{% if entity.createdAt %}{{ entity.createdAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd-LLL-Y - HH:mm") }}{% endif %}</td>
                                     <td>{% if entity.updatedAt %}{{ entity.updatedAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd-LLL-Y - HH:mm") }}{% endif %}</td>
                                     <td>{% if entity.deletedAt %}{{ entity.deletedAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd-LLL-Y - HH:mm") }}{% endif %}</td>

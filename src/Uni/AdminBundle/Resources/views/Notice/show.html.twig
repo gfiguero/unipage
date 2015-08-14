@@ -1,4 +1,4 @@
-{% extends '::uniAdmin.html.twig' %}
+{% extends ':Admin:base.html.twig' %}
 
 {% block title %}{{ app.request.attributes.get('_route')|trans }}{% endblock %}
 
@@ -39,9 +39,9 @@
                     </div>
                     <div class="panel-body">
                         <dl class="dl-horizontal dl-horizontal-sm dl-horizontal-md dl-horizontal-lg">
-                            <dt>{{ 'title'|trans }}</dt><dd>{% if entity.title %}{{ entity.title }}{% endif %}</dd>
-                            <dt>{{ 'content'|trans }}</dt><dd>{% if entity.content %}{{ entity.content }}{% endif %}</dd>
-                            <dt>{{ 'published'|trans }}</dt><dd>{% if entity.published %}{{ entity.published }}{% endif %}</dd>
+                            <dt>{{ 'notice_title'|trans }}</dt><dd>{% if entity.noticetitle %}{{ entity.noticetitle }}{% endif %}</dd>
+                            <dt>{{ 'notice_content'|trans }}</dt><dd>{% if entity.noticecontent %}{{ entity.noticecontent }}{% endif %}</dd>
+                            <dt>{{ 'notice_published'|trans }}</dt><dd>{% if entity.noticepublished %}{{ entity.noticepublished }}{% endif %}</dd>
                             <dt>{{ 'createdAt'|trans }}</dt><dd>{% if entity.createdAt %}{{ entity.createdAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y - HH:mm") }}{% endif %}</dd>
                             <dt>{{ 'updatedAt'|trans }}</dt><dd>{% if entity.updatedAt %}{{ entity.updatedAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y - HH:mm") }}{% endif %}</dd>
                             <dt>{{ 'deletedAt'|trans }}</dt><dd>{% if entity.deletedAt %}{{ entity.deletedAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y - HH:mm") }}{% endif %}</dd>

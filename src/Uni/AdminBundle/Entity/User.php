@@ -17,12 +17,12 @@ class User
     /**
      * @var string
      */
-    private $firstname;
+    private $user_firstname;
 
     /**
      * @var string
      */
-    private $lastname;
+    private $user_lastname;
 
     /**
      * @var \DateTime
@@ -51,49 +51,49 @@ class User
     }
 
     /**
-     * Set firstname
+     * Set user_firstname
      *
-     * @param string $firstname
+     * @param string $userFirstname
      * @return User
      */
-    public function setFirstname($firstname)
+    public function setUserFirstname($userFirstname)
     {
-        $this->firstname = $firstname;
+        $this->user_firstname = $userFirstname;
 
         return $this;
     }
 
     /**
-     * Get firstname
+     * Get user_firstname
      *
      * @return string 
      */
-    public function getFirstname()
+    public function getUserFirstname()
     {
-        return $this->firstname;
+        return $this->user_firstname;
     }
 
     /**
-     * Set lastname
+     * Set user_lastname
      *
-     * @param string $lastname
+     * @param string $userLastname
      * @return User
      */
-    public function setLastname($lastname)
+    public function setUserLastname($userLastname)
     {
-        $this->lastname = $lastname;
+        $this->user_lastname = $userLastname;
 
         return $this;
     }
 
     /**
-     * Get lastname
+     * Get user_lastname
      *
      * @return string 
      */
-    public function getLastname()
+    public function getUserLastname()
     {
-        return $this->lastname;
+        return $this->user_lastname;
     }
 
     /**

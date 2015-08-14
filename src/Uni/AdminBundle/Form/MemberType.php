@@ -15,35 +15,44 @@ class MemberType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('firstname', null, array(
-                'label' =>  'firstname',
+            ->add('member_firstname', null, array(
+                'label' =>  'member_firstname',
             ))
-            ->add('lastname', null, array(
-                'label' =>  'lastname',
+            ->add('member_lastname', null, array(
+                'label' =>  'member_lastname',
             ))
-            ->add('email', null, array(
-                'label' =>  'email',
+            ->add('member_email', null, array(
+                'label' =>  'member_email',
             ))
-            ->add('phonenumber', null, array(
-                'label' =>  'phonenumber',
+            ->add('member_phonenumber', null, array(
+                'label' =>  'member_phonenumber',
             ))
-            ->add('birthdate', 'birthday', array(
-                'label' =>  'birthdate',
+            ->add('member_birthdate', null, array(
+                'label' =>  'member_birthdate',
             ))
-            ->add('admissiondate', null, array(
-                'label' =>  'admissiondate',
+            ->add('member_admissiondate', null, array(
+                'label' =>  'member_admissiondate',
             ))
-            ->add('active', null, array(
-                'label' =>  'active',
+            ->add('member_active', null, array(
+                'label' =>  'member_active',
             ))
-            ->add('file_photo', 'file', array(
-                'required'  =>  false,
-                'label'     =>  'file_photo',
+            ->add('member_photo_path', null, array(
+                'label' =>  'member_photo_path',
             ))
-            ->add('role', 'entity', array(
-                'label' =>  'role',
-                'property'  =>  'name',
-                'class'     =>  'UniAdminBundle:Role',
+            ->add('member_photo_file', null, array(
+                'label' =>  'member_photo_file',
+            ))
+            ->add('createdAt', null, array(
+                'label' =>  'createdAt',
+            ))
+            ->add('updatedAt', null, array(
+                'label' =>  'updatedAt',
+            ))
+            ->add('deletedAt', null, array(
+                'label' =>  'deletedAt',
+            ))
+            ->add('member_role', null, array(
+                'label' =>  'member_role',
             ))
         ;
     }

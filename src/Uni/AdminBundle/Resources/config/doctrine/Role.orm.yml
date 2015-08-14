@@ -8,10 +8,10 @@ Uni\AdminBundle\Entity\Role:
             generator:
                 strategy: AUTO
     fields:
-        name:
+        role_name:
             type: string
             length: '100'
-        rank:
+        role_rank:
             type: integer
         createdAt:
             type: datetime
@@ -27,9 +27,9 @@ Uni\AdminBundle\Entity\Role:
             type: datetime
             nullable: true
     oneToMany:
-        member:
+        role_member:
             targetEntity: Member
-            mappedBy: role
+            mappedBy: member_role
     gedmo:
         soft_deleteable:
             field_name: deletedAt
