@@ -1,0 +1,65 @@
+# All
+notification: Notificación
+createdAt: Fecha de Registro
+updatedAt: Última Actualización
+deletedAt: Fecha de Borrado
+Deleted records can not be recovered.: Los registros borrados no podrán ser recuperados.
+Are you shure?: ¿Está seguro?
+
+# All Buttons
+create: Registrar
+save: Guardar
+edit: Editar
+delete: Borrar
+confirm: Confirmar
+cancel: Cancelar
+back: Volver
+
+# ---------------------------------------------------------------
+
+# Member
+member: Miembro
+members: Miembros
+member_new: Nuevo Miembro
+member_show: Ver Miembro
+member_edit: Editar Miembro
+Member has been created.: El miembro ha sido creado.
+Member has been updated.: El miembro ha sido actualizado.
+Member has been deleted.: El miembro ha sido borrado.
+Nombre: Nombre
+firstname: Nombre
+lastname: Apellido
+email: Email
+phonenumber: Teléfono
+birthdate: Fecha Nacimiento
+admissiondate: Fecha Ingreso
+active: Activo
+file_photo: Foto Perfil
+path_photo: Directorio
+role: Cargo
+
+# Notice
+notice: Noticia
+notices: Noticias
+notice_new: Nueva Noticia
+notice_show: Ver Noticia
+notice_edit: Editar Noticia
+Notice has been created.: La noticia ha sido creada.
+Notice has been updated.: La noticia ha sido actualizada.
+Notice has been deleted.: La noticia ha sido borrada.
+title: Título
+content: Contenido
+published: Publicada
+
+# Cargos
+role: Cargo
+roles: Cargos
+role_new: Nuevo Cargo
+role_show: Ver Cargo
+role_edit: Editar Cargo
+Role has been created.: El cargo ha sido creado.
+Role has been updated.: El cargo ha sido actualizado.
+Role has been deleted.: El cargo ha sido borrado.
+name: Nombre
+rank: Rango
+
