@@ -4,7 +4,7 @@ createdAt: Fecha de Registro
 updatedAt: Última Actualización
 deletedAt: Fecha de Borrado
 Deleted records can not be recovered.: Los registros borrados no podrán ser recuperados.
-Are you shure?: ¿Está seguro?
+Are you sure?: ¿Está seguro?
 
 # All Buttons
 create: Registrar
@@ -30,8 +30,8 @@ member_phonenumber: Teléfono
 member_birthdate: Fecha Nacimiento
 member_admissiondate: Fecha Ingreso
 member_active: Activo
-member_file_photo: Foto Perfil
-member_path_photo: Directorio
+member_photo_file: Foto Perfil
+member_photo_path: Directorio
 member_role: Cargo Asignado
 Member has been created.: El miembro ha sido creado.
 Member has been updated.: El miembro ha sido actualizado.

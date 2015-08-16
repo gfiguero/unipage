@@ -22,10 +22,12 @@ class {{ form_class }} extends AbstractType
     {
         $builder
         {%- for field in fields %}
+            {%- if (field != 'createdAt') and (field != 'updatedAt') and (field != 'deletedAt') %}
 
             ->add('{{ field }}', null, array(
                 'label' =>  '{{ field }}',
             ))
+            {%- endif %}
         {%- endfor %}
 
         ;

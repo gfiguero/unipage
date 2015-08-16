@@ -22,7 +22,7 @@
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                        <h4 class="modal-title" id="myModalLabel">{{ 'Are you shure?'|trans }}</h4>
+                                        <h4 class="modal-title" id="myModalLabel">{{ 'Are you sure?'|trans }}</h4>
                                     </div>
                                     <div class="modal-body">
                                         <p>{{ 'Deleted records can not be recovered.'|trans }}</p>
@@ -50,7 +50,6 @@
                             <dt>{{ 'member_photo_file'|trans }}</dt><dd>{% if entity.memberphotofile %}{{ entity.memberphotofile }}{% endif %}</dd>
                             <dt>{{ 'createdAt'|trans }}</dt><dd>{% if entity.createdAt %}{{ entity.createdAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y - HH:mm") }}{% endif %}</dd>
                             <dt>{{ 'updatedAt'|trans }}</dt><dd>{% if entity.updatedAt %}{{ entity.updatedAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y - HH:mm") }}{% endif %}</dd>
-                            <dt>{{ 'deletedAt'|trans }}</dt><dd>{% if entity.deletedAt %}{{ entity.deletedAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y - HH:mm") }}{% endif %}</dd>
                         </dl>
                     </div>
                 </div>

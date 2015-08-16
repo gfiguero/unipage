@@ -21,15 +21,6 @@ class UserType extends AbstractType
             ->add('user_lastname', null, array(
                 'label' =>  'user_lastname',
             ))
-            ->add('createdAt', null, array(
-                'label' =>  'createdAt',
-            ))
-            ->add('updatedAt', null, array(
-                'label' =>  'updatedAt',
-            ))
-            ->add('deletedAt', null, array(
-                'label' =>  'deletedAt',
-            ))
         ;
     }
     

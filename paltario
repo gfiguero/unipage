@@ -68,3 +68,10 @@ php app/console generate:doctrine:crud --entity=UniAdminBundle:NoticePhoto --for
 php app/console doctrine:schema:update --force
 php app/console cache:clear --env=dev
 php app/console cache:clear --env=prod
+
+Comiteo
+---------
+git commit -a -m ""
+git push -u origin master
+git remote add origin git@github.com:gfiguero/unipage.git
+git clone git@github.com:gfiguero/unipage.git

@@ -48,11 +48,11 @@
 
                                 <tr>
 
-                                    {%- else %}
+                                    {%- else %}{%- if field != 'deletedAt' %}
 
                                     <th>{{ "{{ knp_pagination_sortable(pagination, '" ~ field ~ "'|trans, '" ~ field ~ "') }}" }}{{ "{% if sort == '" ~ field ~ "' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}" }}</th>
 
-                                    {%- endif %}
+                                    {%- endif %}{%- endif %}
 
                                 {%- endfor %}
 

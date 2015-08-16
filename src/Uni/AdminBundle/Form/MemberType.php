@@ -42,15 +42,6 @@ class MemberType extends AbstractType
             ->add('member_photo_file', null, array(
                 'label' =>  'member_photo_file',
             ))
-            ->add('createdAt', null, array(
-                'label' =>  'createdAt',
-            ))
-            ->add('updatedAt', null, array(
-                'label' =>  'updatedAt',
-            ))
-            ->add('deletedAt', null, array(
-                'label' =>  'deletedAt',
-            ))
             ->add('member_role', null, array(
                 'label' =>  'member_role',
             ))

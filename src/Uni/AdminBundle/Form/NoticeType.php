@@ -24,15 +24,6 @@ class NoticeType extends AbstractType
             ->add('notice_published', null, array(
                 'label' =>  'notice_published',
             ))
-            ->add('createdAt', null, array(
-                'label' =>  'createdAt',
-            ))
-            ->add('updatedAt', null, array(
-                'label' =>  'updatedAt',
-            ))
-            ->add('deletedAt', null, array(
-                'label' =>  'deletedAt',
-            ))
         ;
     }
     
