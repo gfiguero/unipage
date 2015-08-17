@@ -1,4 +1,4 @@
-uni_page_index:
+uni_page:
     path:     /
     defaults: { _controller: UniPageBundle:Page:index }
 

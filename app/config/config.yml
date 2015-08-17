@@ -112,7 +112,7 @@ assetic:
         uniPage_css:
             inputs:
                 - %kernel.root_dir%/Resources/less/uniPage.less
-                - %kernel.root_dir%/Resources/less/clean-blog/clean-blog.less
+                - %kernel.root_dir%/../git_components/startbootstrap-clean-blog/less/clean-blog.less
             filters:
                 - less
                 - cssrewrite
@@ -151,6 +151,7 @@ assetic:
                 - %kernel.root_dir%/../vendor/components/bootstrap/js/tab.js
                 - %kernel.root_dir%/../vendor/components/bootstrap/js/affix.js
                 - %kernel.root_dir%/../bower_components/metisMenu/src/metisMenu.js
+                - %kernel.root_dir%/../git_components/startbootstrap-clean-blog/js/clean-blog.js
             output: js/uniPage.js
 
 braincrafted_bootstrap:

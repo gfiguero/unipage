@@ -34,7 +34,7 @@ dashboard:
     path:     /dashboard
     defaults: { _controller: UniAdminBundle:Dashboard:index }
 
-root:
+uni_admin:
     path: /
     defaults:
         _controller: FrameworkBundle:Redirect:urlRedirect
