@@ -39,6 +39,16 @@ rm src/Uni/AdminBundle/Controller/HistoryController.php
 rm src/Uni/AdminBundle/Form/HistoryType.php
 php app/console doctrine:generate:entities UniAdminBundle:History --path="src"
 php app/console generate:doctrine:crud --entity=UniAdminBundle:History --format=yml --with-write --overwrite --no-interaction --route-prefix='history'
+rm src/Uni/AdminBundle/Entity/Frontpage.php
+rm src/Uni/AdminBundle/Controller/FrontpageController.php
+rm src/Uni/AdminBundle/Form/FrontpageType.php
+php app/console doctrine:generate:entities UniAdminBundle:Frontpage --path="src"
+php app/console generate:doctrine:crud --entity=UniAdminBundle:Frontpage --format=yml --with-write --overwrite --no-interaction --route-prefix='frontpage'
+rm src/Uni/AdminBundle/Entity/FrontpagePhoto.php
+rm src/Uni/AdminBundle/Controller/FrontpagePhotoController.php
+rm src/Uni/AdminBundle/Form/FrontpagePhotoType.php
+php app/console doctrine:generate:entities UniAdminBundle:FrontpagePhoto --path="src"
+php app/console generate:doctrine:crud --entity=UniAdminBundle:FrontpagePhoto --format=yml --with-write --overwrite --no-interaction --route-prefix='frontpagephoto'
 php app/console doctrine:schema:update --force
 php app/console cache:clear --env=dev
 php app/console cache:clear --env=prod

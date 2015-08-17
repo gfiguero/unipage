@@ -1,5 +1,5 @@
 {% block iconos %}
-    {% if app.request.attributes.get( '_route' ) starts with 'dashboard' %}{{ icon('dashboard fa-fw') }}
+    {% if app.request.attributes.get( '_route' ) starts with 'frontpage' %}{{ icon('clone fa-fw') }}
     {% elseif app.request.attributes.get( '_route' ) starts with 'member' %}{{ icon('group fa-fw') }}
     {% elseif app.request.attributes.get( '_route' ) starts with 'role' %}{{ icon('sitemap fa-fw') }}
     {% elseif app.request.attributes.get( '_route' ) starts with 'notice' %}{{ icon('newspaper-o fa-fw') }}

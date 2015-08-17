@@ -19,6 +19,24 @@ back: Volver
 
 # ---------------------------------------------------------------
 
+# Frontpage
+frontpage: Portada
+frontpages: Portadas
+frontpage_index: Portadas
+frontpage_new: Nueva Portada
+frontpage_show: Ver Portada
+frontpage_edit: Editar Portada
+frontpage_title: Título de la Portada
+frontpage_subtitle: Subtítulo
+frontpage_email: Email de Contacto
+frontpage_phonenumber: Teléfono de Contacto
+frontpage_mission: Misión
+frontpage_vision: Visión
+frontpage_active: Portada activa
+Frontpage has been created.: La portada ha sido creada.
+Frontpage has been updated.: La portada ha sido actualizada.
+Frontpage has been deleted.: La portada ha sido borrada.
+
 # Member
 member: Miembro
 members: Miembros
