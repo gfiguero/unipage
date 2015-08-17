@@ -112,12 +112,12 @@ assetic:
         uniPage_css:
             inputs:
                 - %kernel.root_dir%/Resources/less/uniPage.less
-                - %kernel.root_dir%/../vendor/braincrafted/bootstrap-bundle/Braincrafted/Bundle/BootstrapBundle/Resources/less/form.less
+                - %kernel.root_dir%/Resources/less/clean-blog/clean-blog.less
             filters:
                 - less
                 - cssrewrite
             output: css/uniPage.css
-        bootstrap_js:
+        uniAdmin_js:
             inputs:
                 - %kernel.root_dir%/../vendor/components/bootstrap/js/transition.js
                 - %kernel.root_dir%/../vendor/components/bootstrap/js/alert.js
@@ -136,6 +136,22 @@ assetic:
                 - %kernel.root_dir%/../bower_components/metisMenu/src/metisMenu.js
                 - %kernel.root_dir%/../vendor/braincrafted/bootstrap-bundle/Braincrafted/Bundle/BootstrapBundle/Resources/js/bc-bootstrap-collection.js
             output: js/uniAdmin.js
+        uniPage_js:
+            inputs:
+                - %kernel.root_dir%/../vendor/components/bootstrap/js/transition.js
+                - %kernel.root_dir%/../vendor/components/bootstrap/js/alert.js
+                - %kernel.root_dir%/../vendor/components/bootstrap/js/button.js
+                - %kernel.root_dir%/../vendor/components/bootstrap/js/carousel.js
+                - %kernel.root_dir%/../vendor/components/bootstrap/js/collapse.js
+                - %kernel.root_dir%/../vendor/components/bootstrap/js/dropdown.js
+                - %kernel.root_dir%/../vendor/components/bootstrap/js/modal.js
+                - %kernel.root_dir%/../vendor/components/bootstrap/js/tooltip.js
+                - %kernel.root_dir%/../vendor/components/bootstrap/js/popover.js
+                - %kernel.root_dir%/../vendor/components/bootstrap/js/scrollspy.js
+                - %kernel.root_dir%/../vendor/components/bootstrap/js/tab.js
+                - %kernel.root_dir%/../vendor/components/bootstrap/js/affix.js
+                - %kernel.root_dir%/../bower_components/metisMenu/src/metisMenu.js
+            output: js/uniPage.js
 
 braincrafted_bootstrap:
     output_dir:

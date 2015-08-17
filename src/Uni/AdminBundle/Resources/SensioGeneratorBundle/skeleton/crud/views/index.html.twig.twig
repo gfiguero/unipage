@@ -3,7 +3,7 @@
 {% endblock extends %}
 
 {% block body %}
-{{ "{% block title %}" }}{{ "{{ '" ~ route_name_prefix ~ "s'|trans }}" }}{{ "{% endblock %}" }}
+{{ "{% block title %}" }}{{ "{{ '" ~ route_name_prefix ~ "_index'|trans }}" }}{{ "{% endblock %}" }}
 
 {{ "{% block body -%}" }}
 
@@ -11,7 +11,7 @@
 
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">{{ "{% include ':Files:icon.html.twig' %}" }}{{ "{{ '" ~ route_name_prefix ~ "s'|trans }}" }}</h1>
+                <h1 class="page-header">{{ "{% include ':Admin:icon.html.twig' %}" }}{{ "{{ '" ~ route_name_prefix ~ "_index'|trans }}" }}</h1>
                 {{ "{% for flashMessage in app.session.flashbag.get('success') %}" }}
                     <div class="alert alert-success alert-dismissible fade in" role="alert">
                         <button type="button" class="close" data-dismiss="alert" aria-label="close">{{ "{{ icon('remove fa-fw') }}" }}</button>

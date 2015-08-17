@@ -5,6 +5,8 @@ updatedAt: Última Actualización
 deletedAt: Fecha de Borrado
 Deleted records can not be recovered.: Los registros borrados no podrán ser recuperados.
 Are you sure?: ¿Está seguro?
+login: Acceso
+logout: Salir
 
 # All Buttons
 create: Registrar
@@ -20,6 +22,7 @@ back: Volver
 # Member
 member: Miembro
 members: Miembros
+member_index: Miembros
 member_new: Nuevo Miembro
 member_show: Ver Miembro
 member_edit: Editar Miembro
@@ -40,6 +43,7 @@ Member has been deleted.: El miembro ha sido borrado.
 # Cargos
 role: Cargo
 roles: Cargos
+role_index: Cargos
 role_new: Nuevo Cargo
 role_show: Ver Cargo
 role_edit: Editar Cargo
@@ -52,6 +56,7 @@ Role has been deleted.: El cargo ha sido borrado.
 # Usuarios
 user: Usuario
 users: Usuarios
+user_index: Usuarios
 user_new: Nuevo Usuario
 user_show: Ver Usuario
 user_edit: Editar Usuario
@@ -64,6 +69,7 @@ User has been deleted.: El usuario ha sido borrado.
 # Notice
 notice: Noticia
 notices: Noticias
+notice_index: Noticias
 notice_new: Nueva Noticia
 notice_show: Ver Noticia
 notice_edit: Editar Noticia
@@ -75,4 +81,31 @@ Notice has been created.: La noticia ha sido creada.
 Notice has been updated.: La noticia ha sido actualizada.
 Notice has been deleted.: La noticia ha sido borrada.
 
+# History
+history: Historia
+history_index: Historias
+history_new: Nueva Historia
+history_show: Ver Historia
+history_edit: Editar Historia
+history_title: Título
+history_content: Contenido
+history_published: Publicada
+history_photo: Foto
+History has been created.: La historia ha sido creada.
+History has been updated.: La historia ha sido actualizada.
+History has been deleted.: La historia ha sido borrada.
+
+# Reports
+report: Reportes
+report_index: Reportes
+report_new: Nuevo Reporte
+report_show: Ver Reporte
+report_edit: Editar Reporte
+report_title: Título
+report_content: Contenido
+report_published: Publicado
+report_photo: Foto
+Reports has been created.: La historia ha sido creada.
+Reports has been updated.: La historia ha sido actualizada.
+Reports has been deleted.: La historia ha sido borrada.
 
