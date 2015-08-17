@@ -1,0 +1,31 @@
+reportphoto:
+    path:     /
+    defaults: { _controller: "UniAdminBundle:ReportPhoto:index" }
+    methods: [GET]
+
+reportphoto_show:
+    path:     /{id}/show
+    defaults: { _controller: "UniAdminBundle:ReportPhoto:show" }
+
+reportphoto_new:
+    path:     /new
+    defaults: { _controller: "UniAdminBundle:ReportPhoto:new" }
+
+reportphoto_create:
+    path:     /create
+    defaults: { _controller: "UniAdminBundle:ReportPhoto:create" }
+    methods: [POST]
+
+reportphoto_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "UniAdminBundle:ReportPhoto:edit" }
+
+reportphoto_update:
+    path:     /{id}/update
+    defaults: { _controller: "UniAdminBundle:ReportPhoto:update" }
+    methods: [POST|PUT]
+
+reportphoto_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "UniAdminBundle:ReportPhoto:delete" }
+    methods: [POST|DELETE]
