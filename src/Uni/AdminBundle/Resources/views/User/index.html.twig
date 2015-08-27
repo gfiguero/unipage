@@ -42,6 +42,7 @@
                                 <tr>
                                     <th>{{ knp_pagination_sortable(pagination, 'user_firstname'|trans, 'user_firstname') }}{% if sort == 'user_firstname' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                     <th>{{ knp_pagination_sortable(pagination, 'user_lastname'|trans, 'user_lastname') }}{% if sort == 'user_lastname' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(pagination, 'user_phonenumber'|trans, 'user_phonenumber') }}{% if sort == 'user_phonenumber' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                     <th>{{ knp_pagination_sortable(pagination, 'createdAt'|trans, 'createdAt') }}{% if sort == 'createdAt' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                     <th>{{ knp_pagination_sortable(pagination, 'updatedAt'|trans, 'updatedAt') }}{% if sort == 'updatedAt' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                 </tr>
@@ -51,9 +52,9 @@
                                 <tr class='clickableRow' href="{{ path('user_show', { 'id': entity.id }) }}">
                                     <td>{% if entity.userfirstname %}{{ entity.userfirstname }}{% endif %}</td>
                                     <td>{% if entity.userlastname %}{{ entity.userlastname }}{% endif %}</td>
+                                    <td>{% if entity.userphonenumber %}{{ entity.userphonenumber }}{% endif %}</td>
                                     <td>{% if entity.createdAt %}{{ entity.createdAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd-LLL-Y - HH:mm") }}{% endif %}</td>
                                     <td>{% if entity.updatedAt %}{{ entity.updatedAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd-LLL-Y - HH:mm") }}{% endif %}</td>
-                                    <td>{% if entity.deletedAt %}{{ entity.deletedAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd-LLL-Y - HH:mm") }}{% endif %}</td>
                                 </tr>
                             {% endfor %}
                             </tbody>

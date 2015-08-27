@@ -36,6 +36,18 @@ Uni\AdminBundle\Entity\Notice:
             targetEntity: NoticePhoto
             cascade: [persist]
             mappedBy: photo_notice
+    manyToMany:
+        notice_noticecategory:
+            targetEntity: NoticeCategory
+            inversedBy: noticecategory_notice
+            joinTable:
+                name: NoticeCategoryNub
+                joinColumns:
+                    noticecategory:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    notice:
+                        referencedColumnName: id
     gedmo:
         soft_deleteable:
             field_name: deletedAt

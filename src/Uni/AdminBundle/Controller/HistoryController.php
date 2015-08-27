@@ -73,7 +73,7 @@ class HistoryController extends Controller
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'create', 'attr' => array('icon' => 'save' )));
+        $form->add('submit', 'submit', array('label' => 'create', 'attr' => array('icon' => 'save', 'data-toggle' => 'modal', 'data-target' => '#loading' )));
 
         return $form;
     }
@@ -153,7 +153,7 @@ class HistoryController extends Controller
 
         $form->add('actions', 'form_actions', [
             'buttons' => [
-                'submit' => ['type' => 'submit', 'options' => ['label' => 'save', 'attr' => array('icon' => 'save', 'class' => 'btn-primary')]],
+                'submit' => ['type' => 'submit', 'options' => ['label' => 'save', 'attr' => array('icon' => 'save', 'class' => 'btn-primary', 'data-toggle' => 'modal', 'data-target' => '#loading')]],
             ]
         ]);
 

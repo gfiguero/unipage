@@ -59,7 +59,7 @@
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'create', 'attr' => array('icon' => 'save' )));
+        $form->add('submit', 'submit', array('label' => 'create', 'attr' => array('icon' => 'save', 'data-toggle' => 'modal', 'data-target' => '#loading' )));
 
         return $form;
     }

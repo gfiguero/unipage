@@ -20,5 +20,4 @@ Uni\AdminBundle\Entity\NoticePhoto:
         photo_notice:
             targetEntity: Notice
             inversedBy: notice_photos
-
     lifecycleCallbacks: {  }

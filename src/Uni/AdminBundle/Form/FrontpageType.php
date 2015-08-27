@@ -4,7 +4,7 @@ namespace Uni\AdminBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class FrontpageType extends AbstractType
 {
@@ -36,13 +36,23 @@ class FrontpageType extends AbstractType
             ->add('frontpage_active', null, array(
                 'label' =>  'frontpage_active',
             ))
+            ->add('frontpage_photos', 'bootstrap_collection', array(
+                'label'                 =>  'frontpage_photos',
+                'type'                  =>  new FrontpagePhotoType(),
+                'allow_add'             =>  true,
+                'allow_delete'          =>  true,
+                'add_button_text'       =>  'frontpage_photo_add',
+                'delete_button_text'    =>  'frontpage_photo_delete',
+                'sub_widget_col'        =>  10,
+                'button_col'            =>  2
+            ))
         ;
     }
     
     /**
-     * @param OptionsResolverInterface $resolver
+     * @param OptionsResolver $resolver
      */
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
             'data_class' => 'Uni\AdminBundle\Entity\Frontpage'

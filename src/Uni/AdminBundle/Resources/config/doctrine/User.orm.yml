@@ -16,6 +16,10 @@ Uni\AdminBundle\Entity\User:
             type: string
             length: '100'
             nullable: true
+        user_phonenumber:
+            type: string
+            length: '100'
+            nullable: true
         createdAt:
             type: datetime
             gedmo:

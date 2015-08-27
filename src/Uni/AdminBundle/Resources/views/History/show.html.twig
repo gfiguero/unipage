@@ -39,9 +39,11 @@
                     </div>
                     <div class="panel-body">
                         <dl class="dl-horizontal dl-horizontal-sm dl-horizontal-md dl-horizontal-lg">
+                            <dt>{{ 'history_time'|trans }}</dt><dd>{% if entity.historytime %}{{ entity.historytime }}{% endif %}</dd>
                             <dt>{{ 'history_title'|trans }}</dt><dd>{% if entity.historytitle %}{{ entity.historytitle }}{% endif %}</dd>
+                            <dt>{{ 'history_abstract'|trans }}</dt><dd>{% if entity.historyabstract %}{{ entity.historyabstract }}{% endif %}</dd>
                             <dt>{{ 'history_content'|trans }}</dt><dd>{% if entity.historycontent %}{{ entity.historycontent }}{% endif %}</dd>
-                            <dt>{{ 'history_date'|trans }}</dt><dd>{% if entity.historydate %}{{ entity.historydate|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y - HH:mm") }}{% endif %}</dd>
+                            <dt>{{ 'history_rank'|trans }}</dt><dd>{% if entity.historyrank %}{{ entity.historyrank }}{% endif %}</dd>
                             <dt>{{ 'history_published'|trans }}</dt><dd>{% if entity.historypublished %}{{ entity.historypublished }}{% endif %}</dd>
                             <dt>{{ 'history_photo_path'|trans }}</dt><dd>{% if entity.historyphotopath %}{{ entity.historyphotopath }}{% endif %}</dd>
                             <dt>{{ 'history_photo_file'|trans }}</dt><dd>{% if entity.historyphotofile %}{{ entity.historyphotofile }}{% endif %}</dd>

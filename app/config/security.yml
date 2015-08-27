@@ -51,10 +51,10 @@ security:
     access_control:
         - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        #- { path: ^/usuarios, role: ROLE_ADMIN }
-        #- { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/user, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        # - { path: ^/, roles: ROLE_ADMIN }
         - { path: ^/, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        # - { path: ^/, roles: ROLE_ADMIN }
         # Include the following line to also secure the /admin path itself
         # - { path: ^/admin$, roles: ROLE_ADMIN }

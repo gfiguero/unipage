@@ -17,7 +17,17 @@ class History
     /**
      * @var string
      */
+    private $history_time;
+
+    /**
+     * @var string
+     */
     private $history_title;
+
+    /**
+     * @var string
+     */
+    private $history_abstract;
 
     /**
      * @var string
@@ -25,9 +35,9 @@ class History
     private $history_content;
 
     /**
-     * @var \DateTime
+     * @var integer
      */
-    private $history_date;
+    private $history_rank;
 
     /**
      * @var boolean
@@ -71,6 +81,29 @@ class History
     }
 
     /**
+     * Set history_time
+     *
+     * @param string $historyTime
+     * @return History
+     */
+    public function setHistoryTime($historyTime)
+    {
+        $this->history_time = $historyTime;
+
+        return $this;
+    }
+
+    /**
+     * Get history_time
+     *
+     * @return string 
+     */
+    public function getHistoryTime()
+    {
+        return $this->history_time;
+    }
+
+    /**
      * Set history_title
      *
      * @param string $historyTitle
@@ -91,6 +124,29 @@ class History
     public function getHistoryTitle()
     {
         return $this->history_title;
+    }
+
+    /**
+     * Set history_abstract
+     *
+     * @param string $historyAbstract
+     * @return History
+     */
+    public function setHistoryAbstract($historyAbstract)
+    {
+        $this->history_abstract = $historyAbstract;
+
+        return $this;
+    }
+
+    /**
+     * Get history_abstract
+     *
+     * @return string 
+     */
+    public function getHistoryAbstract()
+    {
+        return $this->history_abstract;
     }
 
     /**
@@ -117,26 +173,26 @@ class History
     }
 
     /**
-     * Set history_date
+     * Set history_rank
      *
-     * @param \DateTime $historyDate
+     * @param integer $historyRank
      * @return History
      */
-    public function setHistoryDate($historyDate)
+    public function setHistoryRank($historyRank)
     {
-        $this->history_date = $historyDate;
+        $this->history_rank = $historyRank;
 
         return $this;
     }
 
     /**
-     * Get history_date
+     * Get history_rank
      *
-     * @return \DateTime 
+     * @return integer 
      */
-    public function getHistoryDate()
+    public function getHistoryRank()
     {
-        return $this->history_date;
+        return $this->history_rank;
     }
 
     /**

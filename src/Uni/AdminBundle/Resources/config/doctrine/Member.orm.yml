@@ -24,10 +24,11 @@ Uni\AdminBundle\Entity\Member:
             length: '100'
             nullable: true
         member_birthdate:
-            type: datetime
+            type: date
             nullable: true
         member_admissiondate:
-            type: datetime
+            type: date
+            nullable: true
         member_active:
             type: boolean
             options:

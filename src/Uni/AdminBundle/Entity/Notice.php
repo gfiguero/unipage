@@ -50,11 +50,17 @@ class Notice
     private $notice_photos;
 
     /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $notice_noticecategory;
+
+    /**
      * Constructor
      */
     public function __construct()
     {
         $this->notice_photos = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->notice_noticecategory = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -236,5 +242,38 @@ class Notice
     public function getNoticePhotos()
     {
         return $this->notice_photos;
+    }
+
+    /**
+     * Add notice_noticecategory
+     *
+     * @param \Uni\AdminBundle\Entity\NoticeCategory $noticeNoticecategory
+     * @return Notice
+     */
+    public function addNoticeNoticecategory(\Uni\AdminBundle\Entity\NoticeCategory $noticeNoticecategory)
+    {
+        $this->notice_noticecategory[] = $noticeNoticecategory;
+
+        return $this;
+    }
+
+    /**
+     * Remove notice_noticecategory
+     *
+     * @param \Uni\AdminBundle\Entity\NoticeCategory $noticeNoticecategory
+     */
+    public function removeNoticeNoticecategory(\Uni\AdminBundle\Entity\NoticeCategory $noticeNoticecategory)
+    {
+        $this->notice_noticecategory->removeElement($noticeNoticecategory);
+    }
+
+    /**
+     * Get notice_noticecategory
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getNoticeNoticecategory()
+    {
+        return $this->notice_noticecategory;
     }
 }

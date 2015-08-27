@@ -3,16 +3,17 @@
 namespace Uni\AdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use FOS\UserBundle\Entity\User as BaseUser;
 
 /**
  * User
  */
-class User
+class User extends BaseUser
 {
     /**
      * @var integer
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string
@@ -23,6 +24,11 @@ class User
      * @var string
      */
     private $user_lastname;
+
+    /**
+     * @var string
+     */
+    private $user_phonenumber;
 
     /**
      * @var \DateTime
@@ -94,6 +100,29 @@ class User
     public function getUserLastname()
     {
         return $this->user_lastname;
+    }
+
+    /**
+     * Set user_phonenumber
+     *
+     * @param string $userPhonenumber
+     * @return User
+     */
+    public function setUserPhonenumber($userPhonenumber)
+    {
+        $this->user_phonenumber = $userPhonenumber;
+
+        return $this;
+    }
+
+    /**
+     * Get user_phonenumber
+     *
+     * @return string 
+     */
+    public function getUserPhonenumber()
+    {
+        return $this->user_phonenumber;
     }
 
     /**

@@ -48,11 +48,12 @@
 
                                 <tr>
 
-                                    {%- else %}{%- if field != 'deletedAt' %}
+                                    {%- elseif field in ['deletedAt'] %}
+                                    {%- else %}
 
                                     <th>{{ "{{ knp_pagination_sortable(pagination, '" ~ field ~ "'|trans, '" ~ field ~ "') }}" }}{{ "{% if sort == '" ~ field ~ "' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}" }}</th>
 
-                                    {%- endif %}{%- endif %}
+                                    {%- endif %}
 
                                 {%- endfor %}
 
@@ -66,9 +67,16 @@
 
                                 <tr class='clickableRow' href="{{ "{{ path('" ~ route_name_prefix ~ "_show', { 'id': entity."~ identifier ~" }) }}" }}">
 
-                                {%- elseif metadata.type in ['date', 'datetime'] %}
+                                {%- elseif field in ['deletedAt'] %}
+                                {%- elseif metadata.type in ['date', 'time', 'datetime'] %}
+
+                                    {%- if metadata.type == 'date' %}
+
+                                    <td>{{ '{% if entity.' ~ field|replace({'_': ''}) ~ ' %}{{ entity.' ~ field|replace({'_': ''}) ~ '|localizeddate(\'full\', \'full\', \'es_ES\', \'America/Santiago\', "dd-LLL-Y") }}{% endif %}' }}</td>
+                                    {%- else %}
 
                                     <td>{{ '{% if entity.' ~ field|replace({'_': ''}) ~ ' %}{{ entity.' ~ field|replace({'_': ''}) ~ '|localizeddate(\'full\', \'full\', \'es_ES\', \'America/Santiago\', "dd-LLL-Y - HH:mm") }}{% endif %}' }}</td>
+                                    {%- endif %}
 
                                 {%- else %}
 

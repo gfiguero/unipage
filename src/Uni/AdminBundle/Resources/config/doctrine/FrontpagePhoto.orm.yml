@@ -20,5 +20,4 @@ Uni\AdminBundle\Entity\FrontpagePhoto:
         photo_frontpage:
             targetEntity: Frontpage
             inversedBy: frontpage_photos
-
     lifecycleCallbacks: {  }

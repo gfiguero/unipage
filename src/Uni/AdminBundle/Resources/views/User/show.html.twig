@@ -41,6 +41,7 @@
                         <dl class="dl-horizontal dl-horizontal-sm dl-horizontal-md dl-horizontal-lg">
                             <dt>{{ 'user_firstname'|trans }}</dt><dd>{% if entity.userfirstname %}{{ entity.userfirstname }}{% endif %}</dd>
                             <dt>{{ 'user_lastname'|trans }}</dt><dd>{% if entity.userlastname %}{{ entity.userlastname }}{% endif %}</dd>
+                            <dt>{{ 'user_phonenumber'|trans }}</dt><dd>{% if entity.userphonenumber %}{{ entity.userphonenumber }}{% endif %}</dd>
                             <dt>{{ 'createdAt'|trans }}</dt><dd>{% if entity.createdAt %}{{ entity.createdAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y - HH:mm") }}{% endif %}</dd>
                             <dt>{{ 'updatedAt'|trans }}</dt><dd>{% if entity.updatedAt %}{{ entity.updatedAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y - HH:mm") }}{% endif %}</dd>
                         </dl>

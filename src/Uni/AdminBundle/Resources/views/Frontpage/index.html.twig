@@ -63,7 +63,6 @@
                                     <td>{% if entity.frontpageactive %}{{ entity.frontpageactive }}{% endif %}</td>
                                     <td>{% if entity.createdAt %}{{ entity.createdAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd-LLL-Y - HH:mm") }}{% endif %}</td>
                                     <td>{% if entity.updatedAt %}{{ entity.updatedAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd-LLL-Y - HH:mm") }}{% endif %}</td>
-                                    <td>{% if entity.deletedAt %}{{ entity.deletedAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd-LLL-Y - HH:mm") }}{% endif %}</td>
                                 </tr>
                             {% endfor %}
                             </tbody>

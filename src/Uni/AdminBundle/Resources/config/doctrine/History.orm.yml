@@ -8,15 +8,20 @@ Uni\AdminBundle\Entity\History:
             generator:
                 strategy: AUTO
     fields:
+        history_time:
+            type: string
+            length: '200'
         history_title:
             type: string
             length: '200'
+        history_abstract:
+            type: text
+            nullable: true
         history_content:
             type: text
             nullable: true
-        history_date:
-            type: date
-            nullable: true
+        history_rank:
+            type: integer
         history_published:
             type: boolean
             options:

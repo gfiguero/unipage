@@ -20,5 +20,4 @@ Uni\AdminBundle\Entity\ReportPhoto:
         photo_report:
             targetEntity: Report
             inversedBy: report_photos
-
     lifecycleCallbacks: {  }

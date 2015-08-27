@@ -7,6 +7,22 @@
  *
  * Designed and built with all the love in the world by @mdo and @fat.
  */
+.vertical-alignment-helper {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+.vertical-align-center {
+  display: table-cell;
+  vertical-align: middle;
+  pointer-events: none;
+}
+.modal-content {
+  width: inherit;
+  height: inherit;
+  margin: 0 auto;
+  pointer-events: all;
+}
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 html {
   font-family: sans-serif;

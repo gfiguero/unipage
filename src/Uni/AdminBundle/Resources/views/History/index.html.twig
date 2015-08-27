@@ -40,9 +40,11 @@
                         <table class="records_list table table-striped table-hover">
                             <thead>
                                 <tr>
+                                    <th>{{ knp_pagination_sortable(pagination, 'history_time'|trans, 'history_time') }}{% if sort == 'history_time' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                     <th>{{ knp_pagination_sortable(pagination, 'history_title'|trans, 'history_title') }}{% if sort == 'history_title' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(pagination, 'history_abstract'|trans, 'history_abstract') }}{% if sort == 'history_abstract' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                     <th>{{ knp_pagination_sortable(pagination, 'history_content'|trans, 'history_content') }}{% if sort == 'history_content' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
-                                    <th>{{ knp_pagination_sortable(pagination, 'history_date'|trans, 'history_date') }}{% if sort == 'history_date' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(pagination, 'history_rank'|trans, 'history_rank') }}{% if sort == 'history_rank' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                     <th>{{ knp_pagination_sortable(pagination, 'history_published'|trans, 'history_published') }}{% if sort == 'history_published' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                     <th>{{ knp_pagination_sortable(pagination, 'history_photo_path'|trans, 'history_photo_path') }}{% if sort == 'history_photo_path' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                     <th>{{ knp_pagination_sortable(pagination, 'history_photo_file'|trans, 'history_photo_file') }}{% if sort == 'history_photo_file' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
@@ -53,15 +55,16 @@
                             <tbody>
                             {% for entity in pagination %}
                                 <tr class='clickableRow' href="{{ path('history_show', { 'id': entity.id }) }}">
+                                    <td>{% if entity.historytime %}{{ entity.historytime }}{% endif %}</td>
                                     <td>{% if entity.historytitle %}{{ entity.historytitle }}{% endif %}</td>
+                                    <td>{% if entity.historyabstract %}{{ entity.historyabstract }}{% endif %}</td>
                                     <td>{% if entity.historycontent %}{{ entity.historycontent }}{% endif %}</td>
-                                    <td>{% if entity.historydate %}{{ entity.historydate|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd-LLL-Y - HH:mm") }}{% endif %}</td>
+                                    <td>{% if entity.historyrank %}{{ entity.historyrank }}{% endif %}</td>
                                     <td>{% if entity.historypublished %}{{ entity.historypublished }}{% endif %}</td>
                                     <td>{% if entity.historyphotopath %}{{ entity.historyphotopath }}{% endif %}</td>
                                     <td>{% if entity.historyphotofile %}{{ entity.historyphotofile }}{% endif %}</td>
                                     <td>{% if entity.createdAt %}{{ entity.createdAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd-LLL-Y - HH:mm") }}{% endif %}</td>
                                     <td>{% if entity.updatedAt %}{{ entity.updatedAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd-LLL-Y - HH:mm") }}{% endif %}</td>
-                                    <td>{% if entity.deletedAt %}{{ entity.deletedAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd-LLL-Y - HH:mm") }}{% endif %}</td>
                                 </tr>
                             {% endfor %}
                             </tbody>

@@ -1,18 +1,25 @@
 {% extends ':Page:base.html.twig' %}
 
-{% block stylesheet %}{% endblock %}
+{% block stylesheet %}
+    {% set foto = random(frontpage.frontpagephotos) %}
+    {% set image = '/uploads/frontpage_photos/' ~ foto.photopath %}
+    <style type="text/css">
+    .header-image {
+        background: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url('{{ asset(image) | imagine_filter('page_header') }}');
+        background-repeat:no-repeat;
+    }
+    </style>
+{% endblock %}
 
 {% block header %}
-    <!-- Page Header -->
-    <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image:url('{{ asset('/img/home-bg.jpg') }}');">
+    <header class="intro-header header-image">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="site-heading">
-                        <h1>uniPage</h1>
+                        <h1>{{ frontpage.frontpagetitle }}</h1>
                         <hr class="small">
-                        <span class="subheading">Una página simple y funcional</span>
+                        <span class="subheading">{{ frontpage.frontpagesubtitle }}</span>
                     </div>
                 </div>
             </div>
@@ -23,62 +30,21 @@
 {% block javascript %}{% endblock %}
 
 {% block body -%}
-    <!-- Main Content -->
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="post-preview">
-                    <a href="post.html">
-                        <h2 class="post-title">
-                            Man must explore, and this is exploration at its greatest
-                        </h2>
-                        <h3 class="post-subtitle">
-                            Problems look mighty small from 150 miles up
-                        </h3>
-                    </a>
-                    <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on September 24, 2014</p>
+    <section id="service">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-12">
+                    <h2 class="section-heading">Servicios</h2>
                 </div>
-                <hr>
-                <div class="post-preview">
-                    <a href="post.html">
-                        <h2 class="post-title">
-                            I believe every human has a finite number of heartbeats. I don't intend to waste any of mine.
-                        </h2>
-                    </a>
-                    <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on September 18, 2014</p>
+                {% for service in services %}
+                <div class="col-md-4">
+                    {% set image = '/uploads/frontpage_photos/' ~ service.servicephotopath %}
+                    <img class="img-circle img-responsive center-block" src="{{ asset(image) | imagine_filter('page_small') }}" alt="">
+                    <h4 class="service-heading">{{ service.servicetitle }}</h4>
+                    <p class="text-muted">{{ service.servicecontent }}</p>
                 </div>
-                <hr>
-                <div class="post-preview">
-                    <a href="post.html">
-                        <h2 class="post-title">
-                            Science has not yet mastered prophecy
-                        </h2>
-                        <h3 class="post-subtitle">
-                            We predict too much for the next year and yet far too little for the next ten.
-                        </h3>
-                    </a>
-                    <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on August 24, 2014</p>
-                </div>
-                <hr>
-                <div class="post-preview">
-                    <a href="post.html">
-                        <h2 class="post-title">
-                            Failure is not an option
-                        </h2>
-                        <h3 class="post-subtitle">
-                            Many say exploration is part of our destiny, but it’s actually our duty to future generations.
-                        </h3>
-                    </a>
-                    <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on July 8, 2014</p>
-                </div>
-                <hr>
-                <!-- Pager -->
-                <ul class="pager">
-                    <li class="next">
-                        <a href="#">Older Posts &rarr;</a>
-                    </li>
-                </ul>
+                {% endfor %}
             </div>
         </div>
-    </div>
+    </section>
 {% endblock %}

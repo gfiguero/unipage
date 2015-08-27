@@ -4,7 +4,7 @@ namespace Uni\AdminBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class NoticeType extends AbstractType
 {
@@ -24,13 +24,16 @@ class NoticeType extends AbstractType
             ->add('notice_published', null, array(
                 'label' =>  'notice_published',
             ))
+            ->add('notice_noticecategory', null, array(
+                'label' =>  'notice_noticecategory',
+            ))
         ;
     }
     
     /**
-     * @param OptionsResolverInterface $resolver
+     * @param OptionsResolver $resolver
      */
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
             'data_class' => 'Uni\AdminBundle\Entity\Notice'

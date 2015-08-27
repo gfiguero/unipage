@@ -1,22 +1,30 @@
-uni_admin_frontpagephoto:
-    resource: "@UniAdminBundle/Resources/config/routing/frontpagephoto.yml"
-    prefix:   /frontpagephoto
+uni_admin_noticecategory:
+    resource: "@UniAdminBundle/Resources/config/routing/noticecategory.yml"
+    prefix:   /noticecategory
+
+uni_admin_service:
+    resource: "@UniAdminBundle/Resources/config/routing/service.yml"
+    prefix:   /service
 
 uni_admin_frontpage:
     resource: "@UniAdminBundle/Resources/config/routing/frontpage.yml"
     prefix:   /frontpage
 
+uni_admin_notice:
+    resource: "@UniAdminBundle/Resources/config/routing/notice.yml"
+    prefix:   /notice
+
 uni_admin_history:
     resource: "@UniAdminBundle/Resources/config/routing/history.yml"
     prefix:   /history
 
-uni_admin_reportphoto:
-    resource: "@UniAdminBundle/Resources/config/routing/reportphoto.yml"
-    prefix:   /reportphoto
-
 uni_admin_report:
     resource: "@UniAdminBundle/Resources/config/routing/report.yml"
     prefix:   /report
+
+uni_admin_user:
+    resource: "@UniAdminBundle/Resources/config/routing/user.yml"
+    prefix:   /user
 
 uni_admin_role:
     resource: "@UniAdminBundle/Resources/config/routing/role.yml"
@@ -25,18 +33,6 @@ uni_admin_role:
 uni_admin_member:
     resource: "@UniAdminBundle/Resources/config/routing/member.yml"
     prefix:   /member
-
-uni_admin_noticephoto:
-    resource: "@UniAdminBundle/Resources/config/routing/noticephoto.yml"
-    prefix:   /noticephoto
-
-uni_admin_notice:
-    resource: "@UniAdminBundle/Resources/config/routing/notice.yml"
-    prefix:   /notice
-
-uni_admin_user:
-    resource: "@UniAdminBundle/Resources/config/routing/user.yml"
-    prefix:   /user
 
 uni_admin:
     path: /

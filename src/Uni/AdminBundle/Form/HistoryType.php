@@ -4,7 +4,7 @@ namespace Uni\AdminBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class HistoryType extends AbstractType
 {
@@ -15,14 +15,20 @@ class HistoryType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add('history_time', null, array(
+                'label' =>  'history_time',
+            ))
             ->add('history_title', null, array(
                 'label' =>  'history_title',
+            ))
+            ->add('history_abstract', null, array(
+                'label' =>  'history_abstract',
             ))
             ->add('history_content', null, array(
                 'label' =>  'history_content',
             ))
-            ->add('history_date', null, array(
-                'label' =>  'history_date',
+            ->add('history_rank', null, array(
+                'label' =>  'history_rank',
             ))
             ->add('history_published', null, array(
                 'label' =>  'history_published',
@@ -37,9 +43,9 @@ class HistoryType extends AbstractType
     }
     
     /**
-     * @param OptionsResolverInterface $resolver
+     * @param OptionsResolver $resolver
      */
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
             'data_class' => 'Uni\AdminBundle\Entity\History'
