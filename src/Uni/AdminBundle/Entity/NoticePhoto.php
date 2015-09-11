@@ -3,6 +3,7 @@
 namespace Uni\AdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\Util\SecureRandom;
 
 /**
  * NoticePhoto
@@ -17,17 +18,17 @@ class NoticePhoto
     /**
      * @var string
      */
-    private $photo_path;
+    private $path;
 
     /**
      * @var string
      */
-    private $photo_file;
+    private $file;
 
     /**
      * @var \Uni\AdminBundle\Entity\Notice
      */
-    private $photo_notice;
+    private $notice;
 
 
     /**
@@ -41,71 +42,76 @@ class NoticePhoto
     }
 
     /**
-     * Set photo_path
+     * Set path
      *
-     * @param string $photoPath
+     * @param string $path
      * @return NoticePhoto
      */
-    public function setPhotoPath($photoPath)
+    public function setPath($path)
     {
-        $this->photo_path = $photoPath;
+        $this->path = $path;
 
         return $this;
     }
 
     /**
-     * Get photo_path
+     * Get path
      *
      * @return string 
      */
-    public function getPhotoPath()
+    public function getPath()
     {
-        return $this->photo_path;
+        return $this->path;
     }
 
     /**
-     * Set photo_file
+     * Set file
      *
-     * @param string $photoFile
+     * @param string $file
      * @return NoticePhoto
      */
-    public function setPhotoFile($photoFile)
+    public function setFile($file)
     {
-        $this->photo_file = $photoFile;
+        $this->file = $file;
 
         return $this;
     }
 
     /**
-     * Get photo_file
+     * Get file
      *
      * @return string 
      */
-    public function getPhotoFile()
+    public function getFile()
     {
-        return $this->photo_file;
+        return $this->file;
     }
 
     /**
-     * Set photo_notice
+     * Set notice
      *
-     * @param \Uni\AdminBundle\Entity\Notice $photoNotice
+     * @param \Uni\AdminBundle\Entity\Notice $notice
      * @return NoticePhoto
      */
-    public function setPhotoNotice(\Uni\AdminBundle\Entity\Notice $photoNotice = null)
+    public function setNotice(\Uni\AdminBundle\Entity\Notice $notice = null)
     {
-        $this->photo_notice = $photoNotice;
+        $this->notice = $notice;
 
         return $this;
     }
 
     /**
-     * Get photo_notice
+     * Get notice
      *
      * @return \Uni\AdminBundle\Entity\Notice 
      */
-    public function getPhotoNotice()
+    public function getNotice()
     {
-        return $this->photo_notice;
+        return $this->notice;
     }
+    public function upload() { if (null === $this->getFile()) { return; } $generator = new SecureRandom(); $random = $generator->nextBytes(10); $prefix = md5($random); $this->getFile()->move($this->getUploadRootDir(), $prefix.'_'.$this->getFile()->getClientOriginalName());$this->path = $prefix.'_'.$this->getFile()->getClientOriginalName();$this->file = null; }
+    public function getAbsolutePath() { return null === $this->path ? null : $this->getUploadRootDir().'/'.$this->path; }
+    public function getWebPath() { return null === $this->path ? 'default' : $this->getUploadDir().'/'.$this->path; }
+    protected function getUploadRootDir() { return __DIR__.'/../../../../web/'.$this->getUploadDir(); }
+    protected function getUploadDir() { return '/uploads/notice'; }
 }

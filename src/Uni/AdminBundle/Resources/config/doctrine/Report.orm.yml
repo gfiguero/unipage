@@ -8,16 +8,24 @@ Uni\AdminBundle\Entity\Report:
             generator:
                 strategy: AUTO
     fields:
-        report_title:
+        title:
             type: string
             length: '200'
-        report_content:
+        content:
             type: text
             nullable: true
-        report_published:
+        published:
             type: boolean
             options:
                 default: false
+        path:
+            type: string
+            length: '300'
+            nullable: true
+        file:
+            type: string
+            length: '300'
+            nullable: true
         createdAt:
             type: datetime
             gedmo:
@@ -31,11 +39,6 @@ Uni\AdminBundle\Entity\Report:
         deletedAt:
             type: datetime
             nullable: true
-    oneToMany:
-        report_photos:
-            targetEntity: ReportPhoto
-            cascade: [persist]
-            mappedBy: photo_report
     gedmo:
         soft_deleteable:
             field_name: deletedAt

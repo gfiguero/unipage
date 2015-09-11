@@ -17,7 +17,7 @@ class NoticeCategory
     /**
      * @var string
      */
-    private $noticecategory_name;
+    private $name;
 
     /**
      * @var \DateTime
@@ -37,14 +37,14 @@ class NoticeCategory
     /**
      * @var \Doctrine\Common\Collections\Collection
      */
-    private $noticecategory_notice;
+    private $notice;
 
     /**
      * Constructor
      */
     public function __construct()
     {
-        $this->noticecategory_notice = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->notice = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -58,26 +58,26 @@ class NoticeCategory
     }
 
     /**
-     * Set noticecategory_name
+     * Set name
      *
-     * @param string $noticecategoryName
+     * @param string $name
      * @return NoticeCategory
      */
-    public function setNoticecategoryName($noticecategoryName)
+    public function setName($name)
     {
-        $this->noticecategory_name = $noticecategoryName;
+        $this->name = $name;
 
         return $this;
     }
 
     /**
-     * Get noticecategory_name
+     * Get name
      *
      * @return string 
      */
-    public function getNoticecategoryName()
+    public function getName()
     {
-        return $this->noticecategory_name;
+        return $this->name;
     }
 
     /**
@@ -150,35 +150,35 @@ class NoticeCategory
     }
 
     /**
-     * Add noticecategory_notice
+     * Add notice
      *
-     * @param \Uni\AdminBundle\Entity\Notice $noticecategoryNotice
+     * @param \Uni\AdminBundle\Entity\Notice $notice
      * @return NoticeCategory
      */
-    public function addNoticecategoryNotice(\Uni\AdminBundle\Entity\Notice $noticecategoryNotice)
+    public function addNotice(\Uni\AdminBundle\Entity\Notice $notice)
     {
-        $this->noticecategory_notice[] = $noticecategoryNotice;
+        $this->notice[] = $notice;
 
         return $this;
     }
 
     /**
-     * Remove noticecategory_notice
+     * Remove notice
      *
-     * @param \Uni\AdminBundle\Entity\Notice $noticecategoryNotice
+     * @param \Uni\AdminBundle\Entity\Notice $notice
      */
-    public function removeNoticecategoryNotice(\Uni\AdminBundle\Entity\Notice $noticecategoryNotice)
+    public function removeNotice(\Uni\AdminBundle\Entity\Notice $notice)
     {
-        $this->noticecategory_notice->removeElement($noticecategoryNotice);
+        $this->notice->removeElement($notice);
     }
 
     /**
-     * Get noticecategory_notice
+     * Get notice
      *
      * @return \Doctrine\Common\Collections\Collection 
      */
-    public function getNoticecategoryNotice()
+    public function getNotice()
     {
-        return $this->noticecategory_notice;
+        return $this->notice;
     }
 }

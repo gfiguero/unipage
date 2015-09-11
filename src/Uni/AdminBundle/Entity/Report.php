@@ -3,6 +3,7 @@
 namespace Uni\AdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\Util\SecureRandom;
 
 /**
  * Report
@@ -17,17 +18,27 @@ class Report
     /**
      * @var string
      */
-    private $report_title;
+    private $title;
 
     /**
      * @var string
      */
-    private $report_content;
+    private $content;
 
     /**
      * @var boolean
      */
-    private $report_published;
+    private $published;
+
+    /**
+     * @var string
+     */
+    private $path;
+
+    /**
+     * @var string
+     */
+    private $file;
 
     /**
      * @var \DateTime
@@ -44,18 +55,6 @@ class Report
      */
     private $deletedAt;
 
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $report_photos;
-
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->report_photos = new \Doctrine\Common\Collections\ArrayCollection();
-    }
 
     /**
      * Get id
@@ -68,72 +67,118 @@ class Report
     }
 
     /**
-     * Set report_title
+     * Set title
      *
-     * @param string $reportTitle
+     * @param string $title
      * @return Report
      */
-    public function setReportTitle($reportTitle)
+    public function setTitle($title)
     {
-        $this->report_title = $reportTitle;
+        $this->title = $title;
 
         return $this;
     }
 
     /**
-     * Get report_title
+     * Get title
      *
      * @return string 
      */
-    public function getReportTitle()
+    public function getTitle()
     {
-        return $this->report_title;
+        return $this->title;
     }
 
     /**
-     * Set report_content
+     * Set content
      *
-     * @param string $reportContent
+     * @param string $content
      * @return Report
      */
-    public function setReportContent($reportContent)
+    public function setContent($content)
     {
-        $this->report_content = $reportContent;
+        $this->content = $content;
 
         return $this;
     }
 
     /**
-     * Get report_content
+     * Get content
      *
      * @return string 
      */
-    public function getReportContent()
+    public function getContent()
     {
-        return $this->report_content;
+        return $this->content;
     }
 
     /**
-     * Set report_published
+     * Set published
      *
-     * @param boolean $reportPublished
+     * @param boolean $published
      * @return Report
      */
-    public function setReportPublished($reportPublished)
+    public function setPublished($published)
     {
-        $this->report_published = $reportPublished;
+        $this->published = $published;
 
         return $this;
     }
 
     /**
-     * Get report_published
+     * Get published
      *
      * @return boolean 
      */
-    public function getReportPublished()
+    public function getPublished()
     {
-        return $this->report_published;
+        return $this->published;
+    }
+
+    /**
+     * Set path
+     *
+     * @param string $path
+     * @return Report
+     */
+    public function setPath($path)
+    {
+        $this->path = $path;
+
+        return $this;
+    }
+
+    /**
+     * Get path
+     *
+     * @return string 
+     */
+    public function getPath()
+    {
+        return $this->path;
+    }
+
+    /**
+     * Set file
+     *
+     * @param string $file
+     * @return Report
+     */
+    public function setFile($file)
+    {
+        $this->file = $file;
+
+        return $this;
+    }
+
+    /**
+     * Get file
+     *
+     * @return string 
+     */
+    public function getFile()
+    {
+        return $this->file;
     }
 
     /**
@@ -204,37 +249,9 @@ class Report
     {
         return $this->deletedAt;
     }
-
-    /**
-     * Add report_photos
-     *
-     * @param \Uni\AdminBundle\Entity\ReportPhoto $reportPhotos
-     * @return Report
-     */
-    public function addReportPhoto(\Uni\AdminBundle\Entity\ReportPhoto $reportPhotos)
-    {
-        $this->report_photos[] = $reportPhotos;
-
-        return $this;
-    }
-
-    /**
-     * Remove report_photos
-     *
-     * @param \Uni\AdminBundle\Entity\ReportPhoto $reportPhotos
-     */
-    public function removeReportPhoto(\Uni\AdminBundle\Entity\ReportPhoto $reportPhotos)
-    {
-        $this->report_photos->removeElement($reportPhotos);
-    }
-
-    /**
-     * Get report_photos
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getReportPhotos()
-    {
-        return $this->report_photos;
-    }
+    public function upload() { if (null === $this->getFile()) { return; } $generator = new SecureRandom(); $random = $generator->nextBytes(10); $prefix = md5($random); $this->getFile()->move($this->getUploadRootDir(), $prefix.'_'.$this->getFile()->getClientOriginalName());$this->path = $prefix.'_'.$this->getFile()->getClientOriginalName();$this->file = null; }
+    public function getAbsolutePath() { return null === $this->path ? null : $this->getUploadRootDir().'/'.$this->path; }
+    public function getWebPath() { return null === $this->path ? 'default' : $this->getUploadDir().'/'.$this->path; }
+    protected function getUploadRootDir() { return __DIR__.'/../../../../web/'.$this->getUploadDir(); }
+    protected function getUploadDir() { return '/uploads/report'; }
 }

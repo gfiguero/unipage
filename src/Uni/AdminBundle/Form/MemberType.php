@@ -15,35 +15,42 @@ class MemberType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('member_firstname', null, array(
+            ->add('firstname', null, array(
                 'label' =>  'member_firstname',
             ))
-            ->add('member_lastname', null, array(
+            ->add('lastname', null, array(
                 'label' =>  'member_lastname',
             ))
-            ->add('member_email', null, array(
+            ->add('email', null, array(
                 'label' =>  'member_email',
             ))
-            ->add('member_phonenumber', null, array(
+            ->add('phonenumber', null, array(
                 'label' =>  'member_phonenumber',
             ))
-            ->add('member_birthdate', null, array(
+            ->add('birthdate', 'birthday', array(
                 'label' =>  'member_birthdate',
             ))
-            ->add('member_admissiondate', null, array(
+            ->add('admissiondate', 'birthday', array(
                 'label' =>  'member_admissiondate',
             ))
-            ->add('member_active', null, array(
+            ->add('active', null, array(
                 'label' =>  'member_active',
+                'required' => false,
+                'attr'  => array( 'labeled' => true, 'class' => 'switch'),
             ))
-            ->add('member_photo_path', null, array(
-                'label' =>  'member_photo_path',
+            ->add('path', 'hidden', array(
+                'label' =>  'member_path',
+                'required' => false,
+                'attr' => array('preview' => true),
             ))
-            ->add('member_photo_file', null, array(
-                'label' =>  'member_photo_file',
+            ->add('file', 'file', array(
+                'label' =>  'member_file',
+                'required' => false,
+                'attr' => array('class' => 'photo'),
             ))
-            ->add('member_role', null, array(
+            ->add('role', null, array(
                 'label' =>  'member_role',
+                'choice_label' => 'name',
             ))
         ;
     }

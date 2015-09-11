@@ -8,13 +8,13 @@ Uni\AdminBundle\Entity\Notice:
             generator:
                 strategy: AUTO
     fields:
-        notice_title:
+        title:
             type: string
             length: '200'
-        notice_content:
+        content:
             type: text
             nullable: true
-        notice_published:
+        published:
             type: boolean
             options:
                 default: false
@@ -32,18 +32,18 @@ Uni\AdminBundle\Entity\Notice:
             type: datetime
             nullable: true
     oneToMany:
-        notice_photos:
+        photos:
             targetEntity: NoticePhoto
             cascade: [persist]
-            mappedBy: photo_notice
+            mappedBy: notice
     manyToMany:
-        notice_noticecategory:
+        category:
             targetEntity: NoticeCategory
-            inversedBy: noticecategory_notice
+            inversedBy: notice
             joinTable:
                 name: NoticeCategoryNub
                 joinColumns:
-                    noticecategory:
+                    category:
                         referencedColumnName: id
                 inverseJoinColumns:
                     notice:

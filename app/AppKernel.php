@@ -16,15 +16,15 @@ class AppKernel extends Kernel
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
-            new Uni\PageBundle\UniPageBundle(),
-            new Uni\AdminBundle\UniAdminBundle(),
             new Braincrafted\Bundle\BootstrapBundle\BraincraftedBootstrapBundle(),
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
-            new FOS\UserBundle\FOSUserBundle(),
             new Liip\ImagineBundle\LiipImagineBundle(),
             new Stfalcon\Bundle\TinymceBundle\StfalconTinymceBundle(),
+            new FOS\UserBundle\FOSUserBundle(),
             new Uni\UserBundle\UniUserBundle(),
+            new Uni\AdminBundle\UniAdminBundle(),
+            new Uni\PageBundle\UniPageBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

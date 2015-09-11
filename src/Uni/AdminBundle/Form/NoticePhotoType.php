@@ -4,7 +4,7 @@ namespace Uni\AdminBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class NoticePhotoType extends AbstractType
 {
@@ -15,22 +15,23 @@ class NoticePhotoType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('photo_path', null, array(
-                'label' =>  'photo_path',
+            ->add('path', 'hidden', array(
+                'label' =>  'noticephoto_path',
+                'required' => false,
+                'attr' => array('preview' => true),
             ))
-            ->add('photo_file', null, array(
-                'label' =>  'photo_file',
-            ))
-            ->add('photo_notice', null, array(
-                'label' =>  'photo_notice',
+            ->add('file', 'file', array(
+                'label' =>  'noticephoto_file',
+                'required' => false,
+                'attr' => array('class' => 'photo'),
             ))
         ;
     }
     
     /**
-     * @param OptionsResolverInterface $resolver
+     * @param OptionsResolver $resolver
      */
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
             'data_class' => 'Uni\AdminBundle\Entity\NoticePhoto'

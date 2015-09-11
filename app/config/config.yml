@@ -2,15 +2,17 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: services.yml }
+    - { resource: images.yml }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
-    locale: en
+    locale: es
 
 framework:
     #esi:             ~
-    translator:      { fallbacks: [en] }
+    translator:      { fallbacks: [es] }
+    default_locale: es
     secret:          "%secret%"
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
@@ -112,7 +114,8 @@ assetic:
         uniPage_css:
             inputs:
                 - %kernel.root_dir%/Resources/less/uniPage.less
-                - %kernel.root_dir%/../git_components/startbootstrap-clean-blog/less/clean-blog.less
+                - %kernel.root_dir%/Resources/less/clean-blog/clean-blog.less
+                #- %kernel.root_dir%/../git_components/startbootstrap-clean-blog/less/clean-blog.less
             filters:
                 - less
                 - cssrewrite
@@ -237,7 +240,7 @@ fos_user:
     # el nombre de tu firewall
     firewall_name: main
     # el namespace de tu clase 'User' específica
-    user_class:    Uni\AdminBundle\Entity\User
+    user_class:    Uni\UserBundle\Entity\User
     #change_password:
     #    form:
     #        type: sig_fichasocial_change_password
@@ -256,59 +259,29 @@ knp_paginator:
         sortable: KnpPaginatorBundle:Pagination:sortable_link.html.twig # sort link template
         pagination: :Pagination:pagination.html.twig
 
-liip_imagine:
-
-    resolvers:
-        default:
-            web_path: ~
-
-    filter_sets:
-        cache: ~
-        frontpage:
-            quality: 75
-            filters:
-                thumbnail: { size: [1920, 450], mode: outbound }
-        frontpage_edit:
-            quality: 50
-            filters:
-                upscale: { min: [840, 200] }
-                thumbnail: { size: [840, 200], mode: outbound }
-        page_header:
-            quality: 75
-            filters:
-                upscale: { min: [1920, 450] }
-                thumbnail: { size: [1920, 450], mode: outbound }
-        page_small:
-            quality: 50
-            filters:
-                thumbnail: { size: [200, 200], mode: outbound }
-        page_medium:
-            quality: 75
-            filters:
-                thumbnail: { size: [800, 600], mode: outbound }
-        page_large:
-            quality: 75
-            filters:
-                thumbnail: { size: [1366, 768], mode: outbound }
-
-
-        noticia:
-            quality: 75
-            default_image: /uploads/perfil/default.png
-            filters:
-                thumbnail: { size: [512, 288], mode: outbound }
-        noticia_edit:
-            quality: 75
-            default_image: /uploads/perfil/default.png
-            filters:
-                thumbnail: { size: [250, 150], mode: outbound }
-        noticia_show:
-            quality: 75
-            default_image: /uploads/perfil/default.png
-            filters:
-                relative_resize: { heighten: 1000 }
-                thumbnail: { size: [1140, 500], mode: outbound }
-        inicio:
-            quality: 90
-            filters:
-                thumbnail: { size: [1920, 1080], mode: outbound }
+stfalcon_tinymce:
+    selector: ".tinymce"
+    # Get current language from the parameters.ini
+    language: %locale%
+    # Custom buttons
+    theme:
+        # Simple theme: same as default theme
+        simple: ~
+        # Advanced theme with almost all enabled plugins
+        advanced:
+            plugins:
+                - "advlist autolink lists link image charmap print preview hr anchor pagebreak"
+                - "searchreplace wordcount visualblocks visualchars code fullscreen"
+                - "insertdatetime media nonbreaking save table contextmenu directionality"
+                - "emoticons template paste textcolor"
+            toolbar1: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+            toolbar2: "print preview media | forecolor backcolor emoticons | stfalcon | example"
+            image_advtab: true
+            templates:
+                - {title: 'Test template 1', content: 'Test 1'}
+                - {title: 'Test template 2', content: 'Test 2'}
+        # BBCode tag compatible theme (see http://www.bbcode.org/reference.php)
+        bbcode:
+            plugins: ["bbcode, code, link, preview"]
+            menubar: false
+            toolbar1: "bold,italic,underline,undo,redo,link,unlink,removeformat,cleanup,code,preview"

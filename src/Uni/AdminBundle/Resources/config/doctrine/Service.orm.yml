@@ -8,23 +8,23 @@ Uni\AdminBundle\Entity\Service:
             generator:
                 strategy: AUTO
     fields:
-        service_title:
+        title:
             type: string
             length: '200'
-        service_content:
+        content:
             type: text
             nullable: true
-        service_rank:
+        rank:
             type: integer
-        service_published:
+        published:
             type: boolean
             options:
                 default: false
-        service_photo_path:
+        path:
             type: string
             length: '300'
             nullable: true
-        service_photo_file:
+        file:
             type: string
             length: '300'
             nullable: true

@@ -8,7 +8,7 @@ Uni\AdminBundle\Entity\NoticeCategory:
             generator:
                 strategy: AUTO
     fields:
-        noticecategory_name:
+        name:
             type: string
             length: '200'
         createdAt:
@@ -25,9 +25,9 @@ Uni\AdminBundle\Entity\NoticeCategory:
             type: datetime
             nullable: true
     manyToMany:
-        noticecategory_notice:
+        notice:
             targetEntity: Notice
-            mappedBy: notice_categorynotice
+            mappedBy: category
     gedmo:
         soft_deleteable:
             field_name: deletedAt

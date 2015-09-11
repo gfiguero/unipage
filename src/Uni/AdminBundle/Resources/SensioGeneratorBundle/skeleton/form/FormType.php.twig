@@ -22,10 +22,32 @@ class {{ form_class }} extends AbstractType
     {
         $builder
         {%- for field in fields %}
-            {%- if field not in ['createdAt', 'updatedAt', 'deletedAt'] %}
+            {%- if field in ['createdAt', 'updatedAt', 'deletedAt'] %}
+            {%- elseif field in ['published', 'active'] %}
 
             ->add('{{ field }}', null, array(
-                'label' =>  '{{ field }}',
+                'label' =>  '{{ entity_class|lower ~ '_' ~ field }}',
+                'required' => false,
+                'attr'  => array( 'labeled' => true, 'class' => 'switch' ),
+            ))
+            {%- elseif field in ['path'] %}
+
+            ->add('path', 'hidden', array(
+                'label' =>  '{{ entity_class|lower ~ '_path' }}',
+                'required' => false,
+                'attr' => array('preview' => true),
+            ))
+            {%- elseif field in ['file'] %}
+
+            ->add('file', 'file', array(
+                'label' =>  '{{ entity_class|lower ~ '_file' }}',
+                'required' => false,
+                'attr' => array('class' => 'file'),
+            ))
+            {%- else %}
+
+            ->add('{{ field }}', null, array(
+                'label' =>  '{{ entity_class|lower ~ '_' ~ field }}',
             ))
             {%- endif %}
         {%- endfor %}

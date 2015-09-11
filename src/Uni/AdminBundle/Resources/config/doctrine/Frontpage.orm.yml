@@ -8,28 +8,32 @@ Uni\AdminBundle\Entity\Frontpage:
             generator:
                 strategy: AUTO
     fields:
-        frontpage_title:
+        title:
             type: string
             length: '200'
-        frontpage_subtitle:
+        subtitle:
             type: string
             length: '200'
             nullable: true
-        frontpage_email:
+        email:
             type: string
             length: '100'
             nullable: true
-        frontpage_phonenumber:
+        phonenumber:
             type: string
             length: '100'
             nullable: true
-        frontpage_mission:
+        address:
+            type: string
+            length: '300'
+            nullable: true
+        mission:
             type: text
             nullable: true
-        frontpage_vision:
+        vision:
             type: text
             nullable: true
-        frontpage_active:
+        active:
             type: boolean
             options:
                 default: false
@@ -47,10 +51,10 @@ Uni\AdminBundle\Entity\Frontpage:
             type: datetime
             nullable: true
     oneToMany:
-        frontpage_photos:
+        photos:
             targetEntity: FrontpagePhoto
             cascade: [persist]
-            mappedBy: photo_frontpage
+            mappedBy: frontpage
     gedmo:
         soft_deleteable:
             field_name: deletedAt

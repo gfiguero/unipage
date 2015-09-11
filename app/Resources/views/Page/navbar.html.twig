@@ -1,3 +1,4 @@
+{% block navbar %}
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
     <div class="container-fluid">
@@ -19,7 +20,7 @@
                 <li><a href="{{ path('uni_page_history') }}">{{ "history_index"|trans }}</a></li>
                 <li><a href="{{ path('uni_page_notice') }}">{{ "notice_index"|trans }}</a></li>
                 <li><a href="{{ path('uni_page_report') }}">{{ "report_index"|trans }}</a></li>
-                <li><a href="{{ path('uni_page_role') }}">{{ "role_index"|trans }}</a></li>
+                <li><a href="{{ path('uni_page_publication') }}">{{ "publication_index"|trans }}</a></li>
                 <li><a href="{{ path('uni_admin') }}">{{ "login"|trans }}</a></li>
             </ul>
         </div>
@@ -27,3 +28,4 @@
     </div>
     <!-- /.container-fluid -->
 </nav>
+{% endblock %}

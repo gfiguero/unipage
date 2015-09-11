@@ -15,29 +15,36 @@ class HistoryType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('history_time', null, array(
+            ->add('time', null, array(
                 'label' =>  'history_time',
             ))
-            ->add('history_title', null, array(
+            ->add('title', null, array(
                 'label' =>  'history_title',
             ))
-            ->add('history_abstract', null, array(
+            ->add('abstract', null, array(
                 'label' =>  'history_abstract',
             ))
-            ->add('history_content', null, array(
+            ->add('content', null, array(
                 'label' =>  'history_content',
             ))
-            ->add('history_rank', null, array(
+            ->add('rank', null, array(
                 'label' =>  'history_rank',
             ))
-            ->add('history_published', null, array(
+            ->add('published', null, array(
                 'label' =>  'history_published',
+                'required' => false,
+                'attr'  => array(
+                    'labeled' => true,
+                ),
             ))
-            ->add('history_photo_path', null, array(
-                'label' =>  'history_photo_path',
+            ->add('path', 'hidden', array(
+                'label' =>  'history_path',
+                'attr' => array('preview' => true),
+                'required' => false,
             ))
-            ->add('history_photo_file', null, array(
-                'label' =>  'history_photo_file',
+            ->add('file', 'file', array(
+                'label' =>  'history_file',
+                'required' => false,
             ))
         ;
     }

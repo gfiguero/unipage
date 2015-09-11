@@ -15,28 +15,41 @@ class FrontpageType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('frontpage_title', null, array(
+            ->add('title', null, array(
                 'label' =>  'frontpage_title',
             ))
-            ->add('frontpage_subtitle', null, array(
+            ->add('subtitle', null, array(
                 'label' =>  'frontpage_subtitle',
+                'required' => false,
             ))
-            ->add('frontpage_email', null, array(
+            ->add('email', null, array(
                 'label' =>  'frontpage_email',
+                'required' => false,
             ))
-            ->add('frontpage_phonenumber', null, array(
+            ->add('phonenumber', null, array(
                 'label' =>  'frontpage_phonenumber',
+                'required' => false,
             ))
-            ->add('frontpage_mission', null, array(
+            ->add('address', null, array(
+                'label' =>  'frontpage_address',
+                'required' => false,
+            ))
+            ->add('mission', null, array(
                 'label' =>  'frontpage_mission',
+                'required' => false,
+                'attr'  =>  array( 'class' =>  'tinymce', 'data-theme' => 'advanced' ),
             ))
-            ->add('frontpage_vision', null, array(
+            ->add('vision', null, array(
                 'label' =>  'frontpage_vision',
+                'required' => false,
+                'attr'  =>  array( 'class' =>  'tinymce', 'data-theme' => 'advanced' ),
             ))
-            ->add('frontpage_active', null, array(
+            ->add('active', null, array(
                 'label' =>  'frontpage_active',
+                'required' => false,
+                'attr'  => array( 'labeled' => true, 'class' => 'switch'),
             ))
-            ->add('frontpage_photos', 'bootstrap_collection', array(
+            ->add('photos', 'bootstrap_collection', array(
                 'label'                 =>  'frontpage_photos',
                 'type'                  =>  new FrontpagePhotoType(),
                 'allow_add'             =>  true,

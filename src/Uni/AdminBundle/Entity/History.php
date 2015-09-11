@@ -17,42 +17,42 @@ class History
     /**
      * @var string
      */
-    private $history_time;
+    private $time;
 
     /**
      * @var string
      */
-    private $history_title;
+    private $title;
 
     /**
      * @var string
      */
-    private $history_abstract;
+    private $abstract;
 
     /**
      * @var string
      */
-    private $history_content;
+    private $content;
 
     /**
      * @var integer
      */
-    private $history_rank;
+    private $rank;
 
     /**
      * @var boolean
      */
-    private $history_published;
+    private $published;
 
     /**
      * @var string
      */
-    private $history_photo_path;
+    private $path;
 
     /**
      * @var string
      */
-    private $history_photo_file;
+    private $file;
 
     /**
      * @var \DateTime
@@ -81,187 +81,187 @@ class History
     }
 
     /**
-     * Set history_time
+     * Set time
      *
-     * @param string $historyTime
+     * @param string $time
      * @return History
      */
-    public function setHistoryTime($historyTime)
+    public function setTime($time)
     {
-        $this->history_time = $historyTime;
+        $this->time = $time;
 
         return $this;
     }
 
     /**
-     * Get history_time
+     * Get time
      *
      * @return string 
      */
-    public function getHistoryTime()
+    public function getTime()
     {
-        return $this->history_time;
+        return $this->time;
     }
 
     /**
-     * Set history_title
+     * Set title
      *
-     * @param string $historyTitle
+     * @param string $title
      * @return History
      */
-    public function setHistoryTitle($historyTitle)
+    public function setTitle($title)
     {
-        $this->history_title = $historyTitle;
+        $this->title = $title;
 
         return $this;
     }
 
     /**
-     * Get history_title
+     * Get title
      *
      * @return string 
      */
-    public function getHistoryTitle()
+    public function getTitle()
     {
-        return $this->history_title;
+        return $this->title;
     }
 
     /**
-     * Set history_abstract
+     * Set abstract
      *
-     * @param string $historyAbstract
+     * @param string $abstract
      * @return History
      */
-    public function setHistoryAbstract($historyAbstract)
+    public function setAbstract($abstract)
     {
-        $this->history_abstract = $historyAbstract;
+        $this->abstract = $abstract;
 
         return $this;
     }
 
     /**
-     * Get history_abstract
+     * Get abstract
      *
      * @return string 
      */
-    public function getHistoryAbstract()
+    public function getAbstract()
     {
-        return $this->history_abstract;
+        return $this->abstract;
     }
 
     /**
-     * Set history_content
+     * Set content
      *
-     * @param string $historyContent
+     * @param string $content
      * @return History
      */
-    public function setHistoryContent($historyContent)
+    public function setContent($content)
     {
-        $this->history_content = $historyContent;
+        $this->content = $content;
 
         return $this;
     }
 
     /**
-     * Get history_content
+     * Get content
      *
      * @return string 
      */
-    public function getHistoryContent()
+    public function getContent()
     {
-        return $this->history_content;
+        return $this->content;
     }
 
     /**
-     * Set history_rank
+     * Set rank
      *
-     * @param integer $historyRank
+     * @param integer $rank
      * @return History
      */
-    public function setHistoryRank($historyRank)
+    public function setRank($rank)
     {
-        $this->history_rank = $historyRank;
+        $this->rank = $rank;
 
         return $this;
     }
 
     /**
-     * Get history_rank
+     * Get rank
      *
      * @return integer 
      */
-    public function getHistoryRank()
+    public function getRank()
     {
-        return $this->history_rank;
+        return $this->rank;
     }
 
     /**
-     * Set history_published
+     * Set published
      *
-     * @param boolean $historyPublished
+     * @param boolean $published
      * @return History
      */
-    public function setHistoryPublished($historyPublished)
+    public function setPublished($published)
     {
-        $this->history_published = $historyPublished;
+        $this->published = $published;
 
         return $this;
     }
 
     /**
-     * Get history_published
+     * Get published
      *
      * @return boolean 
      */
-    public function getHistoryPublished()
+    public function getPublished()
     {
-        return $this->history_published;
+        return $this->published;
     }
 
     /**
-     * Set history_photo_path
+     * Set path
      *
-     * @param string $historyPhotoPath
+     * @param string $path
      * @return History
      */
-    public function setHistoryPhotoPath($historyPhotoPath)
+    public function setPath($path)
     {
-        $this->history_photo_path = $historyPhotoPath;
+        $this->path = $path;
 
         return $this;
     }
 
     /**
-     * Get history_photo_path
+     * Get path
      *
      * @return string 
      */
-    public function getHistoryPhotoPath()
+    public function getPath()
     {
-        return $this->history_photo_path;
+        return $this->path;
     }
 
     /**
-     * Set history_photo_file
+     * Set file
      *
-     * @param string $historyPhotoFile
+     * @param string $file
      * @return History
      */
-    public function setHistoryPhotoFile($historyPhotoFile)
+    public function setFile($file)
     {
-        $this->history_photo_file = $historyPhotoFile;
+        $this->file = $file;
 
         return $this;
     }
 
     /**
-     * Get history_photo_file
+     * Get file
      *
      * @return string 
      */
-    public function getHistoryPhotoFile()
+    public function getFile()
     {
-        return $this->history_photo_file;
+        return $this->file;
     }
 
     /**

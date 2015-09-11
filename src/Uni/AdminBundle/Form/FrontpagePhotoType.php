@@ -4,7 +4,7 @@ namespace Uni\AdminBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class FrontpagePhotoType extends AbstractType
 {
@@ -15,21 +15,23 @@ class FrontpagePhotoType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('photo_path', 'hidden', array(
-                'required'  =>  false,
-                'attr'      =>  array('preview' => true),
+            ->add('path', 'hidden', array(
+                'label' => 'frontpagephoto_path',
+                'required' => false,
+                'attr' => array('preview' => true),
             ))
-            ->add('photo_file', 'file', array(
-                'required'  =>  false,
-                'label' =>  'photo_file',
+            ->add('file', 'file', array(
+                'label' => 'frontpagephoto_file',
+                'required' => false,
+                'attr' => array('class' => 'photo'),
             ))
         ;
     }
     
     /**
-     * @param OptionsResolverInterface $resolver
+     * @param OptionsResolver $resolver
      */
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
             'data_class' => 'Uni\AdminBundle\Entity\FrontpagePhoto'

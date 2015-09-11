@@ -40,29 +40,23 @@
                         <table class="records_list table table-striped table-hover">
                             <thead>
                                 <tr>
-                                    <th>{{ knp_pagination_sortable(pagination, 'history_time'|trans, 'history_time') }}{% if sort == 'history_time' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
-                                    <th>{{ knp_pagination_sortable(pagination, 'history_title'|trans, 'history_title') }}{% if sort == 'history_title' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
-                                    <th>{{ knp_pagination_sortable(pagination, 'history_abstract'|trans, 'history_abstract') }}{% if sort == 'history_abstract' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
-                                    <th>{{ knp_pagination_sortable(pagination, 'history_content'|trans, 'history_content') }}{% if sort == 'history_content' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
-                                    <th>{{ knp_pagination_sortable(pagination, 'history_rank'|trans, 'history_rank') }}{% if sort == 'history_rank' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
-                                    <th>{{ knp_pagination_sortable(pagination, 'history_published'|trans, 'history_published') }}{% if sort == 'history_published' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
-                                    <th>{{ knp_pagination_sortable(pagination, 'history_photo_path'|trans, 'history_photo_path') }}{% if sort == 'history_photo_path' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
-                                    <th>{{ knp_pagination_sortable(pagination, 'history_photo_file'|trans, 'history_photo_file') }}{% if sort == 'history_photo_file' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
-                                    <th>{{ knp_pagination_sortable(pagination, 'createdAt'|trans, 'createdAt') }}{% if sort == 'createdAt' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
-                                    <th>{{ knp_pagination_sortable(pagination, 'updatedAt'|trans, 'updatedAt') }}{% if sort == 'updatedAt' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(pagination, 'history_time'|trans, 'time') }}{% if sort == 'time' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(pagination, 'history_title'|trans, 'title') }}{% if sort == 'title' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(pagination, 'history_abstract'|trans, 'abstract') }}{% if sort == 'abstract' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(pagination, 'history_rank'|trans, 'rank') }}{% if sort == 'rank' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(pagination, 'history_published'|trans, 'published') }}{% if sort == 'published' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(pagination, 'history_createdAt'|trans, 'createdAt') }}{% if sort == 'createdAt' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(pagination, 'history_updatedAt'|trans, 'updatedAt') }}{% if sort == 'updatedAt' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                 </tr>
                             </thead>
                             <tbody>
                             {% for entity in pagination %}
                                 <tr class='clickableRow' href="{{ path('history_show', { 'id': entity.id }) }}">
-                                    <td>{% if entity.historytime %}{{ entity.historytime }}{% endif %}</td>
-                                    <td>{% if entity.historytitle %}{{ entity.historytitle }}{% endif %}</td>
-                                    <td>{% if entity.historyabstract %}{{ entity.historyabstract }}{% endif %}</td>
-                                    <td>{% if entity.historycontent %}{{ entity.historycontent }}{% endif %}</td>
-                                    <td>{% if entity.historyrank %}{{ entity.historyrank }}{% endif %}</td>
-                                    <td>{% if entity.historypublished %}{{ entity.historypublished }}{% endif %}</td>
-                                    <td>{% if entity.historyphotopath %}{{ entity.historyphotopath }}{% endif %}</td>
-                                    <td>{% if entity.historyphotofile %}{{ entity.historyphotofile }}{% endif %}</td>
+                                    <td>{% if entity.time %}{{ entity.time }}{% endif %}</td>
+                                    <td>{% if entity.title %}{{ entity.title }}{% endif %}</td>
+                                    <td>{% if entity.abstract %}{{ entity.abstract }}{% endif %}</td>
+                                    <td>{% if entity.rank %}{{ entity.rank }}{% endif %}</td>
+                                    <td>{% if entity.published %}{{ 'Si' }}{% else %}{{ 'No' }}{% endif %}</td>
                                     <td>{% if entity.createdAt %}{{ entity.createdAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd-LLL-Y - HH:mm") }}{% endif %}</td>
                                     <td>{% if entity.updatedAt %}{{ entity.updatedAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd-LLL-Y - HH:mm") }}{% endif %}</td>
                                 </tr>

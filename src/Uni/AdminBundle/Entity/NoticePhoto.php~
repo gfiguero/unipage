@@ -17,17 +17,17 @@ class NoticePhoto
     /**
      * @var string
      */
-    private $photo_path;
+    private $path;
 
     /**
      * @var string
      */
-    private $photo_file;
+    private $file;
 
     /**
      * @var \Uni\AdminBundle\Entity\Notice
      */
-    private $photo_notice;
+    private $notice;
 
 
     /**
@@ -41,71 +41,71 @@ class NoticePhoto
     }
 
     /**
-     * Set photo_path
+     * Set path
      *
-     * @param string $photoPath
+     * @param string $path
      * @return NoticePhoto
      */
-    public function setPhotoPath($photoPath)
+    public function setPath($path)
     {
-        $this->photo_path = $photoPath;
+        $this->path = $path;
 
         return $this;
     }
 
     /**
-     * Get photo_path
+     * Get path
      *
      * @return string 
      */
-    public function getPhotoPath()
+    public function getPath()
     {
-        return $this->photo_path;
+        return $this->path;
     }
 
     /**
-     * Set photo_file
+     * Set file
      *
-     * @param string $photoFile
+     * @param string $file
      * @return NoticePhoto
      */
-    public function setPhotoFile($photoFile)
+    public function setFile($file)
     {
-        $this->photo_file = $photoFile;
+        $this->file = $file;
 
         return $this;
     }
 
     /**
-     * Get photo_file
+     * Get file
      *
      * @return string 
      */
-    public function getPhotoFile()
+    public function getFile()
     {
-        return $this->photo_file;
+        return $this->file;
     }
 
     /**
-     * Set photo_notice
+     * Set notice
      *
-     * @param \Uni\AdminBundle\Entity\Notice $photoNotice
+     * @param \Uni\AdminBundle\Entity\Notice $notice
      * @return NoticePhoto
      */
-    public function setPhotoNotice(\Uni\AdminBundle\Entity\Notice $photoNotice = null)
+    public function setNotice(\Uni\AdminBundle\Entity\Notice $notice = null)
     {
-        $this->photo_notice = $photoNotice;
+        $this->notice = $notice;
 
         return $this;
     }
 
     /**
-     * Get photo_notice
+     * Get notice
      *
      * @return \Uni\AdminBundle\Entity\Notice 
      */
-    public function getPhotoNotice()
+    public function getNotice()
     {
-        return $this->photo_notice;
+        return $this->notice;
     }
 }

@@ -8,16 +8,16 @@ Uni\AdminBundle\Entity\NoticePhoto:
             generator:
                 strategy: AUTO
     fields:
-        photo_path:
+        path:
             type: string
             length: '300'
             nullable: true
-        photo_file:
+        file:
             type: string
             length: '300'
             nullable: true
     manyToOne:
-        photo_notice:
+        notice:
             targetEntity: Notice
-            inversedBy: notice_photos
+            inversedBy: photos
     lifecycleCallbacks: {  }

@@ -15,14 +15,28 @@ class ReportType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('report_title', null, array(
+            ->add('title', null, array(
                 'label' =>  'report_title',
             ))
-            ->add('report_content', null, array(
+            ->add('content', null, array(
                 'label' =>  'report_content',
+                'required' => false,
+                'attr'  =>  array( 'class' =>  'tinymce', 'data-theme' => 'advanced' ),
             ))
-            ->add('report_published', null, array(
+            ->add('published', null, array(
                 'label' =>  'report_published',
+                'required' => false,
+                'attr'  => array( 'labeled' => true, 'class' => 'switch'),
+            ))
+            ->add('path', 'hidden', array(
+                'label' =>  'report_path',
+                'required' => false,
+                'attr' => array('preview' => true),
+            ))
+            ->add('file', 'file', array(
+                'label' =>  'report_file',
+                'required' => false,
+                'attr' => array('class' => 'file'),
             ))
         ;
     }

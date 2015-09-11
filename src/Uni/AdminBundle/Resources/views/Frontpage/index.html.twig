@@ -40,27 +40,25 @@
                         <table class="records_list table table-striped table-hover">
                             <thead>
                                 <tr>
-                                    <th>{{ knp_pagination_sortable(pagination, 'frontpage_title'|trans, 'frontpage_title') }}{% if sort == 'frontpage_title' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
-                                    <th>{{ knp_pagination_sortable(pagination, 'frontpage_subtitle'|trans, 'frontpage_subtitle') }}{% if sort == 'frontpage_subtitle' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
-                                    <th>{{ knp_pagination_sortable(pagination, 'frontpage_email'|trans, 'frontpage_email') }}{% if sort == 'frontpage_email' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
-                                    <th>{{ knp_pagination_sortable(pagination, 'frontpage_phonenumber'|trans, 'frontpage_phonenumber') }}{% if sort == 'frontpage_phonenumber' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
-                                    <th>{{ knp_pagination_sortable(pagination, 'frontpage_mission'|trans, 'frontpage_mission') }}{% if sort == 'frontpage_mission' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
-                                    <th>{{ knp_pagination_sortable(pagination, 'frontpage_vision'|trans, 'frontpage_vision') }}{% if sort == 'frontpage_vision' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
-                                    <th>{{ knp_pagination_sortable(pagination, 'frontpage_active'|trans, 'frontpage_active') }}{% if sort == 'frontpage_active' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
-                                    <th>{{ knp_pagination_sortable(pagination, 'createdAt'|trans, 'createdAt') }}{% if sort == 'createdAt' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
-                                    <th>{{ knp_pagination_sortable(pagination, 'updatedAt'|trans, 'updatedAt') }}{% if sort == 'updatedAt' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(pagination, 'frontpage_title'|trans, 'title') }}{% if sort == 'title' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(pagination, 'frontpage_subtitle'|trans, 'subtitle') }}{% if sort == 'subtitle' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(pagination, 'frontpage_email'|trans, 'email') }}{% if sort == 'email' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(pagination, 'frontpage_phonenumber'|trans, 'phonenumber') }}{% if sort == 'phonenumber' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(pagination, 'frontpage_address'|trans, 'address') }}{% if sort == 'address' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(pagination, 'frontpage_active'|trans, 'active') }}{% if sort == 'active' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(pagination, 'frontpage_createdAt'|trans, 'createdAt') }}{% if sort == 'createdAt' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(pagination, 'frontpage_updatedAt'|trans, 'updatedAt') }}{% if sort == 'updatedAt' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                 </tr>
                             </thead>
                             <tbody>
                             {% for entity in pagination %}
                                 <tr class='clickableRow' href="{{ path('frontpage_show', { 'id': entity.id }) }}">
-                                    <td>{% if entity.frontpagetitle %}{{ entity.frontpagetitle }}{% endif %}</td>
-                                    <td>{% if entity.frontpagesubtitle %}{{ entity.frontpagesubtitle }}{% endif %}</td>
-                                    <td>{% if entity.frontpageemail %}{{ entity.frontpageemail }}{% endif %}</td>
-                                    <td>{% if entity.frontpagephonenumber %}{{ entity.frontpagephonenumber }}{% endif %}</td>
-                                    <td>{% if entity.frontpagemission %}{{ entity.frontpagemission }}{% endif %}</td>
-                                    <td>{% if entity.frontpagevision %}{{ entity.frontpagevision }}{% endif %}</td>
-                                    <td>{% if entity.frontpageactive %}{{ entity.frontpageactive }}{% endif %}</td>
+                                    <td>{% if entity.title %}{{ entity.title }}{% endif %}</td>
+                                    <td>{% if entity.subtitle %}{{ entity.subtitle }}{% endif %}</td>
+                                    <td>{% if entity.email %}{{ entity.email }}{% endif %}</td>
+                                    <td>{% if entity.phonenumber %}{{ entity.phonenumber }}{% endif %}</td>
+                                    <td>{% if entity.address %}{{ entity.address }}{% endif %}</td>
+                                    <td>{% if entity.active %}{{ 'Si' }}{% else %}{{ 'No' }}{% endif %}</td>
                                     <td>{% if entity.createdAt %}{{ entity.createdAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd-LLL-Y - HH:mm") }}{% endif %}</td>
                                     <td>{% if entity.updatedAt %}{{ entity.updatedAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd-LLL-Y - HH:mm") }}{% endif %}</td>
                                 </tr>

@@ -15,23 +15,31 @@ class ServiceType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('service_title', null, array(
+            ->add('title', null, array(
                 'label' =>  'service_title',
             ))
-            ->add('service_content', null, array(
+            ->add('content', null, array(
                 'label' =>  'service_content',
+                'required' => false,
+                'attr'  =>  array( 'class' =>  'tinymce', 'data-theme' => 'advanced' ),
             ))
-            ->add('service_rank', null, array(
+            ->add('rank', null, array(
                 'label' =>  'service_rank',
             ))
-            ->add('service_published', null, array(
+            ->add('published', null, array(
                 'label' =>  'service_published',
+                'required' => false,
+                'attr'  => array( 'labeled' => true, 'class' => 'switch'),
             ))
-            ->add('service_photo_path', null, array(
-                'label' =>  'service_photo_path',
+            ->add('path', 'hidden', array(
+                'label' =>  'service_path',
+                'required' => false,
+                'attr' => array('preview' => true),
             ))
-            ->add('service_photo_file', null, array(
-                'label' =>  'service_photo_file',
+            ->add('file', 'file', array(
+                'label' =>  'service_file',
+                'required' => false,
+                'attr' => array('class' => 'photo'),
             ))
         ;
     }

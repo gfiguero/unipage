@@ -3,6 +3,7 @@
 namespace Uni\AdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\Util\SecureRandom;
 
 /**
  * Member
@@ -17,47 +18,47 @@ class Member
     /**
      * @var string
      */
-    private $member_firstname;
+    private $firstname;
 
     /**
      * @var string
      */
-    private $member_lastname;
+    private $lastname;
 
     /**
      * @var string
      */
-    private $member_email;
+    private $email;
 
     /**
      * @var string
      */
-    private $member_phonenumber;
+    private $phonenumber;
 
     /**
      * @var \DateTime
      */
-    private $member_birthdate;
+    private $birthdate;
 
     /**
      * @var \DateTime
      */
-    private $member_admissiondate;
+    private $admissiondate;
 
     /**
      * @var boolean
      */
-    private $member_active;
+    private $active;
 
     /**
      * @var string
      */
-    private $member_photo_path;
+    private $path;
 
     /**
      * @var string
      */
-    private $member_photo_file;
+    private $file;
 
     /**
      * @var \DateTime
@@ -75,9 +76,9 @@ class Member
     private $deletedAt;
 
     /**
-     * @var \Uni\AdminBundle\Entity\Role
+     * @var \Uni\AdminBundle\Entity\MemberRole
      */
-    private $member_role;
+    private $role;
 
 
     /**
@@ -91,210 +92,210 @@ class Member
     }
 
     /**
-     * Set member_firstname
+     * Set firstname
      *
-     * @param string $memberFirstname
+     * @param string $firstname
      * @return Member
      */
-    public function setMemberFirstname($memberFirstname)
+    public function setFirstname($firstname)
     {
-        $this->member_firstname = $memberFirstname;
+        $this->firstname = $firstname;
 
         return $this;
     }
 
     /**
-     * Get member_firstname
+     * Get firstname
      *
      * @return string 
      */
-    public function getMemberFirstname()
+    public function getFirstname()
     {
-        return $this->member_firstname;
+        return $this->firstname;
     }
 
     /**
-     * Set member_lastname
+     * Set lastname
      *
-     * @param string $memberLastname
+     * @param string $lastname
      * @return Member
      */
-    public function setMemberLastname($memberLastname)
+    public function setLastname($lastname)
     {
-        $this->member_lastname = $memberLastname;
+        $this->lastname = $lastname;
 
         return $this;
     }
 
     /**
-     * Get member_lastname
+     * Get lastname
      *
      * @return string 
      */
-    public function getMemberLastname()
+    public function getLastname()
     {
-        return $this->member_lastname;
+        return $this->lastname;
     }
 
     /**
-     * Set member_email
+     * Set email
      *
-     * @param string $memberEmail
+     * @param string $email
      * @return Member
      */
-    public function setMemberEmail($memberEmail)
+    public function setEmail($email)
     {
-        $this->member_email = $memberEmail;
+        $this->email = $email;
 
         return $this;
     }
 
     /**
-     * Get member_email
+     * Get email
      *
      * @return string 
      */
-    public function getMemberEmail()
+    public function getEmail()
     {
-        return $this->member_email;
+        return $this->email;
     }
 
     /**
-     * Set member_phonenumber
+     * Set phonenumber
      *
-     * @param string $memberPhonenumber
+     * @param string $phonenumber
      * @return Member
      */
-    public function setMemberPhonenumber($memberPhonenumber)
+    public function setPhonenumber($phonenumber)
     {
-        $this->member_phonenumber = $memberPhonenumber;
+        $this->phonenumber = $phonenumber;
 
         return $this;
     }
 
     /**
-     * Get member_phonenumber
+     * Get phonenumber
      *
      * @return string 
      */
-    public function getMemberPhonenumber()
+    public function getPhonenumber()
     {
-        return $this->member_phonenumber;
+        return $this->phonenumber;
     }
 
     /**
-     * Set member_birthdate
+     * Set birthdate
      *
-     * @param \DateTime $memberBirthdate
+     * @param \DateTime $birthdate
      * @return Member
      */
-    public function setMemberBirthdate($memberBirthdate)
+    public function setBirthdate($birthdate)
     {
-        $this->member_birthdate = $memberBirthdate;
+        $this->birthdate = $birthdate;
 
         return $this;
     }
 
     /**
-     * Get member_birthdate
+     * Get birthdate
      *
      * @return \DateTime 
      */
-    public function getMemberBirthdate()
+    public function getBirthdate()
     {
-        return $this->member_birthdate;
+        return $this->birthdate;
     }
 
     /**
-     * Set member_admissiondate
+     * Set admissiondate
      *
-     * @param \DateTime $memberAdmissiondate
+     * @param \DateTime $admissiondate
      * @return Member
      */
-    public function setMemberAdmissiondate($memberAdmissiondate)
+    public function setAdmissiondate($admissiondate)
     {
-        $this->member_admissiondate = $memberAdmissiondate;
+        $this->admissiondate = $admissiondate;
 
         return $this;
     }
 
     /**
-     * Get member_admissiondate
+     * Get admissiondate
      *
      * @return \DateTime 
      */
-    public function getMemberAdmissiondate()
+    public function getAdmissiondate()
     {
-        return $this->member_admissiondate;
+        return $this->admissiondate;
     }
 
     /**
-     * Set member_active
+     * Set active
      *
-     * @param boolean $memberActive
+     * @param boolean $active
      * @return Member
      */
-    public function setMemberActive($memberActive)
+    public function setActive($active)
     {
-        $this->member_active = $memberActive;
+        $this->active = $active;
 
         return $this;
     }
 
     /**
-     * Get member_active
+     * Get active
      *
      * @return boolean 
      */
-    public function getMemberActive()
+    public function getActive()
     {
-        return $this->member_active;
+        return $this->active;
     }
 
     /**
-     * Set member_photo_path
+     * Set path
      *
-     * @param string $memberPhotoPath
+     * @param string $path
      * @return Member
      */
-    public function setMemberPhotoPath($memberPhotoPath)
+    public function setPath($path)
     {
-        $this->member_photo_path = $memberPhotoPath;
+        $this->path = $path;
 
         return $this;
     }
 
     /**
-     * Get member_photo_path
+     * Get path
      *
      * @return string 
      */
-    public function getMemberPhotoPath()
+    public function getPath()
     {
-        return $this->member_photo_path;
+        return $this->path;
     }
 
     /**
-     * Set member_photo_file
+     * Set file
      *
-     * @param string $memberPhotoFile
+     * @param string $file
      * @return Member
      */
-    public function setMemberPhotoFile($memberPhotoFile)
+    public function setFile($file)
     {
-        $this->member_photo_file = $memberPhotoFile;
+        $this->file = $file;
 
         return $this;
     }
 
     /**
-     * Get member_photo_file
+     * Get file
      *
      * @return string 
      */
-    public function getMemberPhotoFile()
+    public function getFile()
     {
-        return $this->member_photo_file;
+        return $this->file;
     }
 
     /**
@@ -367,25 +368,30 @@ class Member
     }
 
     /**
-     * Set member_role
+     * Set role
      *
-     * @param \Uni\AdminBundle\Entity\Role $memberRole
+     * @param \Uni\AdminBundle\Entity\MemberRole $role
      * @return Member
      */
-    public function setMemberRole(\Uni\AdminBundle\Entity\Role $memberRole = null)
+    public function setRole(\Uni\AdminBundle\Entity\MemberRole $role = null)
     {
-        $this->member_role = $memberRole;
+        $this->role = $role;
 
         return $this;
     }
 
     /**
-     * Get member_role
+     * Get role
      *
-     * @return \Uni\AdminBundle\Entity\Role 
+     * @return \Uni\AdminBundle\Entity\MemberRole 
      */
-    public function getMemberRole()
+    public function getRole()
     {
-        return $this->member_role;
+        return $this->role;
     }
+    public function upload() { if (null === $this->getFile()) { return; } $generator = new SecureRandom(); $random = $generator->nextBytes(10); $prefix = md5($random); $this->getFile()->move($this->getUploadRootDir(), $prefix.'_'.$this->getFile()->getClientOriginalName());$this->path = $prefix.'_'.$this->getFile()->getClientOriginalName();$this->file = null; }
+    public function getAbsolutePath() { return null === $this->path ? null : $this->getUploadRootDir().'/'.$this->path; }
+    public function getWebPath() { return null === $this->path ? 'default' : $this->getUploadDir().'/'.$this->path; }
+    protected function getUploadRootDir() { return __DIR__.'/../../../../web/'.$this->getUploadDir(); }
+    protected function getUploadDir() { return '/uploads/member'; }
 }

@@ -15,8 +15,8 @@
             <div class="col-lg-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <a type="button" class="btn btn-warning" href="{{ path('noticecategory_edit', { 'id': entity.id }) }}">{{ icon('pencil') }}&nbsp;{{ 'edit'|trans }}</a>
-                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-confirm">{{ icon('trash-o') }}&nbsp;{{ 'delete'|trans }}</button>
+                        <a type="button" class="btn btn-warning" href="{{ path('noticecategory_edit', { 'id': entity.id }) }}">{{ icon('pencil') }}&nbsp;{{ 'noticecategory_edit'|trans }}</a>
+                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-confirm">{{ icon('trash-o') }}&nbsp;{{ 'noticecategory_delete'|trans }}</button>
                         <div class="modal fade" id="modal-confirm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                             <div class="modal-dialog modal-md" role="document">
                                 <div class="modal-content">
@@ -39,9 +39,9 @@
                     </div>
                     <div class="panel-body">
                         <dl class="dl-horizontal dl-horizontal-sm dl-horizontal-md dl-horizontal-lg">
-                            <dt>{{ 'noticecategory_name'|trans }}</dt><dd>{% if entity.noticecategoryname %}{{ entity.noticecategoryname }}{% endif %}</dd>
-                            <dt>{{ 'createdAt'|trans }}</dt><dd>{% if entity.createdAt %}{{ entity.createdAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y - HH:mm") }}{% endif %}</dd>
-                            <dt>{{ 'updatedAt'|trans }}</dt><dd>{% if entity.updatedAt %}{{ entity.updatedAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y - HH:mm") }}{% endif %}</dd>
+                            <dt>{{ 'noticecategory_name'|trans }}</dt><dd>{% if entity.name %}{{ entity.name }}{% endif %}</dd>
+                            <dt>{{ 'noticecategory_createdAt'|trans }}</dt><dd>{% if entity.createdAt %}{{ entity.createdAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y - HH:mm") }}{% endif %}</dd>
+                            <dt>{{ 'noticecategory_updatedAt'|trans }}</dt><dd>{% if entity.updatedAt %}{{ entity.updatedAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y - HH:mm") }}{% endif %}</dd>
                         </dl>
                     </div>
                 </div>

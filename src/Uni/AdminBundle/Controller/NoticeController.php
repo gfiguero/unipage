@@ -4,6 +4,7 @@ namespace Uni\AdminBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Doctrine\Common\Collections\ArrayCollection;
 
 use Uni\AdminBundle\Entity\Notice;
 use Uni\AdminBundle\Form\NoticeType;
@@ -47,6 +48,12 @@ class NoticeController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $photos = $entity->getPhotos();
+            foreach ($photos as $photo) {
+                $photo->upload();
+                $photo->setNotice($entity);
+                $em->persist($photo);
+            }
             $em->persist($entity);
             $em->flush();
             $request->getSession()->getFlashBag()->add( 'success', 'Notice has been created.' );    
@@ -73,7 +80,7 @@ class NoticeController extends Controller
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'create', 'attr' => array('icon' => 'save', 'data-toggle' => 'modal', 'data-target' => '#loading' )));
+        $form->add('submit', 'submit', array('label' => 'create', 'attr' => array('icon' => 'save')));
 
         return $form;
     }
@@ -153,7 +160,7 @@ class NoticeController extends Controller
 
         $form->add('actions', 'form_actions', [
             'buttons' => [
-                'submit' => ['type' => 'submit', 'options' => ['label' => 'save', 'attr' => array('icon' => 'save', 'class' => 'btn-primary', 'data-toggle' => 'modal', 'data-target' => '#loading')]],
+                'submit' => ['type' => 'submit', 'options' => ['label' => 'save', 'attr' => array('icon' => 'save', 'class' => 'btn-primary')]],
             ]
         ]);
 
@@ -173,10 +180,27 @@ class NoticeController extends Controller
             throw $this->createNotFoundException('The Notice cannot be found.');
         }
 
+        $currentPhotos = new ArrayCollection();
+        foreach ($entity->getPhotos() as $photo) {
+            $currentPhotos->add($photo);
+        }
+
         $editForm = $this->createEditForm($entity);
         $editForm->handleRequest($request);
 
         if ($editForm->isValid()) {
+            foreach ($currentPhotos as $photo) {
+                if (false === $entity->getPhotos()->contains($photo)) {
+                    $em->remove($photo);
+                }
+            }
+            $photos = $entity->getPhotos();
+            foreach ($photos as $photo) {
+                $photo->upload();
+                $photo->setNotice($entity);
+                $em->persist($photo);
+            }
+            $em->persist($entity);
             $em->flush();
             $request->getSession()->getFlashBag()->add( 'success', 'Notice has been updated.' );
             return $this->redirect($this->generateUrl('notice'));

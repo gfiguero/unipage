@@ -3,6 +3,7 @@
 namespace Uni\AdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\Util\SecureRandom;
 
 /**
  * Service
@@ -17,32 +18,32 @@ class Service
     /**
      * @var string
      */
-    private $service_title;
+    private $title;
 
     /**
      * @var string
      */
-    private $service_content;
+    private $content;
 
     /**
      * @var integer
      */
-    private $service_rank;
+    private $rank;
 
     /**
      * @var boolean
      */
-    private $service_published;
+    private $published;
 
     /**
      * @var string
      */
-    private $service_photo_path;
+    private $path;
 
     /**
      * @var string
      */
-    private $service_photo_file;
+    private $file;
 
     /**
      * @var \DateTime
@@ -71,141 +72,141 @@ class Service
     }
 
     /**
-     * Set service_title
+     * Set title
      *
-     * @param string $serviceTitle
+     * @param string $title
      * @return Service
      */
-    public function setServiceTitle($serviceTitle)
+    public function setTitle($title)
     {
-        $this->service_title = $serviceTitle;
+        $this->title = $title;
 
         return $this;
     }
 
     /**
-     * Get service_title
+     * Get title
      *
      * @return string 
      */
-    public function getServiceTitle()
+    public function getTitle()
     {
-        return $this->service_title;
+        return $this->title;
     }
 
     /**
-     * Set service_content
+     * Set content
      *
-     * @param string $serviceContent
+     * @param string $content
      * @return Service
      */
-    public function setServiceContent($serviceContent)
+    public function setContent($content)
     {
-        $this->service_content = $serviceContent;
+        $this->content = $content;
 
         return $this;
     }
 
     /**
-     * Get service_content
+     * Get content
      *
      * @return string 
      */
-    public function getServiceContent()
+    public function getContent()
     {
-        return $this->service_content;
+        return $this->content;
     }
 
     /**
-     * Set service_rank
+     * Set rank
      *
-     * @param integer $serviceRank
+     * @param integer $rank
      * @return Service
      */
-    public function setServiceRank($serviceRank)
+    public function setRank($rank)
     {
-        $this->service_rank = $serviceRank;
+        $this->rank = $rank;
 
         return $this;
     }
 
     /**
-     * Get service_rank
+     * Get rank
      *
      * @return integer 
      */
-    public function getServiceRank()
+    public function getRank()
     {
-        return $this->service_rank;
+        return $this->rank;
     }
 
     /**
-     * Set service_published
+     * Set published
      *
-     * @param boolean $servicePublished
+     * @param boolean $published
      * @return Service
      */
-    public function setServicePublished($servicePublished)
+    public function setPublished($published)
     {
-        $this->service_published = $servicePublished;
+        $this->published = $published;
 
         return $this;
     }
 
     /**
-     * Get service_published
+     * Get published
      *
      * @return boolean 
      */
-    public function getServicePublished()
+    public function getPublished()
     {
-        return $this->service_published;
+        return $this->published;
     }
 
     /**
-     * Set service_photo_path
+     * Set path
      *
-     * @param string $servicePhotoPath
+     * @param string $path
      * @return Service
      */
-    public function setServicePhotoPath($servicePhotoPath)
+    public function setPath($path)
     {
-        $this->service_photo_path = $servicePhotoPath;
+        $this->path = $path;
 
         return $this;
     }
 
     /**
-     * Get service_photo_path
+     * Get path
      *
      * @return string 
      */
-    public function getServicePhotoPath()
+    public function getPath()
     {
-        return $this->service_photo_path;
+        return $this->path;
     }
 
     /**
-     * Set service_photo_file
+     * Set file
      *
-     * @param string $servicePhotoFile
+     * @param string $file
      * @return Service
      */
-    public function setServicePhotoFile($servicePhotoFile)
+    public function setFile($file)
     {
-        $this->service_photo_file = $servicePhotoFile;
+        $this->file = $file;
 
         return $this;
     }
 
     /**
-     * Get service_photo_file
+     * Get file
      *
      * @return string 
      */
-    public function getServicePhotoFile()
+    public function getFile()
     {
-        return $this->service_photo_file;
+        return $this->file;
     }
 
     /**
@@ -276,4 +277,10 @@ class Service
     {
         return $this->deletedAt;
     }
+
+    public function upload() { if (null === $this->getFile()) { return; } $generator = new SecureRandom(); $random = $generator->nextBytes(10); $prefix = md5($random); $this->getFile()->move($this->getUploadRootDir(), $prefix.'_'.$this->getFile()->getClientOriginalName());$this->path = $prefix.'_'.$this->getFile()->getClientOriginalName();$this->file = null; }
+    public function getAbsolutePath() { return null === $this->path ? null : $this->getUploadRootDir().'/'.$this->path; }
+    public function getWebPath() { return null === $this->path ? 'default' : $this->getUploadDir().'/'.$this->path; }
+    protected function getUploadRootDir() { return __DIR__.'/../../../../web/'.$this->getUploadDir(); }
+    protected function getUploadDir() { return '/uploads/service'; }
 }

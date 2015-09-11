@@ -47,6 +47,7 @@ class ServiceController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $entity->upload();
             $em->persist($entity);
             $em->flush();
             $request->getSession()->getFlashBag()->add( 'success', 'Service has been created.' );    
@@ -73,7 +74,7 @@ class ServiceController extends Controller
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'create', 'attr' => array('icon' => 'save', 'data-toggle' => 'modal', 'data-target' => '#loading' )));
+        $form->add('submit', 'submit', array('label' => 'create', 'attr' => array('icon' => 'save')));
 
         return $form;
     }
@@ -153,7 +154,7 @@ class ServiceController extends Controller
 
         $form->add('actions', 'form_actions', [
             'buttons' => [
-                'submit' => ['type' => 'submit', 'options' => ['label' => 'save', 'attr' => array('icon' => 'save', 'class' => 'btn-primary', 'data-toggle' => 'modal', 'data-target' => '#loading')]],
+                'submit' => ['type' => 'submit', 'options' => ['label' => 'save', 'attr' => array('icon' => 'save', 'class' => 'btn-primary')]],
             ]
         ]);
 
@@ -177,6 +178,7 @@ class ServiceController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isValid()) {
+            $entity->upload();
             $em->flush();
             $request->getSession()->getFlashBag()->add( 'success', 'Service has been updated.' );
             return $this->redirect($this->generateUrl('service'));

@@ -23,6 +23,12 @@
   margin: 0 auto;
   pointer-events: all;
 }
+.uniadmin-logo {
+  padding: 5px 25px;
+}
+.login-logo {
+  margin-top: 100px;
+}
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 html {
   font-family: sans-serif;
@@ -308,7 +314,7 @@ a {
 }
 a:hover,
 a:focus {
-  color: #23527c;
+  color: #22527b;
   text-decoration: underline;
 }
 a:focus {
@@ -548,7 +554,7 @@ mark,
 }
 a.text-primary:hover,
 a.text-primary:focus {
-  color: #286090;
+  color: #285f8f;
 }
 .text-success {
   color: #3c763d;
@@ -584,7 +590,7 @@ a.text-danger:focus {
 }
 a.bg-primary:hover,
 a.bg-primary:focus {
-  background-color: #286090;
+  background-color: #285f8f;
 }
 .bg-success {
   background-color: #dff0d8;
@@ -2327,25 +2333,25 @@ fieldset[disabled] .btn-default.active {
 .btn-primary {
   color: #ffffff;
   background-color: #337ab7;
-  border-color: #2e6da4;
+  border-color: #2d6da3;
 }
 .btn-primary:focus,
 .btn-primary.focus {
   color: #ffffff;
-  background-color: #286090;
-  border-color: #122b40;
+  background-color: #285f8f;
+  border-color: #122a3f;
 }
 .btn-primary:hover {
   color: #ffffff;
-  background-color: #286090;
-  border-color: #204d74;
+  background-color: #285f8f;
+  border-color: #204d73;
 }
 .btn-primary:active,
 .btn-primary.active,
 .open > .dropdown-toggle.btn-primary {
   color: #ffffff;
-  background-color: #286090;
-  border-color: #204d74;
+  background-color: #285f8f;
+  border-color: #204d73;
 }
 .btn-primary:active:hover,
 .btn-primary.active:hover,
@@ -2357,8 +2363,8 @@ fieldset[disabled] .btn-default.active {
 .btn-primary.active.focus,
 .open > .dropdown-toggle.btn-primary.focus {
   color: #ffffff;
-  background-color: #204d74;
-  border-color: #122b40;
+  background-color: #204d73;
+  border-color: #122a3f;
 }
 .btn-primary:active,
 .btn-primary.active,
@@ -2384,7 +2390,7 @@ fieldset[disabled] .btn-primary:active,
 .btn-primary[disabled].active,
 fieldset[disabled] .btn-primary.active {
   background-color: #337ab7;
-  border-color: #2e6da4;
+  border-color: #2d6da3;
 }
 .btn-primary .badge {
   color: #337ab7;
@@ -2676,7 +2682,7 @@ fieldset[disabled] .btn-link {
 }
 .btn-link:hover,
 .btn-link:focus {
-  color: #23527c;
+  color: #22527b;
   text-decoration: underline;
   background-color: transparent;
 }
@@ -4792,7 +4798,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .pagination > li > a:focus,
 .pagination > li > span:focus {
   z-index: 3;
-  color: #23527c;
+  color: #22527b;
   background-color: #eeeeee;
   border-color: #dddddd;
 }
@@ -4888,7 +4894,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .pagination > li > a:focus,
 .pagination > li > span:focus {
   z-index: 3;
-  color: #23527c;
+  color: #22527b;
   background-color: #eeeeee;
   border-color: #dddddd;
 }
@@ -5022,7 +5028,7 @@ a.label:focus {
 }
 .label-primary[href]:hover,
 .label-primary[href]:focus {
-  background-color: #286090;
+  background-color: #285f8f;
 }
 .label-success {
   background-color: #5cb85c;

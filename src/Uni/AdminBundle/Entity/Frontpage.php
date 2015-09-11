@@ -17,37 +17,42 @@ class Frontpage
     /**
      * @var string
      */
-    private $frontpage_title;
+    private $title;
 
     /**
      * @var string
      */
-    private $frontpage_subtitle;
+    private $subtitle;
 
     /**
      * @var string
      */
-    private $frontpage_email;
+    private $email;
 
     /**
      * @var string
      */
-    private $frontpage_phonenumber;
+    private $phonenumber;
 
     /**
      * @var string
      */
-    private $frontpage_mission;
+    private $address;
 
     /**
      * @var string
      */
-    private $frontpage_vision;
+    private $mission;
+
+    /**
+     * @var string
+     */
+    private $vision;
 
     /**
      * @var boolean
      */
-    private $frontpage_active;
+    private $active;
 
     /**
      * @var \DateTime
@@ -67,14 +72,14 @@ class Frontpage
     /**
      * @var \Doctrine\Common\Collections\Collection
      */
-    private $frontpage_photos;
+    private $photos;
 
     /**
      * Constructor
      */
     public function __construct()
     {
-        $this->frontpage_photos = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->photos = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -88,164 +93,187 @@ class Frontpage
     }
 
     /**
-     * Set frontpage_title
+     * Set title
      *
-     * @param string $frontpageTitle
+     * @param string $title
      * @return Frontpage
      */
-    public function setFrontpageTitle($frontpageTitle)
+    public function setTitle($title)
     {
-        $this->frontpage_title = $frontpageTitle;
+        $this->title = $title;
 
         return $this;
     }
 
     /**
-     * Get frontpage_title
+     * Get title
      *
      * @return string 
      */
-    public function getFrontpageTitle()
+    public function getTitle()
     {
-        return $this->frontpage_title;
+        return $this->title;
     }
 
     /**
-     * Set frontpage_subtitle
+     * Set subtitle
      *
-     * @param string $frontpageSubtitle
+     * @param string $subtitle
      * @return Frontpage
      */
-    public function setFrontpageSubtitle($frontpageSubtitle)
+    public function setSubtitle($subtitle)
     {
-        $this->frontpage_subtitle = $frontpageSubtitle;
+        $this->subtitle = $subtitle;
 
         return $this;
     }
 
     /**
-     * Get frontpage_subtitle
+     * Get subtitle
      *
      * @return string 
      */
-    public function getFrontpageSubtitle()
+    public function getSubtitle()
     {
-        return $this->frontpage_subtitle;
+        return $this->subtitle;
     }
 
     /**
-     * Set frontpage_email
+     * Set email
      *
-     * @param string $frontpageEmail
+     * @param string $email
      * @return Frontpage
      */
-    public function setFrontpageEmail($frontpageEmail)
+    public function setEmail($email)
     {
-        $this->frontpage_email = $frontpageEmail;
+        $this->email = $email;
 
         return $this;
     }
 
     /**
-     * Get frontpage_email
+     * Get email
      *
      * @return string 
      */
-    public function getFrontpageEmail()
+    public function getEmail()
     {
-        return $this->frontpage_email;
+        return $this->email;
     }
 
     /**
-     * Set frontpage_phonenumber
+     * Set phonenumber
      *
-     * @param string $frontpagePhonenumber
+     * @param string $phonenumber
      * @return Frontpage
      */
-    public function setFrontpagePhonenumber($frontpagePhonenumber)
+    public function setPhonenumber($phonenumber)
     {
-        $this->frontpage_phonenumber = $frontpagePhonenumber;
+        $this->phonenumber = $phonenumber;
 
         return $this;
     }
 
     /**
-     * Get frontpage_phonenumber
+     * Get phonenumber
      *
      * @return string 
      */
-    public function getFrontpagePhonenumber()
+    public function getPhonenumber()
     {
-        return $this->frontpage_phonenumber;
+        return $this->phonenumber;
     }
 
     /**
-     * Set frontpage_mission
+     * Set address
      *
-     * @param string $frontpageMission
+     * @param string $address
      * @return Frontpage
      */
-    public function setFrontpageMission($frontpageMission)
+    public function setAddress($address)
     {
-        $this->frontpage_mission = $frontpageMission;
+        $this->address = $address;
 
         return $this;
     }
 
     /**
-     * Get frontpage_mission
+     * Get address
      *
      * @return string 
      */
-    public function getFrontpageMission()
+    public function getAddress()
     {
-        return $this->frontpage_mission;
+        return $this->address;
     }
 
     /**
-     * Set frontpage_vision
+     * Set mission
      *
-     * @param string $frontpageVision
+     * @param string $mission
      * @return Frontpage
      */
-    public function setFrontpageVision($frontpageVision)
+    public function setMission($mission)
     {
-        $this->frontpage_vision = $frontpageVision;
+        $this->mission = $mission;
 
         return $this;
     }
 
     /**
-     * Get frontpage_vision
+     * Get mission
      *
      * @return string 
      */
-    public function getFrontpageVision()
+    public function getMission()
     {
-        return $this->frontpage_vision;
+        return $this->mission;
     }
 
     /**
-     * Set frontpage_active
+     * Set vision
      *
-     * @param boolean $frontpageActive
+     * @param string $vision
      * @return Frontpage
      */
-    public function setFrontpageActive($frontpageActive)
+    public function setVision($vision)
     {
-        $this->frontpage_active = $frontpageActive;
+        $this->vision = $vision;
 
         return $this;
     }
 
     /**
-     * Get frontpage_active
+     * Get vision
+     *
+     * @return string 
+     */
+    public function getVision()
+    {
+        return $this->vision;
+    }
+
+    /**
+     * Set active
+     *
+     * @param boolean $active
+     * @return Frontpage
+     */
+    public function setActive($active)
+    {
+        $this->active = $active;
+
+        return $this;
+    }
+
+    /**
+     * Get active
      *
      * @return boolean 
      */
-    public function getFrontpageActive()
+    public function getActive()
     {
-        return $this->frontpage_active;
+        return $this->active;
     }
 
     /**
@@ -318,35 +346,35 @@ class Frontpage
     }
 
     /**
-     * Add frontpage_photos
+     * Add photos
      *
-     * @param \Uni\AdminBundle\Entity\FrontpagePhoto $frontpagePhotos
+     * @param \Uni\AdminBundle\Entity\FrontpagePhoto $photos
      * @return Frontpage
      */
-    public function addFrontpagePhoto(\Uni\AdminBundle\Entity\FrontpagePhoto $frontpagePhotos)
+    public function addPhoto(\Uni\AdminBundle\Entity\FrontpagePhoto $photos)
     {
-        $this->frontpage_photos[] = $frontpagePhotos;
+        $this->photos[] = $photos;
 
         return $this;
     }
 
     /**
-     * Remove frontpage_photos
+     * Remove photos
      *
-     * @param \Uni\AdminBundle\Entity\FrontpagePhoto $frontpagePhotos
+     * @param \Uni\AdminBundle\Entity\FrontpagePhoto $photos
      */
-    public function removeFrontpagePhoto(\Uni\AdminBundle\Entity\FrontpagePhoto $frontpagePhotos)
+    public function removePhoto(\Uni\AdminBundle\Entity\FrontpagePhoto $photos)
     {
-        $this->frontpage_photos->removeElement($frontpagePhotos);
+        $this->photos->removeElement($photos);
     }
 
     /**
-     * Get frontpage_photos
+     * Get photos
      *
      * @return \Doctrine\Common\Collections\Collection 
      */
-    public function getFrontpagePhotos()
+    public function getPhotos()
     {
-        return $this->frontpage_photos;
+        return $this->photos;
     }
 }

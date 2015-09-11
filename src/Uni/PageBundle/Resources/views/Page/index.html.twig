@@ -1,15 +1,14 @@
 {% extends ':Page:base.html.twig' %}
 
-{% block stylesheet %}
-    {% set foto = random(frontpage.frontpagephotos) %}
-    {% set image = '/uploads/frontpage_photos/' ~ foto.photopath %}
-    <style type="text/css">
-    .header-image {
-        background: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url('{{ asset(image) | imagine_filter('page_header') }}');
-        background-repeat:no-repeat;
-    }
-    </style>
-{% endblock %}
+{% use 'UniPageBundle:Page:frontpage.html.twig' %}
+
+{% use 'UniPageBundle:Page:contact.html.twig' %}
+
+{% use 'UniPageBundle:Page:service.html.twig' %}
+
+{% use 'UniPageBundle:Page:missionvision.html.twig' %}
+
+{% block stylesheet %}{{ parent() }}{% endblock %}
 
 {% block header %}
     <header class="intro-header header-image">
@@ -17,9 +16,12 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="site-heading">
-                        <h1>{{ frontpage.frontpagetitle }}</h1>
+                        <h1>{% if frontpage %}{{ frontpage.title }}
+                            {% else %}Título
+                            {% endif %}
+                        </h1>
                         <hr class="small">
-                        <span class="subheading">{{ frontpage.frontpagesubtitle }}</span>
+                        <span class="subheading">{% if frontpage %}{{ frontpage.subtitle }}{% else %}subtítulo{% endif %}</span>
                     </div>
                 </div>
             </div>
@@ -27,24 +29,24 @@
     </header>
 {% endblock %}
 
-{% block javascript %}{% endblock %}
-
 {% block body -%}
-    <section id="service">
+
+    {% block service %}{{ parent() }}{% endblock %}
+
+    {% block missionvision %}{{ parent() }}{% endblock %}
+
+    {% block contact %}{{ parent() }}{% endblock %}
+
+{% endblock %}
+
+{% block footer %}
+    <footer class="bg-gray-lighter">
         <div class="container">
-            <div class="row text-center">
-                <div class="col-lg-12">
-                    <h2 class="section-heading">Servicios</h2>
-                </div>
-                {% for service in services %}
-                <div class="col-md-4">
-                    {% set image = '/uploads/frontpage_photos/' ~ service.servicephotopath %}
-                    <img class="img-circle img-responsive center-block" src="{{ asset(image) | imagine_filter('page_small') }}" alt="">
-                    <h4 class="service-heading">{{ service.servicetitle }}</h4>
-                    <p class="text-muted">{{ service.servicecontent }}</p>
-                </div>
-                {% endfor %}
+            <div class="row">
+                <p class="text-muted">{% if frontpage %}{{ frontpage.title }}{% endif %} - 2015</p>
             </div>
         </div>
-    </section>
+    </footer>
 {% endblock %}
+
+{% block javascript %}{% endblock %}

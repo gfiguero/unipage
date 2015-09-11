@@ -48,10 +48,9 @@
 
                                 <tr>
 
-                                    {%- elseif field in ['deletedAt'] %}
-                                    {%- else %}
+                                    {%- elseif field not in ['deletedAt', 'path', 'file', 'content', 'decription'] %}
 
-                                    <th>{{ "{{ knp_pagination_sortable(pagination, '" ~ field ~ "'|trans, '" ~ field ~ "') }}" }}{{ "{% if sort == '" ~ field ~ "' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}" }}</th>
+                                    <th>{{ "{{ knp_pagination_sortable(pagination, '" ~ entity|lower ~ "_" ~ field ~ "'|trans, '" ~ field ~ "') }}" }}{{ "{% if sort == '" ~ field ~ "' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}" }}</th>
 
                                     {%- endif %}
 
@@ -67,7 +66,10 @@
 
                                 <tr class='clickableRow' href="{{ "{{ path('" ~ route_name_prefix ~ "_show', { 'id': entity."~ identifier ~" }) }}" }}">
 
-                                {%- elseif field in ['deletedAt'] %}
+                                {%- elseif field in ['deletedAt', 'path', 'file', 'content', 'decription'] %}
+                                {%- elseif field in ['published', 'active'] %}
+
+                                    <td>{{ '{% if entity.' ~ field|replace({'_': ''}) ~ ' %}' }}{{ "{{ 'Si' }}{% else %}{{ 'No' }}{% endif %}" }}</td>
                                 {%- elseif metadata.type in ['date', 'time', 'datetime'] %}
 
                                     {%- if metadata.type == 'date' %}

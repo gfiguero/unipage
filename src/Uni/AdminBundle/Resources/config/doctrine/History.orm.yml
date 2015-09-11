@@ -8,29 +8,29 @@ Uni\AdminBundle\Entity\History:
             generator:
                 strategy: AUTO
     fields:
-        history_time:
+        time:
             type: string
             length: '200'
-        history_title:
+        title:
             type: string
             length: '200'
-        history_abstract:
+        abstract:
             type: text
             nullable: true
-        history_content:
+        content:
             type: text
             nullable: true
-        history_rank:
+        rank:
             type: integer
-        history_published:
+        published:
             type: boolean
             options:
                 default: false
-        history_photo_path:
+        path:
             type: string
             length: '300'
             nullable: true
-        history_photo_file:
+        file:
             type: string
             length: '300'
             nullable: true

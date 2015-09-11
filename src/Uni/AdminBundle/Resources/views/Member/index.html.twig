@@ -40,33 +40,25 @@
                         <table class="records_list table table-striped table-hover">
                             <thead>
                                 <tr>
-                                    <th>{{ knp_pagination_sortable(pagination, 'member_firstname'|trans, 'member_firstname') }}{% if sort == 'member_firstname' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
-                                    <th>{{ knp_pagination_sortable(pagination, 'member_lastname'|trans, 'member_lastname') }}{% if sort == 'member_lastname' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
-                                    <th>{{ knp_pagination_sortable(pagination, 'member_email'|trans, 'member_email') }}{% if sort == 'member_email' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
-                                    <th>{{ knp_pagination_sortable(pagination, 'member_phonenumber'|trans, 'member_phonenumber') }}{% if sort == 'member_phonenumber' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
-                                    <th>{{ knp_pagination_sortable(pagination, 'member_birthdate'|trans, 'member_birthdate') }}{% if sort == 'member_birthdate' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
-                                    <th>{{ knp_pagination_sortable(pagination, 'member_admissiondate'|trans, 'member_admissiondate') }}{% if sort == 'member_admissiondate' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
-                                    <th>{{ knp_pagination_sortable(pagination, 'member_active'|trans, 'member_active') }}{% if sort == 'member_active' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
-                                    <th>{{ knp_pagination_sortable(pagination, 'member_photo_path'|trans, 'member_photo_path') }}{% if sort == 'member_photo_path' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
-                                    <th>{{ knp_pagination_sortable(pagination, 'member_photo_file'|trans, 'member_photo_file') }}{% if sort == 'member_photo_file' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
-                                    <th>{{ knp_pagination_sortable(pagination, 'createdAt'|trans, 'createdAt') }}{% if sort == 'createdAt' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
-                                    <th>{{ knp_pagination_sortable(pagination, 'updatedAt'|trans, 'updatedAt') }}{% if sort == 'updatedAt' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(pagination, 'member_firstname'|trans, 'firstname') }}{% if sort == 'firstname' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(pagination, 'member_lastname'|trans, 'lastname') }}{% if sort == 'lastname' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(pagination, 'member_email'|trans, 'email') }}{% if sort == 'email' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(pagination, 'member_phonenumber'|trans, 'phonenumber') }}{% if sort == 'phonenumber' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(pagination, 'member_birthdate'|trans, 'birthdate') }}{% if sort == 'birthdate' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(pagination, 'member_admissiondate'|trans, 'admissiondate') }}{% if sort == 'admissiondate' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(pagination, 'member_active'|trans, 'active') }}{% if sort == 'active' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                 </tr>
                             </thead>
                             <tbody>
                             {% for entity in pagination %}
                                 <tr class='clickableRow' href="{{ path('member_show', { 'id': entity.id }) }}">
-                                    <td>{% if entity.memberfirstname %}{{ entity.memberfirstname }}{% endif %}</td>
-                                    <td>{% if entity.memberlastname %}{{ entity.memberlastname }}{% endif %}</td>
-                                    <td>{% if entity.memberemail %}{{ entity.memberemail }}{% endif %}</td>
-                                    <td>{% if entity.memberphonenumber %}{{ entity.memberphonenumber }}{% endif %}</td>
-                                    <td>{% if entity.memberbirthdate %}{{ entity.memberbirthdate|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd-LLL-Y") }}{% endif %}</td>
-                                    <td>{% if entity.memberadmissiondate %}{{ entity.memberadmissiondate|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd-LLL-Y") }}{% endif %}</td>
-                                    <td>{% if entity.memberactive %}{{ entity.memberactive }}{% endif %}</td>
-                                    <td>{% if entity.memberphotopath %}{{ entity.memberphotopath }}{% endif %}</td>
-                                    <td>{% if entity.memberphotofile %}{{ entity.memberphotofile }}{% endif %}</td>
-                                    <td>{% if entity.createdAt %}{{ entity.createdAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd-LLL-Y - HH:mm") }}{% endif %}</td>
-                                    <td>{% if entity.updatedAt %}{{ entity.updatedAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd-LLL-Y - HH:mm") }}{% endif %}</td>
+                                    <td>{% if entity.firstname %}{{ entity.firstname }}{% endif %}</td>
+                                    <td>{% if entity.lastname %}{{ entity.lastname }}{% endif %}</td>
+                                    <td>{% if entity.email %}{{ entity.email }}{% endif %}</td>
+                                    <td>{% if entity.phonenumber %}{{ entity.phonenumber }}{% endif %}</td>
+                                    <td>{% if entity.birthdate %}{{ entity.birthdate|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd-LLL-Y") }}{% endif %}</td>
+                                    <td>{% if entity.admissiondate %}{{ entity.admissiondate|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd-LLL-Y") }}{% endif %}</td>
+                                    <td>{% if entity.active %}{{ 'Si' }}{% else %}{{ 'No' }}{% endif %}</td>
                                 </tr>
                             {% endfor %}
                             </tbody>

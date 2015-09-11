@@ -2,9 +2,9 @@
 
 namespace Uni\AdminBundle\Controller;
 
-use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Doctrine\Common\Collections\ArrayCollection;
 
 use Uni\AdminBundle\Entity\Frontpage;
 use Uni\AdminBundle\Form\FrontpageType;
@@ -48,6 +48,12 @@ class FrontpageController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $photos = $entity->getPhotos();
+            foreach ($photos as $photo) {
+                $photo->upload();
+                $photo->setFrontpage($entity);
+                $em->persist($photo);
+            }
             $em->persist($entity);
             $em->flush();
             $request->getSession()->getFlashBag()->add( 'success', 'Frontpage has been created.' );    
@@ -74,7 +80,7 @@ class FrontpageController extends Controller
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'create', 'attr' => array('icon' => 'save', 'data-toggle' => 'modal', 'data-target' => '#loading' )));
+        $form->add('submit', 'submit', array('label' => 'create', 'attr' => array('icon' => 'save')));
 
         return $form;
     }
@@ -154,7 +160,7 @@ class FrontpageController extends Controller
 
         $form->add('actions', 'form_actions', [
             'buttons' => [
-                'submit' => ['type' => 'submit', 'options' => ['label' => 'save', 'attr' => array('icon' => 'save', 'class' => 'btn-primary', 'data-toggle' => 'modal', 'data-target' => '#loading')]],
+                'submit' => ['type' => 'submit', 'options' => ['label' => 'save', 'attr' => array('icon' => 'save', 'class' => 'btn-primary')]],
             ]
         ]);
 
@@ -175,7 +181,7 @@ class FrontpageController extends Controller
         }
 
         $currentPhotos = new ArrayCollection();
-        foreach ($entity->getFrontpagePhotos() as $photo) {
+        foreach ($entity->getPhotos() as $photo) {
             $currentPhotos->add($photo);
         }
 
@@ -184,14 +190,14 @@ class FrontpageController extends Controller
 
         if ($editForm->isValid()) {
             foreach ($currentPhotos as $photo) {
-                if (false === $entity->getFrontpagePhotos()->contains($photo)) {
+                if (false === $entity->getPhotos()->contains($photo)) {
                     $em->remove($photo);
                 }
             }
-            $photos = $entity->getFrontpagePhotos();
+            $photos = $entity->getPhotos();
             foreach ($photos as $photo) {
                 $photo->upload();
-                $photo->setPhotoFrontpage($entity);
+                $photo->setFrontpage($entity);
                 $em->persist($photo);
             }
             $em->persist($entity);

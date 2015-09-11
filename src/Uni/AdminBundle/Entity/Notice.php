@@ -17,17 +17,17 @@ class Notice
     /**
      * @var string
      */
-    private $notice_title;
+    private $title;
 
     /**
      * @var string
      */
-    private $notice_content;
+    private $content;
 
     /**
      * @var boolean
      */
-    private $notice_published;
+    private $published;
 
     /**
      * @var \DateTime
@@ -47,20 +47,20 @@ class Notice
     /**
      * @var \Doctrine\Common\Collections\Collection
      */
-    private $notice_photos;
+    private $photos;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
      */
-    private $notice_noticecategory;
+    private $category;
 
     /**
      * Constructor
      */
     public function __construct()
     {
-        $this->notice_photos = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->notice_noticecategory = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->photos = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->category = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -74,72 +74,72 @@ class Notice
     }
 
     /**
-     * Set notice_title
+     * Set title
      *
-     * @param string $noticeTitle
+     * @param string $title
      * @return Notice
      */
-    public function setNoticeTitle($noticeTitle)
+    public function setTitle($title)
     {
-        $this->notice_title = $noticeTitle;
+        $this->title = $title;
 
         return $this;
     }
 
     /**
-     * Get notice_title
+     * Get title
      *
      * @return string 
      */
-    public function getNoticeTitle()
+    public function getTitle()
     {
-        return $this->notice_title;
+        return $this->title;
     }
 
     /**
-     * Set notice_content
+     * Set content
      *
-     * @param string $noticeContent
+     * @param string $content
      * @return Notice
      */
-    public function setNoticeContent($noticeContent)
+    public function setContent($content)
     {
-        $this->notice_content = $noticeContent;
+        $this->content = $content;
 
         return $this;
     }
 
     /**
-     * Get notice_content
+     * Get content
      *
      * @return string 
      */
-    public function getNoticeContent()
+    public function getContent()
     {
-        return $this->notice_content;
+        return $this->content;
     }
 
     /**
-     * Set notice_published
+     * Set published
      *
-     * @param boolean $noticePublished
+     * @param boolean $published
      * @return Notice
      */
-    public function setNoticePublished($noticePublished)
+    public function setPublished($published)
     {
-        $this->notice_published = $noticePublished;
+        $this->published = $published;
 
         return $this;
     }
 
     /**
-     * Get notice_published
+     * Get published
      *
      * @return boolean 
      */
-    public function getNoticePublished()
+    public function getPublished()
     {
-        return $this->notice_published;
+        return $this->published;
     }
 
     /**
@@ -212,68 +212,68 @@ class Notice
     }
 
     /**
-     * Add notice_photos
+     * Add photos
      *
-     * @param \Uni\AdminBundle\Entity\NoticePhoto $noticePhotos
+     * @param \Uni\AdminBundle\Entity\NoticePhoto $photos
      * @return Notice
      */
-    public function addNoticePhoto(\Uni\AdminBundle\Entity\NoticePhoto $noticePhotos)
+    public function addPhoto(\Uni\AdminBundle\Entity\NoticePhoto $photos)
     {
-        $this->notice_photos[] = $noticePhotos;
+        $this->photos[] = $photos;
 
         return $this;
     }
 
     /**
-     * Remove notice_photos
+     * Remove photos
      *
-     * @param \Uni\AdminBundle\Entity\NoticePhoto $noticePhotos
+     * @param \Uni\AdminBundle\Entity\NoticePhoto $photos
      */
-    public function removeNoticePhoto(\Uni\AdminBundle\Entity\NoticePhoto $noticePhotos)
+    public function removePhoto(\Uni\AdminBundle\Entity\NoticePhoto $photos)
     {
-        $this->notice_photos->removeElement($noticePhotos);
+        $this->photos->removeElement($photos);
     }
 
     /**
-     * Get notice_photos
+     * Get photos
      *
      * @return \Doctrine\Common\Collections\Collection 
      */
-    public function getNoticePhotos()
+    public function getPhotos()
     {
-        return $this->notice_photos;
+        return $this->photos;
     }
 
     /**
-     * Add notice_noticecategory
+     * Add category
      *
-     * @param \Uni\AdminBundle\Entity\NoticeCategory $noticeNoticecategory
+     * @param \Uni\AdminBundle\Entity\NoticeCategory $category
      * @return Notice
      */
-    public function addNoticeNoticecategory(\Uni\AdminBundle\Entity\NoticeCategory $noticeNoticecategory)
+    public function addCategory(\Uni\AdminBundle\Entity\NoticeCategory $category)
     {
-        $this->notice_noticecategory[] = $noticeNoticecategory;
+        $this->category[] = $category;
 
         return $this;
     }
 
     /**
-     * Remove notice_noticecategory
+     * Remove category
      *
-     * @param \Uni\AdminBundle\Entity\NoticeCategory $noticeNoticecategory
+     * @param \Uni\AdminBundle\Entity\NoticeCategory $category
      */
-    public function removeNoticeNoticecategory(\Uni\AdminBundle\Entity\NoticeCategory $noticeNoticecategory)
+    public function removeCategory(\Uni\AdminBundle\Entity\NoticeCategory $category)
     {
-        $this->notice_noticecategory->removeElement($noticeNoticecategory);
+        $this->category->removeElement($category);
     }
 
     /**
-     * Get notice_noticecategory
+     * Get category
      *
      * @return \Doctrine\Common\Collections\Collection 
      */
-    public function getNoticeNoticecategory()
+    public function getCategory()
     {
-        return $this->notice_noticecategory;
+        return $this->category;
     }
 }
