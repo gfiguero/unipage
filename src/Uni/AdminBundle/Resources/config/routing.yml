@@ -1,3 +1,7 @@
+uni_admin_camera:
+    resource: "@UniAdminBundle/Resources/config/routing/camera.yml"
+    prefix:   /camera
+
 uni_admin_process:
     resource: "@UniAdminBundle/Resources/config/routing/process.yml"
     prefix:   /process

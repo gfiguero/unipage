@@ -24,6 +24,7 @@ user_new: Nuevo Usuario
 user_show: Ver Usuario
 user_edit: Editar Usuario
 user_delete: Borrar Usuario
+user_control: Control de Usuarios
 user_firstname: Nombre
 user_lastname: Apellido
 user_username: Username

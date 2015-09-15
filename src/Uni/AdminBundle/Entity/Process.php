@@ -3,6 +3,7 @@
 namespace Uni\AdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\Util\SecureRandom;
 
 /**
  * Process
@@ -42,7 +43,7 @@ class Process
     /**
      * @var boolean
      */
-    private $published;
+    private $active;
 
     /**
      * @var string
@@ -196,26 +197,26 @@ class Process
     }
 
     /**
-     * Set published
+     * Set active
      *
-     * @param boolean $published
+     * @param boolean $active
      * @return Process
      */
-    public function setPublished($published)
+    public function setActive($active)
     {
-        $this->published = $published;
+        $this->active = $active;
 
         return $this;
     }
 
     /**
-     * Get published
+     * Get active
      *
      * @return boolean 
      */
-    public function getPublished()
+    public function getActive()
     {
-        return $this->published;
+        return $this->active;
     }
 
     /**
@@ -332,4 +333,9 @@ class Process
     {
         return $this->deletedAt;
     }
+    public function upload() { if (null === $this->getFile()) { return; } $generator = new SecureRandom(); $random = $generator->nextBytes(10); $prefix = md5($random); $this->getFile()->move($this->getUploadRootDir(), $prefix.'_'.$this->getFile()->getClientOriginalName());$this->path = $prefix.'_'.$this->getFile()->getClientOriginalName();$this->file = null; }
+    public function getAbsolutePath() { return null === $this->path ? null : $this->getUploadRootDir().'/'.$this->path; }
+    public function getWebPath() { return null === $this->path ? 'default' : $this->getUploadDir().'/'.$this->path; }
+    protected function getUploadRootDir() { return __DIR__.'/../../../../web/'.$this->getUploadDir(); }
+    protected function getUploadDir() { return '/uploads/process'; }
 }

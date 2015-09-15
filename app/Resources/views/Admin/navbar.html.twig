@@ -12,9 +12,11 @@
         </div>
     </div>
     <ul class="nav navbar-top-links navbar-right">
-        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">{{ icon('user fa-fw') }}&nbsp;{{ icon('caret-down') }}</a>
+        <li><a href="{{ path('camera') }}">{{ icon('video-camera fa-fw') }}&nbsp;{{ "camera_index"|trans }}</a></li>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">{{ icon('user fa-fw') }}&nbsp;{{ "user_control"|trans }}&nbsp;{{ icon('caret-down') }}</a>
             <ul class="dropdown-menu dropdown-user">
                 {#<li><a href="#">{{ icon('user fa-fw') }}&nbsp;{{"user_profile"|trans}}</a></li>#}
+                <li><a href="{{ path('user') }}">{{ icon('user fa-fw') }}&nbsp;{{"user_index"|trans}}</a></li>
                 <li><a href="{{ path('fos_user_security_logout') }}">{{ icon('sign-out fa-fw') }}&nbsp;{{"logout"|trans}}</a></li>
             </ul>
         </li>
@@ -40,7 +42,7 @@
                         <li {% if 'productcategory' in app.request.attributes.get('_route') %}class="active"{% endif %}><a href="{{ path('productcategory') }}">{{ "productcategory_index"|trans }}</a></li>
                     </ul></li>
                 <li {% if 'publication' in app.request.attributes.get('_route') %}class="active"{% endif %}><a href="{{ path('publication') }}">{{ icon('bullhorn fa-fw') }}&nbsp;{{ "publication_index"|trans }}</a></li>
-                <li {% if 'user' in app.request.attributes.get('_route') %}class="active"{% endif %}><a href="{{ path('user') }}">{{ icon('user fa-fw') }}&nbsp;{{ "user_index"|trans }}</a></li>
+                {#}<li {% if 'user' in app.request.attributes.get('_route') %}class="active"{% endif %}><a href="{{ path('user') }}">{{ icon('user fa-fw') }}&nbsp;{{ "user_index"|trans }}</a></li>{#}
                 <li {% if 'report' in app.request.attributes.get('_route') %}class="active"{% endif %}><a href="{{ path('report') }}">{{ icon('flag fa-fw') }}&nbsp;{{ "report_index"|trans }}</a></li>
                 {#}<li {% if 'history' in app.request.attributes.get('_route') %}class="active"{% endif %}><a href="{{ path('history') }}">{{ icon('book fa-fw') }}&nbsp;{{ "history_index"|trans }}</a></li>{#}
                 <li {% if 'process' in app.request.attributes.get('_route') %}class="active"{% endif %}><a href="{{ path('process') }}">{{ icon('paper-plane fa-fw') }}&nbsp;{{ "process_index"|trans }}</a></li>

@@ -127,18 +127,14 @@ hr.small {
   }
 }
 .intro-header {
-  background-color: #ffffff;
-  background-repeat: no-repeat;
+  background-color: #808080;
+  background: no-repeat center center;
   background-attachment: scroll;
-  background-position: center top;
-  background-size: 1366px 320px;
-  background-clip: border-box;
-}
-@media only screen and (min-width: 768px) {
-  .intro-header {
-    background-attachment: fixed;
-    background-size: 1920px 450px;
-  }
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  margin-bottom: 50px;
 }
 .intro-header .site-heading,
 .intro-header .post-heading,
@@ -262,21 +258,16 @@ hr.small {
   border-bottom-left-radius: 5px;
 }
 footer {
-  position: relative;
-  width: 100%;
-  clear: both;
+  padding: 50px 0 65px;
 }
 footer .list-inline {
   margin: 0;
   padding: 0;
 }
-footer p {
-  font-size: 16px;
+footer .copyright {
+  font-size: 14px;
   text-align: center;
-  height: 60px;
-  line-height: 60px;
-  vertical-align: middle;
-  margin: 0;
+  margin-bottom: 0;
 }
 .floating-label-form-group {
   font-size: 14px;
@@ -331,9 +322,11 @@ form .row:first-child .floating-label-form-group {
 .btn {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   text-transform: uppercase;
+  font-size: 14px;
   font-weight: 800;
   letter-spacing: 1px;
   border-radius: 0;
+  padding: 15px 25px;
 }
 .btn-lg {
   font-size: 16px;
@@ -344,13 +337,6 @@ form .row:first-child .floating-label-form-group {
   background-color: #0085a1;
   border: 1px solid #0085a1;
   color: white;
-}
-select {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
-  font-weight: 800;
-  letter-spacing: 1px;
-  border-radius: 0;
 }
 .pager {
   margin: 20px 0 0;

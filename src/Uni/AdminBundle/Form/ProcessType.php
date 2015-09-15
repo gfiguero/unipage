@@ -16,35 +16,40 @@ class ProcessType extends AbstractType
     {
         $builder
             ->add('title', null, array(
-                'label' =>  'process_title',
+                'label' => 'process_title',
             ))
             ->add('name', null, array(
-                'label' =>  'process_name',
+                'label' => 'process_name',
+                'required' => false,
             ))
             ->add('abstract', null, array(
-                'label' =>  'process_abstract',
+                'label' => 'process_abstract',
+                'required' => false,
+                'attr'  =>  array( 'class' =>  'tinymce', 'data-theme' => 'advanced' ),
             ))
             ->add('content', null, array(
-                'label' =>  'process_content',
+                'label' => 'process_content',
+                'required' => false,
+                'attr'  =>  array( 'class' =>  'tinymce', 'data-theme' => 'advanced' ),
             ))
             ->add('rank', null, array(
-                'label' =>  'process_rank',
-            ))
-            ->add('published', null, array(
-                'label' =>  'process_published',
+                'label' => 'process_rank',
                 'required' => false,
-                'attr'  => array(
-                    'labeled' => true,
-                ),
+            ))
+            ->add('active', null, array(
+                'label' => 'process_active',
+                'required' => false,
+                'attr'  => array('labeled' => true, 'class' => 'switch'),
             ))
             ->add('path', 'hidden', array(
-                'label' =>  'process_path',
-                'attr' => array('preview' => true),
+                'label' => 'process_path',
                 'required' => false,
+                'attr' => array('preview' => true),
             ))
             ->add('file', 'file', array(
-                'label' =>  'process_file',
+                'label' => 'process_file',
                 'required' => false,
+                'attr' => array('class' => 'photo'),
             ))
         ;
     }

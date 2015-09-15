@@ -185,7 +185,7 @@ process_name: Nombre
 process_abstract: Resumen
 process_content: Descripción
 process_rank: Orden
-process_published: Publicada
+process_active: Activo
 process_file: Foto
 process_createdAt: Fecha de Registro
 process_updatedAt: Última Actualización
@@ -229,7 +229,7 @@ Service has been created.: El servicio ha sido creado.
 Service has been updated.: El servicio ha sido actualizado.
 Service has been deleted.: El servicio ha sido borrado.
 
-# Reports
+# Report
 report: Reportes
 report_index: Reportes
 report_new: Nuevo Reporte
@@ -240,9 +240,26 @@ report_title: Título
 report_content: Contenido
 report_published: Publicado
 report_file: Archivo
+report_download: Descargar
 report_createdAt: Fecha de Registro
 report_updatedAt: Última Actualización
-Reports has been created.: El reporte ha sido creado.
-Reports has been updated.: El reporte ha sido actualizado.
-Reports has been deleted.: El reporte ha sido borrado.
+Report has been created.: El reporte ha sido creado.
+Report has been updated.: El reporte ha sido actualizado.
+Report has been deleted.: El reporte ha sido borrado.
+
+# Camera
+camera: Cámaras
+camera_index: Cámaras
+camera_new: Nueva Cámara
+camera_show: Ver Cámara
+camera_edit: Editar Cámara
+camera_delete: Borrar Cámara
+camera_name: Nombre
+camera_source: Origen
+camera_active: Activa
+camera_createdAt: Fecha de Registro
+camera_updatedAt: Última Actualización
+Camera has been created.: La Cámara ha sido creada.
+Camera has been updated.: La Cámara ha sido actualizada.
+Camera has been deleted.: La Cámara ha sido borrada.
 

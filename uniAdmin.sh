@@ -102,6 +102,13 @@ php app/console doctrine:generate:entities UniAdminBundle:ProductPhoto --path="s
 #rm src/Uni/AdminBundle/Form/ProductPhotoType.php
 php app/console doctrine:generate:form UniAdminBundle:ProductPhoto
 
+# Camera
+#rm src/Uni/AdminBundle/Entity/Camera.php
+php app/console doctrine:generate:entities UniAdminBundle:Camera --path="src"
+#rm src/Uni/AdminBundle/Form/CameraType.php
+#rm src/Uni/AdminBundle/Controller/CameraController.php
+php app/console generate:doctrine:crud --entity=UniAdminBundle:Camera --format=yml --with-write --overwrite --no-interaction --route-prefix='camera'
+
 # User
 #rm src/Uni/UserBundle/Entity/User.php
 php app/console doctrine:generate:entities UniUserBundle:User --path="src"

@@ -18,6 +18,10 @@ uni_page_notice:
     path:   /notice
     defaults: { _controller: UniPageBundle:Page:notice }
 
+uni_page_camera:
+    path:   /camera
+    defaults: { _controller: UniPageBundle:Page:camera }
+
 uni_page_notice_show:
     path:     /{id}/noticeshow
     defaults: { _controller: UniPageBundle:Page:noticeshow }

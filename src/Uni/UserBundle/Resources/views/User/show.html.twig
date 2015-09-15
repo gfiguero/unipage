@@ -41,26 +41,6 @@
                         <dl class="dl-horizontal dl-horizontal-sm dl-horizontal-md dl-horizontal-lg">
                             <dt>{{ 'user_firstname'|trans }}</dt><dd>{% if entity.firstname %}{{ entity.firstname }}{% endif %}</dd>
                             <dt>{{ 'user_lastname'|trans }}</dt><dd>{% if entity.lastname %}{{ entity.lastname }}{% endif %}</dd>
-                            <dt>{{ 'user_username'|trans }}</dt><dd>{% if entity.username %}{{ entity.username }}{% endif %}</dd>
-                            <dt>{{ 'user_usernameCanonical'|trans }}</dt><dd>{% if entity.usernameCanonical %}{{ entity.usernameCanonical }}{% endif %}</dd>
-                            <dt>{{ 'user_email'|trans }}</dt><dd>{% if entity.email %}{{ entity.email }}{% endif %}</dd>
-                            <dt>{{ 'user_emailCanonical'|trans }}</dt><dd>{% if entity.emailCanonical %}{{ entity.emailCanonical }}{% endif %}</dd>
-                            <dt>{{ 'user_enabled'|trans }}</dt><dd>{% if entity.enabled %}{{ 'Si' }}{% else %}{{ 'No' }}{% endif %}</dd>
-                            <dt>{{ 'user_locked'|trans }}</dt><dd>{% if entity.locked %}{{ 'Si' }}{% else %}{{ 'No' }}{% endif %}</dd>
-                            <dt>{{ 'user_expired'|trans }}</dt><dd>{% if entity.expired %}{{ 'Si' }}{% else %}{{ 'No' }}{% endif %}</dd>
-                            <dt>{{ 'user_credentialsExpired'|trans }}</dt><dd>{% if entity.credentialsExpired %}{{ 'Si' }}{% else %}{{ 'No' }}{% endif %}</dd>
-                            <dt>{{ 'user_roles'|trans }}</dt><dd>{% if entity.roles %}{% for role in entity.roles %}{{ role }}{% endfor %}{% endif %}</dd>
-                        </dl>
-                    </div>
-                </div>
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <dl class="dl-horizontal dl-horizontal-sm dl-horizontal-md dl-horizontal-lg">
-                            <dt>{{ 'user_password'|trans }}</dt><dd>{% if entity.password %}{{ entity.password }}{% endif %}</dd>
-                            <dt>{{ 'user_salt'|trans }}</dt><dd>{% if entity.salt %}{{ entity.salt }}{% endif %}</dd>
-                            <dt>{{ 'user_confirmationToken'|trans }}</dt><dd>{% if entity.confirmationToken %}{{ entity.confirmationToken }}{% endif %}</dd>
-                            <dt>{{ 'user_lastlogin'|trans }}</dt><dd>{% if entity.lastlogin %}{{ entity.lastlogin|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y - HH:mm") }}{% endif %}</dd>
-                            <dt>{{ 'user_passwordRequestedAt'|trans }}</dt><dd>{% if entity.passwordRequestedAt %}{{ entity.passwordRequestedAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y - HH:mm") }}{% endif %}</dd>
                             <dt>{{ 'user_createdAt'|trans }}</dt><dd>{% if entity.createdAt %}{{ entity.createdAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y - HH:mm") }}{% endif %}</dd>
                             <dt>{{ 'user_updatedAt'|trans }}</dt><dd>{% if entity.updatedAt %}{{ entity.updatedAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y - HH:mm") }}{% endif %}</dd>
                         </dl>

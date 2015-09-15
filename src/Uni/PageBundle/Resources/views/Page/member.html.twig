@@ -25,20 +25,49 @@
 {% block body -%}
     <section id="member">
         <div class="container">
-            <div class="row text-center">
+            <div class="row">
                 {% for member in members %}
-                <div class="col-xs-12 col-sm-3 col-lg-2">
-                    <div class="thumbnail row-no-padding">
-                        <div class="member-photo col-xs-6 col-sm-12">
-                            <img class="img-rounded img-responsive" alt="{{ member.firstname }}" src="{{ asset(member.webpath) | imagine_filter('page_member') }}">
+                    <a href="#" data-toggle="modal" data-target="#modal{{ member.id }}">
+                        <div class="col-xs-12 col-sm-3 col-lg-2">
+                            <div class="thumbnail row-no-padding text-center">
+                                <div class="member-photo col-xs-6 col-sm-12">
+                                    <img class="img-rounded img-responsive" alt="{{ member.firstname }}" src="{{ asset(member.webpath) | imagine_filter('page_member') }}">
+                                </div>
+                                <div class="member-caption col-xs-6 col-sm-12">
+                                    <h3>{{ member.firstname ~ ' ' ~ member.lastname }}</h3>
+                                    <p>{% if member.role %}{{ member.role.name }}{% endif %}</p>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
                         </div>
-                        <div class="member-caption col-xs-6 col-sm-12">
-                            <h3>{{ member.firstname ~ ' ' ~ member.lastname }}</h3>
-                            <p>{% if member.role %}{{ member.role.name }}{% endif %}</p>
+                    </a>
+                    <div class="modal fade" id="modal{{ member.id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="modalLabel{{ member.id }}">{{ member.firstname ~ ' ' ~ member.lastname }}</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-6">
+                                            <img class="img-rounded img-responsive" alt="{{ member.firstname }}" src="{{ asset(member.webpath) | imagine_filter('page_member_modal') }}">
+                                        </div>
+                                        <div class="col-xs-12 col-md-6">
+                                            <dl>
+                                                {% if member.role %}<dt>{{ 'member_role'|trans }}</dt><dd>{{ member.role.name }}</dd>{% endif %}
+                                                {% if member.phonenumber %}<dt>{{ 'member_phonenumber'|trans }}</dt><dd>{{ member.phonenumber }}</dd>{% endif %}
+                                                {% if member.email %}<dt>{{ 'member_email'|trans }}</dt><dd>{{ member.email }}</dd>{% endif %}
+                                                {% if date(member.birthdate) > date('01-01-1900') %}<dt>{{ 'member_birthdate'|trans }}</dt><dd>{{ member.birthdate|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y") }}</dd>{% endif %}
+                                                {% if member.admissiondate %}<dt>{{ 'member_admissiondate'|trans }}</dt><dd>{{ member.admissiondate|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y") }}</dd>{% endif %}
+                                            </dl>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="clearfix"></div>
                     </div>
-                </div>
                 {% endfor %}
             </div>
         </div>

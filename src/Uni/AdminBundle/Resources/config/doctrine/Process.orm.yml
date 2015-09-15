@@ -22,7 +22,7 @@ Uni\AdminBundle\Entity\Process:
             nullable: true
         rank:
             type: integer
-        published:
+        active:
             type: boolean
             options:
                 default: false

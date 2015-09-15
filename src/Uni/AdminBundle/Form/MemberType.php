@@ -20,23 +20,28 @@ class MemberType extends AbstractType
             ))
             ->add('lastname', null, array(
                 'label' =>  'member_lastname',
+                'required' => false,
             ))
             ->add('email', null, array(
                 'label' =>  'member_email',
+                'required' => false,
             ))
             ->add('phonenumber', null, array(
                 'label' =>  'member_phonenumber',
+                'required' => false,
             ))
             ->add('birthdate', 'birthday', array(
                 'label' =>  'member_birthdate',
+                'required' => false,
             ))
             ->add('admissiondate', 'birthday', array(
                 'label' =>  'member_admissiondate',
+                'required' => false,
             ))
             ->add('active', null, array(
                 'label' =>  'member_active',
                 'required' => false,
-                'attr'  => array( 'labeled' => true, 'class' => 'switch'),
+                'attr'  => array('labeled' => true, 'class' => 'switch'),
             ))
             ->add('path', 'hidden', array(
                 'label' =>  'member_path',
@@ -50,6 +55,7 @@ class MemberType extends AbstractType
             ))
             ->add('role', null, array(
                 'label' =>  'member_role',
+                'required' => false,
                 'choice_label' => 'name',
             ))
         ;

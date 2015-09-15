@@ -53,7 +53,7 @@ class PageController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $frontpage = $em->getRepository('UniAdminBundle:Frontpage')->findOneBy(array('active' => true), array('createdAt' => 'DESC'));
-        $process = $em->getRepository('UniAdminBundle:Process')->findBy(array('published' => true), array('rank' => 'ASC'));
+        $process = $em->getRepository('UniAdminBundle:Process')->findBy(array('active' => true), array('rank' => 'ASC'));
         return $this->render('UniPageBundle:Page:process.html.twig', array(
             'frontpage' => $frontpage,
             'process' => $process,
@@ -164,6 +164,15 @@ class PageController extends Controller
         return $this->render('UniPageBundle:Page:publication.html.twig', array(
             'frontpage' => $frontpage,
             'publications' => $publications,
+        ));
+    }
+
+    public function cameraAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $cameras = $em->getRepository('UniAdminBundle:Camera')->findBy(array('active' => true), array('name' => 'ASC'));
+        return $this->render('UniPageBundle:Page:camera.html.twig', array(
+            'cameras' => $cameras,
         ));
     }
 

@@ -38,17 +38,21 @@
                         </div>
                     </div>
                     <div class="panel-body">
-                        <dl class="dl-horizontal dl-horizontal-sm dl-horizontal-md dl-horizontal-lg">
-                            <dt>{{ 'process_title'|trans }}</dt><dd>{% if entity.title %}{{ entity.title }}{% endif %}</dd>
-                            <dt>{{ 'process_name'|trans }}</dt><dd>{% if entity.name %}{{ entity.name }}{% endif %}</dd>
-                            <dt>{{ 'process_abstract'|trans }}</dt><dd>{% if entity.abstract %}{{ entity.abstract }}{% endif %}</dd>
-                            <dt>{{ 'process_content'|trans }}</dt><dd>{% if entity.content %}{{ entity.content }}{% endif %}</dd>
-                            <dt>{{ 'process_rank'|trans }}</dt><dd>{% if entity.rank %}{{ entity.rank }}{% endif %}</dd>
-                            <dt>{{ 'process_published'|trans }}</dt><dd>{% if entity.published %}{{ 'Si' }}{% else %}{{ 'No' }}{% endif %}</dd>
-                            <dt>{{ 'process_file'|trans }}</dt><dd>{% if entity.file %}{{ entity.file }}{% endif %}</dd>
-                            <dt>{{ 'process_createdAt'|trans }}</dt><dd>{% if entity.createdAt %}{{ entity.createdAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y - HH:mm") }}{% endif %}</dd>
-                            <dt>{{ 'process_updatedAt'|trans }}</dt><dd>{% if entity.updatedAt %}{{ entity.updatedAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y - HH:mm") }}{% endif %}</dd>
-                        </dl>
+                        <div class="col-md-4">
+                            <img class="img-rounded img-responsive" src="{{ asset(entity.webpath) | imagine_filter('admin_process') }}">
+                        </div>
+                        <div class="col-md-8">
+                            <dl class="dl-horizontal dl-horizontal-sm dl-horizontal-md dl-horizontal-lg">
+                                <dt>{{ 'process_title'|trans }}</dt><dd>{% if entity.title %}{{ entity.title }}{% endif %}</dd>
+                                <dt>{{ 'process_name'|trans }}</dt><dd>{% if entity.name %}{{ entity.name }}{% endif %}</dd>
+                                <dt>{{ 'process_abstract'|trans }}</dt><dd>{% if entity.abstract %}{{ entity.abstract|raw }}{% endif %}</dd>
+                                <dt>{{ 'process_content'|trans }}</dt><dd>{% if entity.content %}{{ entity.content|raw }}{% endif %}</dd>
+                                <dt>{{ 'process_rank'|trans }}</dt><dd>{% if entity.rank %}{{ entity.rank }}{% endif %}</dd>
+                                <dt>{{ 'process_active'|trans }}</dt><dd>{% if entity.active %}{{ 'Si' }}{% else %}{{ 'No' }}{% endif %}</dd>
+                                <dt>{{ 'process_createdAt'|trans }}</dt><dd>{% if entity.createdAt %}{{ entity.createdAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y - HH:mm") }}{% endif %}</dd>
+                                <dt>{{ 'process_updatedAt'|trans }}</dt><dd>{% if entity.updatedAt %}{{ entity.updatedAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y - HH:mm") }}{% endif %}</dd>
+                            </dl>
+                        </div>
                     </div>
                 </div>
             </div>
