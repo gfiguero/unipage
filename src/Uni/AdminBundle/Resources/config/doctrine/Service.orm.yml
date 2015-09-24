@@ -11,6 +11,9 @@ Uni\AdminBundle\Entity\Service:
         title:
             type: string
             length: '200'
+        abstract:
+            type: text
+            nullable: true
         content:
             type: text
             nullable: true

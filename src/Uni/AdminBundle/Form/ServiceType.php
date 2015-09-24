@@ -18,6 +18,11 @@ class ServiceType extends AbstractType
             ->add('title', null, array(
                 'label' =>  'service_title',
             ))
+            ->add('abstract', null, array(
+                'label' =>  'service_abstract',
+                'required' => false,
+                'attr'  =>  array( 'class' =>  'tinymce', 'data-theme' => 'advanced' ),
+            ))
             ->add('content', null, array(
                 'label' =>  'service_content',
                 'required' => false,

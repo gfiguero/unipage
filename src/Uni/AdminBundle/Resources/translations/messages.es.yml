@@ -219,6 +219,7 @@ service_show: Ver Servicio
 service_edit: Editar Servicio
 service_delete: Borrar Servicio
 service_title: Título
+service_abstract: Abstract
 service_content: Descripción
 service_rank: Orden
 service_published: Publicado

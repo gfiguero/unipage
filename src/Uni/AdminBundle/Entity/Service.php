@@ -26,6 +26,11 @@ class Service
     private $content;
 
     /**
+     * @var string
+     */
+    private $abstract;
+
+    /**
      * @var integer
      */
     private $rank;
@@ -92,6 +97,29 @@ class Service
     public function getTitle()
     {
         return $this->title;
+    }
+
+    /**
+     * Set abstract
+     *
+     * @param string $abstract
+     * @return Service
+     */
+    public function setAbstract($abstract)
+    {
+        $this->abstract = $abstract;
+
+        return $this;
+    }
+
+    /**
+     * Get abstract
+     *
+     * @return string 
+     */
+    public function getAbstract()
+    {
+        return $this->abstract;
     }
 
     /**
