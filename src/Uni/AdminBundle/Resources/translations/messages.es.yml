@@ -5,6 +5,7 @@ updatedAt: Última Actualización
 deletedAt: Fecha de Borrado
 Deleted records can not be recovered.: Los registros borrados no podrán ser recuperados.
 Are you sure?: ¿Está seguro?
+home: Inicio
 login: Acceso
 logout: Salir
 
@@ -35,8 +36,8 @@ frontpage_mission: Misión
 frontpage_vision: Visión
 frontpage_active: Portada activa
 frontpage_photos: Fotos de portada
-frontpage_photo_add: Agregar foto de portada
-frontpage_photo_delete: Borrar foto de portada
+frontpage_photo_add: Agregar
+frontpage_photo_delete: Borrar
 frontpage_createdAt: Fecha de Registro
 frontpage_updatedAt: Última Actualización
 Frontpage has been created.: La portada ha sido creada.
@@ -176,6 +177,7 @@ History has been deleted.: La historia ha sido borrada.
 # Process
 process: Proceso
 process_index: Proceso
+process_stages: Etapas de proceso
 process_new: Nueva Etapa
 process_show: Ver Etapa
 process_edit: Editar Etapa
@@ -264,3 +266,12 @@ Camera has been created.: La Cámara ha sido creada.
 Camera has been updated.: La Cámara ha sido actualizada.
 Camera has been deleted.: La Cámara ha sido borrada.
 
+# Dashboard
+dashboard: Dashboard
+dashboard_index: Dashboard
+
+# Gallery
+gallery: Galería
+gallery_index: Galería
+gallery_photos: Fotos
+gallery_all: Todas las fotos

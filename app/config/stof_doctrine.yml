@@ -1,5 +1,5 @@
 stof_doctrine_extensions:
-    default_locale: es_ES
+    default_locale: %locale%
 
     # Only used if you activated the Uploadable extension
     uploadable:

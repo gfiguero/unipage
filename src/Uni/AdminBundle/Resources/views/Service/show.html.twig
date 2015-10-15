@@ -44,6 +44,7 @@
                         <div class="col-md-8">
                             <dl class="dl-horizontal dl-horizontal-sm dl-horizontal-md dl-horizontal-lg">
                                 <dt>{{ 'service_title'|trans }}</dt><dd>{% if entity.title %}{{ entity.title }}{% endif %}</dd>
+                                <dt>{{ 'service_abstract'|trans }}</dt><dd>{% if entity.abstract %}{{ entity.abstract|raw }}{% endif %}</dd>
                                 <dt>{{ 'service_content'|trans }}</dt><dd>{% if entity.content %}{{ entity.content|raw }}{% endif %}</dd>
                                 <dt>{{ 'service_rank'|trans }}</dt><dd>{% if entity.rank %}{{ entity.rank }}{% endif %}</dd>
                                 <dt>{{ 'service_published'|trans }}</dt><dd>{% if entity.published %}{{ 'Si' }}{% else %}{{ 'No' }}{% endif %}</dd>

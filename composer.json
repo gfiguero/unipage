@@ -35,7 +35,9 @@
         "stfalcon/tinymce-bundle": "dev-master",
         "kartik-v/bootstrap-fileinput": "@dev",
         "symfony/security": "~2.7",
-        "symfony/yaml": "^2.7"
+        "symfony/yaml": "^2.7",
+        "knplabs/knp-menu-bundle": "~2",
+        "antimattr/google-bundle": "~2.0@stable"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"
@@ -45,7 +47,6 @@
             "SymfonyStandard\\Composer::hookRootPackageInstall"
         ],
         "post-install-cmd": [
-            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
@@ -54,7 +55,6 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget"
         ],
         "post-update-cmd": [
-            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",

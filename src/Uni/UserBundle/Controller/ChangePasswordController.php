@@ -21,17 +21,18 @@ class ChangePasswordController extends BaseController
         }
 
         $form = $this->container->get('fos_user.change_password.form');
+        $form->add('actions','form_actions',['buttons'=>['submit'=>['type'=>'submit','options'=>['label'=>'user_change_password','attr'=>array('icon'=>'save','class'=>'btn-primary')]]]]);
         $formHandler = $this->container->get('fos_user.change_password.form.handler');
 
         $process = $formHandler->process($user);
         if ($process) {
-            $this->setFlash('fos_user_success', 'change_password.flash.success');
+            $this->setFlash('success', 'User password has been updated.');
 
             return new RedirectResponse($this->getRedirectionUrl($user));
         }
 
         return $this->container->get('templating')->renderResponse(
-            'FOSUserBundle:ChangePassword:changePassword.html.'.$this->container->getParameter('fos_user.template.engine'),
+            'UniUserBundle:ChangePassword:changePassword.html.'.$this->container->getParameter('fos_user.template.engine'),
             array('form' => $form->createView())
         );
     }
@@ -45,7 +46,7 @@ class ChangePasswordController extends BaseController
      */
     protected function getRedirectionUrl(UserInterface $user)
     {
-        return $this->container->get('router')->generate('fos_user_profile_show');
+        return $this->container->get('router')->generate('user_profile_show');
     }
 
     /**

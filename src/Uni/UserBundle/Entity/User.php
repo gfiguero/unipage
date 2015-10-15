@@ -40,6 +40,11 @@ class User extends BaseUser
      */
     private $deletedAt;
 
+    public function __construct()
+    {
+        parent::__construct();
+        // your own logic
+    }
 
     /**
      * Get id

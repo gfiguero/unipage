@@ -176,4 +176,60 @@ class PageController extends Controller
         ));
     }
 
+    public function galleryAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $noticecategory = $request->query->getInt('noticecategory');
+        $reference = null;
+        $frontpage = $em->getRepository('UniAdminBundle:Frontpage')->findOneBy(array('active' => true), array('createdAt' => 'DESC'));
+        if($noticecategory) {
+            $photos = $em->getRepository('UniAdminBundle:NoticePhoto')
+                ->createQueryBuilder('p')
+                ->leftJoin('p.notice', 'pn')
+                ->leftJoin('pn.category', 'pnc')
+                ->where('pn.published = TRUE')
+                ->andWhere('pnc.id = :noticecategory')
+                ->orderBy('pn.createdAt', 'DESC')
+                ->setParameter('noticecategory', $noticecategory)
+                ->getQuery()
+                ->getResult();
+            $reference = $em->getReference("UniAdminBundle:NoticeCategory", $noticecategory);
+        } else {
+            $photos = $em->getRepository('UniAdminBundle:NoticePhoto')
+                ->createQueryBuilder('p')
+                ->leftJoin('p.notice', 'pn')
+                ->leftJoin('pn.category', 'pnc')
+                ->where('pn.published = TRUE')
+                ->orderBy('pn.createdAt', 'DESC')
+                ->getQuery()
+                ->getResult();
+        }
+        $paginator = $this->get('knp_paginator');
+        $pagination = $paginator->paginate($photos, $request->query->getInt('page', 1), 24 );
+        $data = array();
+        $categoryForm = $this->get('form.factory')->createNamedBuilder('', 'form', $data, array('csrf_protection' => false ))
+            ->setMethod('GET')
+            ->add('noticecategory', 'entity', array(
+                'label' => 'gallerycategory',
+                'class' => 'UniAdminBundle:NoticeCategory',
+                'choice_label' => 'name',
+                'placeholder' => 'gallery_all',
+                'required' => false,
+                'data' => $reference,
+            ))
+            ->add('noticecategory_submit', 'button', array(
+                'label' => 'noticecategory_submit',
+                'attr' => array(
+                    'icon' => 'search',
+                    'class' => 'btn-default',
+                )
+            ))
+            ->getForm();
+        return $this->render('UniPageBundle:Page:gallery.html.twig', array(
+            'frontpage' => $frontpage,
+            'photos' => $pagination,
+            'categoryForm' => $categoryForm->createView(),
+        ));
+    }
+
 }

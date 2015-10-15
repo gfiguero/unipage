@@ -10,7 +10,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="uniSign">
-    <title>uniPage</title>
+    <title>{% block title %}{% endblock %}</title>
+    {% block meta %}{% endblock %}
     <link href="{{ asset('css/uniPage.css') }}" type="text/css" rel="stylesheet" />
     <link href="{{ asset('css/uniPage-adjustment.css') }}" type="text/css" rel="stylesheet" />
     <link href="{{ asset('css/jquery-ui.min.css') }}" type="text/css" rel="stylesheet" />
@@ -43,5 +44,7 @@
     {% block javascript %}{% endblock %}
 
 </body>
+
+{% include "GoogleBundle:Analytics:async_universal.html.twig" %}
 
 </html>

@@ -47,6 +47,18 @@ liip_imagine:
             filters:
                 upscale: { min: [1280, 720] }
                 thumbnail: { size: [1280, 720], mode: outbound }
+        page_gallery_preview:
+            quality: 75
+            default_image: /uploads/notice/default.png
+            filters:
+                upscale: { min: [400, 225] }
+                thumbnail: { size: [400, 225], mode: outbound }
+        page_gallery_modal:
+            quality: 75
+            default_image: /uploads/notice/default.png
+            filters:
+                upscale: { min: [1280, 720] }
+                thumbnail: { size: [1280, 720], mode: outbound }
         page_publication:
             quality: 75
             default_image: /uploads/publication/default.png
@@ -62,8 +74,8 @@ liip_imagine:
         admin_logo:
             quality: 75
             filters:
-                upscale: { min: [200, 40] }
-                thumbnail: { size: [200, 40], mode: outbound }
+                upscale: { min: [196, 40] }
+                thumbnail: { size: [196, 40], mode: outbound }
         login_logo:
             quality: 75
             filters:

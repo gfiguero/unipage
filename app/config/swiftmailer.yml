@@ -1,5 +1,9 @@
 # Swiftmailer Configuration
 swiftmailer:
+#    transport: gmail
+#    username:  gps.accion@gmail.com
+#    password:  lyoxqfzizobvkecv
+
     transport: "%mailer_transport%"
     host:      "%mailer_host%"
     username:  "%mailer_user%"

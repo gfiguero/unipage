@@ -8,31 +8,34 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use Symfony\Component\Security\Core\Exception\AccountStatusException;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use FOS\UserBundle\Model\UserInterface;
-use FOS\UserBundle\Controller\RegistrationController as BaseController;
 
-class RegistrationController extends BaseController
+class RegistrationController extends Controller
 {
     public function registerAction()
     {
         $form = $this->container->get('fos_user.registration.form');
+        $form->add('actions','form_actions',['buttons'=>['submit'=>['type'=>'submit','options'=>['label'=>'save','attr'=>array('icon'=>'save','class'=>'btn-primary')]]]]);
+
         $formHandler = $this->container->get('fos_user.registration.form.handler');
         $confirmationEnabled = $this->container->getParameter('fos_user.registration.confirmation.enabled');
 
         $process = $formHandler->process($confirmationEnabled);
         if ($process) {
+/*
             $user = $form->getData();
 
             $authUser = false;
             if ($confirmationEnabled) {
-                $this->container->get('session')->set('fos_user_send_confirmation_email/email', $user->getEmail());
-                $route = 'fos_user_registration_check_email';
+                $this->container->get('session')->set('user_send_confirmation_email/email', $user->getEmail());
+                $route = 'user_registration_check_email';
             } else {
                 $authUser = true;
-                $route = 'fos_user_registration_confirmed';
+                $route = 'user_registration_confirmed';
             }
 
-            $this->setFlash('fos_user_success', 'registration.flash.user_created');
+            $this->setFlash('success', 'User has been created.');
             $url = $this->container->get('router')->generate($route);
             $response = new RedirectResponse($url);
 
@@ -41,9 +44,14 @@ class RegistrationController extends BaseController
             }
 
             return $response;
+*/
+
+            $this->setFlash('success', 'User has been created.');
+            return $this->redirectToRoute('user');
+
         }
 
-        return $this->container->get('templating')->renderResponse('FOSUserBundle:Registration:register.html.'.$this->getEngine(), array(
+        return $this->container->get('templating')->renderResponse('UniUserBundle:Registration:register.html.'.$this->getEngine(), array(
             'form' => $form->createView(),
         ));
     }
@@ -82,7 +90,7 @@ class RegistrationController extends BaseController
         $user->setLastLogin(new \DateTime());
 
         $this->container->get('fos_user.user_manager')->updateUser($user);
-        $response = new RedirectResponse($this->container->get('router')->generate('fos_user_registration_confirmed'));
+        $response = new RedirectResponse($this->container->get('router')->generate('user_registration_confirmed'));
         $this->authenticateUser($user, $response);
 
         return $response;
@@ -98,7 +106,7 @@ class RegistrationController extends BaseController
             throw new AccessDeniedException('This user does not have access to this section.');
         }
 
-        return $this->container->get('templating')->renderResponse('FOSUserBundle:Registration:confirmed.html.'.$this->getEngine(), array(
+        return $this->container->get('templating')->renderResponse('UniUserBundle:Registration:confirmed.html.'.$this->getEngine(), array(
             'user' => $user,
         ));
     }

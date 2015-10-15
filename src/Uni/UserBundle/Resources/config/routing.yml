@@ -1,7 +1,3 @@
-uni_user_user:
-    resource: "@UniUserBundle/Resources/config/routing/user.yml"
-    prefix:   /user
-
 uni_user:
     resource: "@UniUserBundle/Resources/config/routing/user.yml"
     prefix:   /

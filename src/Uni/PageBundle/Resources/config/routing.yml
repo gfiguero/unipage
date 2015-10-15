@@ -38,3 +38,7 @@ uni_page_publication:
     path:   /publication
     defaults: { _controller: UniPageBundle:Page:publication }
 
+uni_page_gallery:
+    path:   /gallery
+    defaults: { _controller: UniPageBundle:Page:gallery }
+

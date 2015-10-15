@@ -52,3 +52,5 @@
         </div>
     </section>
 {% endblock %}
+
+{% block title %}{% if frontpage %}{{ frontpage.title }}{% else %}Título{% endif %}{% endblock %}

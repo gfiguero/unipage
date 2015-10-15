@@ -1,31 +1,16 @@
-user:
-    path:     /
-    defaults: { _controller: "UniUserBundle:User:index" }
-    methods: [GET]
+user_manage:
+    resource: "@UniUserBundle/Resources/config/routing/manage.yml"
+    prefix: /manage
 
-user_show:
-    path:     /{id}/show
-    defaults: { _controller: "UniUserBundle:User:show" }
+user_profile:
+    resource: "@UniUserBundle/Resources/config/routing/profile.yml"
+    prefix: /profile
 
-user_new:
-    path:     /new
-    defaults: { _controller: "UniUserBundle:User:new" }
+user_change_password:
+    resource: "@UniUserBundle/Resources/config/routing/change_password.yml"
+    prefix: /profile
 
-user_create:
-    path:     /create
-    defaults: { _controller: "UniUserBundle:User:create" }
-    methods: [POST]
+user_register:
+    resource: "@UniUserBundle/Resources/config/routing/registration.yml"
+    prefix: /register
 
-user_edit:
-    path:     /{id}/edit
-    defaults: { _controller: "UniUserBundle:User:edit" }
-
-user_update:
-    path:     /{id}/update
-    defaults: { _controller: "UniUserBundle:User:update" }
-    methods: [POST|PUT]
-
-user_delete:
-    path:     /{id}/delete
-    defaults: { _controller: "UniUserBundle:User:delete" }
-    methods: [POST|DELETE]

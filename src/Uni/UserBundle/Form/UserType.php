@@ -21,18 +21,26 @@ class UserType extends AbstractType
             ->add('lastname', null, array(
                 'label' =>  'user_lastname',
             ))
-            ->add('username', null, array(
-                'label' =>  'user_username',
-            ))
-            ->add('email', null, array(
-                'label' =>  'user_email',
-            ))
-            ->add('enabled', null, array(
-                'label' =>  'user_enabled',
-                'attr' => array(
-                    'labeled' => true,
+            ->add('roles', 'choice', array(
+                'label' => 'user_access',
+                'choices' => array(
+                    'ROLE_FRONTPAGE' => 'frontpage_index',
+                    'ROLE_SERVICE' => 'service_index',
+                    'ROLE_PROCESS' => 'process_index',
+                    'ROLE_MEMBER' => 'member_index',
+                    'ROLE_NOTICE' => 'notice_index',
+                    'ROLE_PUBLICATION' => 'publication_index',
+                    'ROLE_REPORT' => 'report_index',
+                    'ROLE_ACCESS' => 'user_index',
                 ),
+                'expanded' => true,
+                'multiple' => true,
             ))
+//            ->add('enabled', null, array(
+//                'label' =>  'user_enabled',
+//                'required' => false,
+//                'attr' => array( 'labeled' => true, 'class' => 'switch'),
+//            ))
         ;
     }
     

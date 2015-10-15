@@ -19,7 +19,7 @@ class ResettingController extends BaseController
      */
     public function requestAction()
     {
-        return $this->container->get('templating')->renderResponse('FOSUserBundle:Resetting:request.html.'.$this->getEngine());
+        return $this->container->get('templating')->renderResponse('UniUserBundle:Resetting:request.html.'.$this->getEngine());
     }
 
     /**
@@ -33,11 +33,11 @@ class ResettingController extends BaseController
         $user = $this->container->get('fos_user.user_manager')->findUserByUsernameOrEmail($username);
 
         if (null === $user) {
-            return $this->container->get('templating')->renderResponse('FOSUserBundle:Resetting:request.html.'.$this->getEngine(), array('invalid_username' => $username));
+            return $this->container->get('templating')->renderResponse('UniUserBundle:Resetting:request.html.'.$this->getEngine(), array('invalid_username' => $username));
         }
 
         if ($user->isPasswordRequestNonExpired($this->container->getParameter('fos_user.resetting.token_ttl'))) {
-            return $this->container->get('templating')->renderResponse('FOSUserBundle:Resetting:passwordAlreadyRequested.html.'.$this->getEngine());
+            return $this->container->get('templating')->renderResponse('UniUserBundle:Resetting:passwordAlreadyRequested.html.'.$this->getEngine());
         }
 
         if (null === $user->getConfirmationToken()) {
@@ -51,7 +51,7 @@ class ResettingController extends BaseController
         $user->setPasswordRequestedAt(new \DateTime());
         $this->container->get('fos_user.user_manager')->updateUser($user);
 
-        return new RedirectResponse($this->container->get('router')->generate('fos_user_resetting_check_email'));
+        return new RedirectResponse($this->container->get('router')->generate('user_resetting_check_email'));
     }
 
     /**
@@ -65,10 +65,10 @@ class ResettingController extends BaseController
 
         if (empty($email)) {
             // the user does not come from the sendEmail action
-            return new RedirectResponse($this->container->get('router')->generate('fos_user_resetting_request'));
+            return new RedirectResponse($this->container->get('router')->generate('user_resetting_request'));
         }
 
-        return $this->container->get('templating')->renderResponse('FOSUserBundle:Resetting:checkEmail.html.'.$this->getEngine(), array(
+        return $this->container->get('templating')->renderResponse('UniUserBundle:Resetting:checkEmail.html.'.$this->getEngine(), array(
             'email' => $email,
         ));
     }
@@ -93,14 +93,14 @@ class ResettingController extends BaseController
         $process = $formHandler->process($user);
 
         if ($process) {
-            $this->setFlash('fos_user_success', 'resetting.flash.success');
+            $this->setFlash('success', 'User password has been reseted.');
             $response = new RedirectResponse($this->getRedirectionUrl($user));
             $this->authenticateUser($user, $response);
 
             return $response;
         }
 
-        return $this->container->get('templating')->renderResponse('FOSUserBundle:Resetting:reset.html.'.$this->getEngine(), array(
+        return $this->container->get('templating')->renderResponse('UniUserBundle:Resetting:reset.html.'.$this->getEngine(), array(
             'token' => $token,
             'form' => $form->createView(),
         ));
@@ -134,7 +134,7 @@ class ResettingController extends BaseController
      */
     protected function getRedirectionUrl(UserInterface $user)
     {
-        return $this->container->get('router')->generate('fos_user_profile_show');
+        return $this->container->get('router')->generate('user_profile_show');
     }
 
     /**
