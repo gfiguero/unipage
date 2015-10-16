@@ -1,7 +1,9 @@
 liip_imagine:
     resolvers:
         default:
-            web_path: ~
+            web_path:
+                web_root: %webpath%
+                cache_prefix: media/cache
     filter_sets:
         cache: ~
 # uniPage
