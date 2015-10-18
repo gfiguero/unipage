@@ -250,6 +250,24 @@ Report has been created.: El reporte ha sido creado.
 Report has been updated.: El reporte ha sido actualizado.
 Report has been deleted.: El reporte ha sido borrado.
 
+# Document
+document: Documentos
+document_index: Documentos
+document_new: Nuevo Documento
+document_show: Ver Documento
+document_edit: Editar Documento
+document_delete: Borrar Documento
+document_title: Título
+document_content: Contenido
+document_published: Publicado
+document_file: Archivo
+document_download: Descargar
+document_createdAt: Fecha de Registro
+document_updatedAt: Última Actualización
+Document has been created.: El documento ha sido creado.
+Document has been updated.: El documento ha sido actualizado.
+Document has been deleted.: El documento ha sido borrado.
+
 # Camera
 camera: Cámaras
 camera_index: Cámaras

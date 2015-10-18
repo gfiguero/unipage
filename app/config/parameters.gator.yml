@@ -12,5 +12,5 @@ parameters:
     secret: 71045a541db89e443a47199d2a38746dd5ccaecd
     locale: es
     webpath: %kernel.root_dir%/../web
-    node: %kernel.root_dir%/../node/bin/node
-    node_modules: %kernel.root_dir%/../node/lib/node_modules
+    node: %kernel.root_dir%/../../../node/bin/node
+    node_modules: %kernel.root_dir%/../../../node/lib/node_modules

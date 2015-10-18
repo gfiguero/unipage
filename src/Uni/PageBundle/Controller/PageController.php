@@ -147,6 +147,32 @@ class PageController extends Controller
         ));
     }
 
+    public function documentAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $frontpage = $em->getRepository('UniAdminBundle:Frontpage')->findOneBy(array('active' => true), array('createdAt' => 'DESC'));
+        $documents = $em->getRepository('UniAdminBundle:Document')->findBy(array('published' => true), array('createdAt' => 'DESC'));
+        $paginator = $this->get('knp_paginator');
+        $pagination = $paginator->paginate($documents, $request->query->getInt('page', 1), 12);
+        return $this->render('UniPageBundle:Page:document.html.twig', array(
+            'frontpage' => $frontpage,
+            'documents' => $pagination,
+        ));
+    }
+
+    public function documentshowAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $frontpage = $em->getRepository('UniAdminBundle:Frontpage')->findOneBy(array('active' => true), array('createdAt' => 'DESC'));
+        $documents = $em->getRepository('UniAdminBundle:Document')->findBy(array('published' => true), array('createdAt' => 'DESC'), 10);
+        $document = $em->getRepository('UniAdminBundle:Document')->find($id);
+        return $this->render('UniPageBundle:Page:documentshow.html.twig', array(
+            'frontpage' => $frontpage,
+            'documents' => $documents,
+            'document' => $document,
+        ));
+    }
+
     public function roleAction()
     {
         $em = $this->getDoctrine()->getManager();

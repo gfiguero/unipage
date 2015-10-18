@@ -43,6 +43,9 @@ class Builder extends ContainerAware
         if(in_array('ROLE_REPORT', $roles) or in_array('ROLE_ADMIN', $roles)) {
             $menu->addChild('report_index', array('route' => 'report'))->setAttribute('icon', 'flag fa-fw');
         }
+        if(in_array('ROLE_DOCUMENT', $roles) or in_array('ROLE_ADMIN', $roles)) {
+            $menu->addChild('document_index', array('route' => 'document'))->setAttribute('icon', 'check fa-fw');
+        }
 //        $menu->addChild('product_control')->setAttribute('icon', 'cube fa-fw');
 //        $menu['product_control']->setChildrenAttribute('class', 'nav nav-second-level collapse');
 //        $menu['product_control']->addChild('product_index', array('route' => 'product'));

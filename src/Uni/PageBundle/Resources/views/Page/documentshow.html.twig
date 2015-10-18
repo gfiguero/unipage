@@ -1,0 +1,52 @@
+{% extends ':Page:base.html.twig' %}
+
+{% use 'UniPageBundle:Page:frontpage.html.twig' %}{% block stylesheet %}{{ parent() }}{% endblock %}
+
+{% use 'UniPageBundle:Page:footer.html.twig' %}{% block footer %}{{ parent() }}{% endblock %}
+
+{% block header %}
+    <header class="intro-header header-image">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <h1>{{ "document_index"|trans }}</h1>
+                        <hr class="small">
+                        <span class="subheading">{% if frontpage %}{{ frontpage.title }}{% endif %}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+{% endblock %}
+
+{% block javascript %}{% endblock %}
+
+{% block body -%}
+    <section id="documentshow">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <h3 class="featurette-heading">{{ document.title }}</h3>
+                    <h6 class="text-muted">
+                        Publicado: {{ document.createdAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y - HH:mm") }},
+                        Actualizado: {{ document.updatedAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y - HH:mm") }}
+                    </h6>
+                    {% if 'default' not in document.webpath %}<a class="btn btn-default btn-lg" href="{{ asset(document.webpath) }}" target="_blank">{{ icon('download fa-fw fa-lg') }}Descargar documento</a>{% endif %}
+                    <p>{{ document.content | raw }}</p>
+                </div>
+                <div class="col-md-4">
+                    <h3 class="featurette-heading">Otros documentos</h3>
+                    <div class="list-group">
+                        {% for odocument in documents %}
+                        {#  #}
+                            <a href="{{ path('uni_page_document_show', { 'id': odocument.id }) }}" class="document-title list-group-item {% if odocument.id == document.id %}active{% endif %}">{{ odocument.title }}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block title %}{% if frontpage %}{{ frontpage.title }}{% else %}Título{% endif %}{% endblock %}

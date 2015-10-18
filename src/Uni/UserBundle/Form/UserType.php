@@ -31,6 +31,7 @@ class UserType extends AbstractType
                     'ROLE_NOTICE' => 'notice_index',
                     'ROLE_PUBLICATION' => 'publication_index',
                     'ROLE_REPORT' => 'report_index',
+                    'ROLE_DOCUMENT' => 'document_index',
                     'ROLE_ACCESS' => 'user_index',
                 ),
                 'expanded' => true,

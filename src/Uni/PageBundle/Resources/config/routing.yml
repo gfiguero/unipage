@@ -34,6 +34,14 @@ uni_page_report_show:
     path:   /{id}/reportshow
     defaults: { _controller: UniPageBundle:Page:reportshow }
 
+uni_page_document:
+    path:   /document
+    defaults: { _controller: UniPageBundle:Page:document }
+
+uni_page_document_show:
+    path:   /{id}/documentshow
+    defaults: { _controller: UniPageBundle:Page:documentshow }
+
 uni_page_publication:
     path:   /publication
     defaults: { _controller: UniPageBundle:Page:publication }
