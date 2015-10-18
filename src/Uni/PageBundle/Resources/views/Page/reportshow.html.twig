@@ -12,7 +12,7 @@
                     <div class="site-heading">
                         <h1>{{ "report_index"|trans }}</h1>
                         <hr class="small">
-                        <span class="subheading">{{ frontpage.title }}</span>
+                        <span class="subheading">{% if frontpage %}{{ frontpage.title }}{% endif %}</span>
                     </div>
                 </div>
             </div>
@@ -48,3 +48,5 @@
         </div>
     </section>
 {% endblock %}
+
+{% block title %}{% if frontpage %}{{ frontpage.title }}{% else %}Título{% endif %}{% endblock %}
