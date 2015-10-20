@@ -9,6 +9,7 @@
 /composer.phar
 /vendor/
 /web/bundles/
+/web/fonts/*
 /web/js/
 /web/css/
 /web/uploads/*

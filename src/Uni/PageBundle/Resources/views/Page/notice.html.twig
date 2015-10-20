@@ -34,6 +34,8 @@
                     <a href="{{ path('uni_page_notice_show', { 'id': notice.id }) }}">
                     <div class="col-md-4">
                         <div class="notice-preview">
+                            {% set photo = notice.photos|first %}
+                            {% if photo %}<div class="notice-photo-preview"><img class="img-responsive" alt="{{ notice.title }}" src={{ asset(photo.webpath) | imagine_filter('page_notice_preview') }}></div>{% endif %}
                             <div class="notice-title">{{ notice.title }}</div>
                             <div class="notice-createdat">{{ notice.createdAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y - HH:mm") }}</div>
                             <div class="notice-content">{{ notice.content | striptags | slice(0, 700) | raw }}</div>
