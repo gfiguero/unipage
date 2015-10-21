@@ -33,21 +33,21 @@
 
 {% block body -%}
 
-    {% block service %}{{ parent() }}{% endblock %}
+    {% block highlight %}{{ parent() }}{% endblock %}
 
     {% block missionvision %}{{ parent() }}{% endblock %}
 
-    {% block highlight %}{{ parent() }}{% endblock %}
+    {% block service %}{{ parent() }}{% endblock %}
 
     {% block contact %}{{ parent() }}{% endblock %}
 
 {% endblock %}
 
 {% block footer %}
-    <footer class="bg-gray-lighter">
-        <div class="container">
+    <footer class="footer contact-image">
+        <div class="container-fluid">
             <div class="row">
-                <p class="text-muted">{% if frontpage %}{{ frontpage.title }}{% endif %} - 2015</p>
+                <p>{% if frontpage %}{{ frontpage.title }}{% endif %} - 2015</p>
             </div>
         </div>
     </footer>

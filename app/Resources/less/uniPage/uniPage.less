@@ -95,4 +95,17 @@ img::-moz-selection {
     background: transparent;
 }
 
-
+.footer {
+    background-repeat:no-repeat;
+    background-attachment: scroll;
+    background-position: center bottom;
+    background-size: 1366px 320px;
+    background-clip: border-box;
+    @media only screen and (min-width: 768px) {
+        background-attachment: fixed;
+        background-size: 1920px 600px;
+    }
+    p {
+        background-color: rgba(255, 255, 255, 0.6);
+    }
+}

@@ -83,6 +83,10 @@ MemberRole has been created.: El cargo ha sido creado.
 MemberRole has been updated.: El cargo ha sido actualizado.
 MemberRole has been deleted.: El cargo ha sido borrado.
 
+# Highlight
+highlight: Noticia Destacada
+highlight_index: Noticias Destacadas
+
 # Notice
 notice: Noticia
 notice_control: Control de Noticias

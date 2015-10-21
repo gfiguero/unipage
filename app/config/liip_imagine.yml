@@ -13,6 +13,12 @@ liip_imagine:
             filters:
                 upscale: { min: [1920, 450] }
                 thumbnail: { size: [1920, 450], mode: outbound }
+        page_contact:
+            quality: 75
+            default_image: /uploads/frontpage/default.png
+            filters:
+                upscale: { min: [1920, 600] }
+                thumbnail: { size: [1920, 600], mode: outbound }
         page_service:
             quality: 75
             default_image: /uploads/service/default.png

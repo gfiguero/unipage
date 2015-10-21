@@ -1,9 +1,13 @@
 {% block stylesheet %}
     {% if frontpage is not empty and frontpage.photos is not empty %}
-        {% set photo = random(frontpage.photos) %}
-        {% set webpath = photo.webpath %}
+        {% set header = random(frontpage.photos) %}
+        {% set contact = random(frontpage.photos) %}
+        {% set headerimage = header.webpath %}
+        {% set contactimage = contact.webpath %}
     {% else %}
-        {% set webpath = 'default' %}
+        {% set headerimage = 'default' %}
+        {% set contactimage = 'default' %}
     {% endif %}
-    <style type="text/css">.header-image { background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url('{{ asset(webpath) | imagine_filter('page_frontpage') }}'); }</style>
+    <style type="text/css">.header-image { background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url('{{ asset(headerimage) | imagine_filter('page_frontpage') }}'); }</style>
+    <style type="text/css">.contact-image { background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url('{{ asset(contactimage) | imagine_filter('page_contact') }}'); }</style>
 {% endblock %}
