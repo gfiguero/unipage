@@ -66,7 +66,7 @@ liip_imagine:
             default_image: /uploads/notice/default.png
             filters:
                 upscale: { min: [1280, 720] }
-                thumbnail: { size: [1280, 720], mode: outbound }
+                thumbnail: { size: [1280, 720], mode: inset }
         page_gallery_preview:
             quality: 75
             default_image: /uploads/notice/default.png
@@ -78,7 +78,7 @@ liip_imagine:
             default_image: /uploads/notice/default.png
             filters:
                 upscale: { min: [1280, 720] }
-                thumbnail: { size: [1280, 720], mode: outbound }
+                thumbnail: { size: [1280, 720], mode: inset }
         page_publication:
             quality: 75
             default_image: /uploads/publication/default.png

@@ -36,7 +36,7 @@
                     <a href="#" data-toggle="modal" data-target="#modal{{ photo.id }}">
                         <div class="col-md-3 col-sm-4 col-xs-6">
                             <div class="gallery-preview">
-                                <img class="img-responsive" src={{ asset(photo.webpath) | imagine_filter('page_gallery_preview') }}>
+                                <img class="img-responsive center-block" src={{ asset(photo.webpath) | imagine_filter('page_gallery_preview') }}>
                             </div>
                         </div>
                     </a>
@@ -44,7 +44,7 @@
                         <div class="modal-dialog modal-xlg" role="document">
                             <div class="modal-content">
                                 <div class="modal-body modal-body-gallery">
-                                    <img class="img-responsive" src="{{ asset(photo.webpath) | imagine_filter('page_gallery_modal') }}">
+                                    <img class="img-responsive center-block" src="{{ asset(photo.webpath) | imagine_filter('page_gallery_modal') }}">
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>

@@ -34,22 +34,25 @@
                     </h6>
                     {% if notice.photos is not empty %}
                     <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                    <!-- Indicators -->
+
+                        <!-- Indicators -->
+                        {% if notice.photos|length > 1 %}
                         <ol class="carousel-indicators">
                             {% for photo in notice.photos %}
                                 <li data-target="#myCarousel" data-slide-to="{{ loop.index0 }}" {% if loop.first %}class="active"{% endif %}></li>
                             {% endfor %}
                         </ol>
+                        {% endif %}
 
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner" role="listbox">
                             {% for photo in notice.photos %}
-                                <div class="item {% if loop.first %}active{% endif %}"><img class="img-responsive" alt="{{ notice.title }}" src={{ asset(photo.webpath) | imagine_filter('page_notice') }}></div>
+                                <div class="item {% if loop.first %}active{% endif %}"><img class="img-responsive center-block" alt="{{ notice.title }}" src={{ asset(photo.webpath) | imagine_filter('page_notice') }}></div>
                             {% endfor %}
                         </div>
 
-                        {% if notice.photos|length > 1 %}
                         <!-- Left and right controls -->
+                        {% if notice.photos|length > 1 %}
                         <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
                             {{ icon('chevron-left') }}
                             <span class="sr-only">Anterior</span>
