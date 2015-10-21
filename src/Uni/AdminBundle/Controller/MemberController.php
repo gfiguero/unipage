@@ -25,7 +25,7 @@ class MemberController extends Controller
         $direction = $request->query->get('direction');
         $em = $this->getDoctrine()->getManager();
         if($sort) $entities = $em->getRepository('UniAdminBundle:Member')->findBy(array(), array($sort => $direction));
-        else $entities = $em->getRepository('UniAdminBundle:Member')->findAll();
+        else $entities = $em->getRepository('UniAdminBundle:Member')->findBy(array(), array('firstname' => 'ASC'));
         $paginator = $this->get('knp_paginator');
         $pagination = $paginator->paginate($entities, $request->query->getInt('page', 1), 10);
 

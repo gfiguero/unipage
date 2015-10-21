@@ -25,7 +25,7 @@ class PublicationController extends Controller
         $direction = $request->query->get('direction');
         $em = $this->getDoctrine()->getManager();
         if($sort) $entities = $em->getRepository('UniAdminBundle:Publication')->findBy(array(), array($sort => $direction));
-        else $entities = $em->getRepository('UniAdminBundle:Publication')->findAll();
+        else $entities = $em->getRepository('UniAdminBundle:Publication')->findBy(array(), array('rank' => 'ASC'));
         $paginator = $this->get('knp_paginator');
         $pagination = $paginator->paginate($entities, $request->query->getInt('page', 1), 10);
 

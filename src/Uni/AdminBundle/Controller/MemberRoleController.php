@@ -25,7 +25,7 @@ class MemberRoleController extends Controller
         $direction = $request->query->get('direction');
         $em = $this->getDoctrine()->getManager();
         if($sort) $entities = $em->getRepository('UniAdminBundle:MemberRole')->findBy(array(), array($sort => $direction));
-        else $entities = $em->getRepository('UniAdminBundle:MemberRole')->findAll();
+        else $entities = $em->getRepository('UniAdminBundle:MemberRole')->findBy(array(), array('rank' => 'ASC'));
         $paginator = $this->get('knp_paginator');
         $pagination = $paginator->paginate($entities, $request->query->getInt('page', 1), 10);
 

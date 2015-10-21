@@ -18,6 +18,10 @@ Uni\AdminBundle\Entity\Notice:
             type: boolean
             options:
                 default: false
+        highlight:
+            type: boolean
+            options:
+                default: false
         createdAt:
             type: datetime
             gedmo:

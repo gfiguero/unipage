@@ -84,7 +84,6 @@ MemberRole has been updated.: El cargo ha sido actualizado.
 MemberRole has been deleted.: El cargo ha sido borrado.
 
 # Highlight
-highlight: Noticia Destacada
 highlight_index: Noticias Destacadas
 
 # Notice
@@ -98,6 +97,7 @@ notice_delete: Borrar Noticia
 notice_title: Título
 notice_content: Contenido
 notice_published: Publicada
+notice_highlight: Destacada
 notice_photos: Fotos
 notice_photo_add: Agregar Foto
 notice_photo_delete: Borrar Foto

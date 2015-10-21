@@ -25,7 +25,7 @@ class DocumentController extends Controller
         $direction = $request->query->get('direction');
         $em = $this->getDoctrine()->getManager();
         if($sort) $entities = $em->getRepository('UniAdminBundle:Document')->findBy(array(), array($sort => $direction));
-        else $entities = $em->getRepository('UniAdminBundle:Document')->findAll();
+        else $entities = $em->getRepository('UniAdminBundle:Document')->findBy(array(), array('createdAt' => 'DESC'));
         $paginator = $this->get('knp_paginator');
         $pagination = $paginator->paginate($entities, $request->query->getInt('page', 1), 10);
 

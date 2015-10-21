@@ -30,6 +30,11 @@ class Notice
     private $published;
 
     /**
+     * @var boolean
+     */
+    private $highlight;
+
+    /**
      * @var \DateTime
      */
     private $createdAt;
@@ -140,6 +145,29 @@ class Notice
     public function getPublished()
     {
         return $this->published;
+    }
+
+    /**
+     * Set highlight
+     *
+     * @param boolean $highlight
+     * @return Notice
+     */
+    public function setHighlight($highlight)
+    {
+        $this->highlight = $highlight;
+
+        return $this;
+    }
+
+    /**
+     * Get highlight
+     *
+     * @return boolean 
+     */
+    public function getHighlight()
+    {
+        return $this->highlight;
     }
 
     /**

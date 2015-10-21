@@ -28,6 +28,11 @@ class NoticeType extends AbstractType
                 'required' => false,
                 'attr'  => array( 'labeled' => true, 'class' => 'switch'),
             ))
+            ->add('highlight', null, array(
+                'label' =>  'notice_highlight',
+                'required' => false,
+                'attr'  => array( 'labeled' => true, 'class' => 'switch'),
+            ))
             ->add('category', null, array(
                 'label' =>  'notice_category',
                 'choice_label' => 'name',
