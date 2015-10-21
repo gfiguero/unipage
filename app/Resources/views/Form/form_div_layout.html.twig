@@ -140,7 +140,7 @@
             {% endif %}
             {% set prototype_html = '<div class="col-xs-' ~ form.vars.sub_widget_col ~ '">' ~ form_widget(prototype, prototype_vars) ~ '</div>' %}
             {% if form.vars.allow_delete %}
-                {% set prototype_html = prototype_html ~ '<div class="col-xs-' ~ form.vars.button_col ~ '"><a href="#" class="btn btn-danger btn-md" data-removefield="collection" data-field="__id__"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> ' ~ form.vars.delete_button_text|trans({}, translation_domain)|parse_icons|raw ~ '</a></div>' %}
+                {% set prototype_html = prototype_html ~ '<div class="col-xs-' ~ form.vars.button_col ~ '"><a href="#" class="btn btn-danger btn-md" data-removefield="collection" data-field="__id__"><span class="fa fa-remove" aria-hidden="true"></span> ' ~ form.vars.delete_button_text|trans({}, translation_domain)|parse_icons|raw ~ '</a></div>' %}
             {% endif %}
             {% set prototype_html = '<div class="row">' ~ prototype_html ~ '</div>' %}
 
@@ -158,7 +158,7 @@
                             </div>
                             {% if form.vars.allow_delete %}
                                 <div class="col-xs-{{ form.vars.button_col }}">
-                                    <a href="#" class="btn btn-danger btn-md" data-removefield="collection" data-field="{{ field.vars.id }}"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> {{ form.vars.delete_button_text|trans({}, translation_domain)|parse_icons|raw }}</a>
+                                    <a href="#" class="btn btn-danger btn-md" data-removefield="collection" data-field="{{ field.vars.id }}"><span class="fa fa-remove" aria-hidden="true"></span> {{ form.vars.delete_button_text|trans({}, translation_domain)|parse_icons|raw }}</a>
                                 </div>
                             {% endif %}
                         </div>
@@ -166,7 +166,7 @@
                 {% endfor %}
             </ul>
             {% if form.vars.allow_add %}
-                <a href="#" class="btn btn-primary btn-md" data-addfield="collection" data-collection="{{ form.vars.id }}" data-prototype-name="{{ prototype_name }}"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> {{ form.vars.add_button_text|trans({}, translation_domain)|parse_icons|raw }}</a>
+                <a href="#" class="btn btn-primary btn-md" data-addfield="collection" data-collection="{{ form.vars.id }}" data-prototype-name="{{ prototype_name }}"><span class="fa fa-plus" aria-hidden="true"></span> {{ form.vars.add_button_text|trans({}, translation_domain)|parse_icons|raw }}</a>
             {% endif %}
         </div>
     {% endspaceless %}
