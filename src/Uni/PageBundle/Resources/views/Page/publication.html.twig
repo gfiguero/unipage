@@ -33,7 +33,7 @@
                     </div>
                     <div class="col-xs-9">
                         <h3>{{ publication.title }}</h3>
-                        <p>{{ publication.createdAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y - HH:mm") }}</p>
+                        <h6 class="text-muted">Publicado: {{ publication.createdAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y - HH:mm") }}</h6>
                         <p>{{ publication.content|raw }}</p>
                     </div>
                     <div class="clearfix"></div>
