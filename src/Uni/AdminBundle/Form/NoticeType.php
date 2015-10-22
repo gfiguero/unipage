@@ -23,6 +23,10 @@ class NoticeType extends AbstractType
                 'required' => false,
                 'attr'  =>  array( 'class' =>  'tinymce', 'data-theme' => 'advanced' ),
             ))
+            ->add('createdAt', 'birthday', array(
+                'label' =>  'member_createdAt',
+                'required' => false,
+            ))
             ->add('published', null, array(
                 'label' =>  'notice_published',
                 'required' => false,
