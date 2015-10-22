@@ -80,6 +80,24 @@ class Member
      */
     private $role;
 
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $courses;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $previous_roles;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->courses = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->previous_roles = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -389,6 +407,73 @@ class Member
     {
         return $this->role;
     }
+
+    /**
+     * Add courses
+     *
+     * @param \Uni\AdminBundle\Entity\MemberCourse $courses
+     * @return Member
+     */
+    public function addCourse(\Uni\AdminBundle\Entity\MemberCourse $courses)
+    {
+        $this->courses[] = $courses;
+
+        return $this;
+    }
+
+    /**
+     * Remove courses
+     *
+     * @param \Uni\AdminBundle\Entity\MemberCourse $courses
+     */
+    public function removeCourse(\Uni\AdminBundle\Entity\MemberCourse $courses)
+    {
+        $this->courses->removeElement($courses);
+    }
+
+    /**
+     * Get courses
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getCourses()
+    {
+        return $this->courses;
+    }
+
+    /**
+     * Add previous_roles
+     *
+     * @param \Uni\AdminBundle\Entity\MemberRole $previousRoles
+     * @return Member
+     */
+    public function addPreviousRole(\Uni\AdminBundle\Entity\MemberRole $previousRoles)
+    {
+        $this->previous_roles[] = $previousRoles;
+
+        return $this;
+    }
+
+    /**
+     * Remove previous_roles
+     *
+     * @param \Uni\AdminBundle\Entity\MemberRole $previousRoles
+     */
+    public function removePreviousRole(\Uni\AdminBundle\Entity\MemberRole $previousRoles)
+    {
+        $this->previous_roles->removeElement($previousRoles);
+    }
+
+    /**
+     * Get previous_roles
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getPreviousRoles()
+    {
+        return $this->previous_roles;
+    }
+
     public function upload() { if (null === $this->getFile()) { return; } $generator = new SecureRandom(); $random = $generator->nextBytes(10); $prefix = md5($random); $this->getFile()->move($this->getUploadRootDir(), $prefix.'_'.$this->getFile()->getClientOriginalName());$this->path = $prefix.'_'.$this->getFile()->getClientOriginalName();$this->file = null; }
     public function getAbsolutePath() { return null === $this->path ? null : $this->getUploadRootDir().'/'.$this->path; }
     public function getWebPath() { return null === $this->path ? 'default' : $this->getUploadDir().'/'.$this->path; }

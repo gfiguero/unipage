@@ -29,9 +29,14 @@ class PageController extends Controller
         $frontpage = $em->getRepository('UniAdminBundle:Frontpage')->findOneBy(array('active' => true), array('createdAt' => 'DESC'));
         $members = $em->getRepository('UniAdminBundle:Member')
             ->createQueryBuilder('m')
+            ->select('m', 'mr', 'mc', 'mp')
             ->leftJoin('m.role', 'mr')
+            ->leftJoin('m.courses', 'mc')
+            ->leftJoin('m.previous_roles', 'mp')
             ->where('m.active = true')
-            ->orderBy('mr.rank', 'ASC')
+            ->addOrderBy('mr.rank', 'ASC')
+            ->addOrderBy('mc.rank', 'ASC')
+            ->addOrderBy('mp.rank', 'ASC')
             ->getQuery()
             ->getResult();
         return $this->render('UniPageBundle:Page:member.html.twig', array(
@@ -71,6 +76,8 @@ class PageController extends Controller
         if($noticecategory) {
             $notices = $em->getRepository('UniAdminBundle:Notice')
                 ->createQueryBuilder('n')
+                ->select('n', 'nc', 'np')
+                ->leftJoin('n.photos', 'np')
                 ->leftJoin('n.category', 'nc')
                 ->where('n.published = TRUE')
                 ->andWhere('nc.id = :noticecategory')
@@ -80,7 +87,14 @@ class PageController extends Controller
                 ->getResult();
             $reference = $em->getReference("UniAdminBundle:NoticeCategory", $noticecategory);
         } else {
-            $notices = $em->getRepository('UniAdminBundle:Notice')->findBy(array('published' => true), array('createdAt' => 'DESC'));
+            $notices = $em->getRepository('UniAdminBundle:Notice')
+                ->createQueryBuilder('n')
+                ->select('n', 'np')
+                ->leftJoin('n.photos', 'np')
+                ->where('n.published = TRUE')
+                ->orderBy('n.createdAt', 'DESC')
+                ->getQuery()
+                ->getResult();
         }
         $paginator = $this->get('knp_paginator');
         $pagination = $paginator->paginate($notices, $request->query->getInt('page', 1), 12);

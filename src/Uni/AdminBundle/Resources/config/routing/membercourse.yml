@@ -1,0 +1,31 @@
+membercourse:
+    path:     /
+    defaults: { _controller: "UniAdminBundle:MemberCourse:index" }
+    methods: [GET]
+
+membercourse_show:
+    path:     /{id}/show
+    defaults: { _controller: "UniAdminBundle:MemberCourse:show" }
+
+membercourse_new:
+    path:     /new
+    defaults: { _controller: "UniAdminBundle:MemberCourse:new" }
+
+membercourse_create:
+    path:     /create
+    defaults: { _controller: "UniAdminBundle:MemberCourse:create" }
+    methods: [POST]
+
+membercourse_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "UniAdminBundle:MemberCourse:edit" }
+
+membercourse_update:
+    path:     /{id}/update
+    defaults: { _controller: "UniAdminBundle:MemberCourse:update" }
+    methods: [POST|PUT]
+
+membercourse_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "UniAdminBundle:MemberCourse:delete" }
+    methods: [POST|DELETE]

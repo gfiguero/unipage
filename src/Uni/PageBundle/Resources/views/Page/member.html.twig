@@ -60,6 +60,8 @@
                                                 {% if member.email %}<dt>{{ 'member_email'|trans }}</dt><dd>{{ member.email }}</dd>{% endif %}
                                                 {% if member.birthdate %}<dt>{{ 'member_birthday'|trans }}</dt><dd>{{ member.birthdate|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL") }}</dd>{% endif %}
                                                 {% if member.admissiondate %}<dt>{{ 'member_admissiondate'|trans }}</dt><dd>{{ member.admissiondate|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y") }}</dd>{% endif %}
+                                                {% if member.courses is not empty %}<dt>{{ 'member_courses'|trans }}</dt><dd>{% for course in member.courses %}{{ course.name }}{% if not loop.last %}, {% endif %}{% endfor %}{% endif %}</dd>
+                                                {% if member.previousroles is not empty %}<dt>{{ 'member_previous_roles'|trans }}</dt><dd>{% for previousrole in member.previousroles %}{{ previousrole.name }}{% if not loop.last %}, {% endif %}{% endfor %}{% endif %}</dd>
                                             </dl>
                                         </div>
                                         <div class="clearfix"></div>

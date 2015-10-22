@@ -63,6 +63,8 @@ member_active: Activo
 member_file: Foto Perfil
 member_path: Directorio
 member_role: Cargo Asignado
+member_previous_roles: Cargos Anteriores
+member_courses: Cursos
 member_createdAt: Fecha de Registro
 member_updatedAt: Última Actualización
 Member has been created.: El integrante ha sido creado.
@@ -83,6 +85,23 @@ memberrole_updatedAt: Última Actualización
 MemberRole has been created.: El cargo ha sido creado.
 MemberRole has been updated.: El cargo ha sido actualizado.
 MemberRole has been deleted.: El cargo ha sido borrado.
+
+# Member Course
+membercourse: Curso
+membercourse_index: Cursos
+membercourse_new: Nuevo Curso
+membercourse_show: Ver Curso
+membercourse_edit: Editar Curso
+membercourse_delete: Borrar Curso
+membercourse_name: Nombre
+membercourse_rank: Rango
+membercourse_code: Código
+membercourse_content: Descripción
+membercourse_createdAt: Fecha de Registro
+membercourse_updatedAt: Última Actualización
+MemberCourse has been created.: El curso ha sido creado.
+MemberCourse has been updated.: El curso ha sido actualizado.
+MemberCourse has been deleted.: El curso ha sido borrado.
 
 # Highlight
 highlight_index: Noticias Destacadas

@@ -30,6 +30,7 @@ class Builder extends ContainerAware
             $menu['member_control']->setChildrenAttribute('class', 'nav nav-second-level collapse');
             $menu['member_control']->addChild('member_index', array('route' => 'member'));
             $menu['member_control']->addChild('memberrole_index', array('route' => 'memberrole'));
+            $menu['member_control']->addChild('membercourse_index', array('route' => 'membercourse'));
         }
         if(in_array('ROLE_NOTICE', $roles) or in_array('ROLE_ADMIN', $roles)) {
             $menu->addChild('notice_control')->setAttribute('icon', 'newspaper-o fa-fw');

@@ -50,6 +50,9 @@
                                 <dt>{{ 'member_birthdate'|trans }}</dt><dd>{% if entity.birthdate %}{{ entity.birthdate|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y - HH:mm") }}{% endif %}</dd>
                                 <dt>{{ 'member_admissiondate'|trans }}</dt><dd>{% if entity.admissiondate %}{{ entity.admissiondate|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y - HH:mm") }}{% endif %}</dd>
                                 <dt>{{ 'member_active'|trans }}</dt><dd>{% if entity.active %}{{ 'Si' }}{% else %}{{ 'No' }}{% endif %}</dd>
+                                <dt>{{ 'member_role'|trans }}</dt><dd>{% if entity.role %}{{ entity.role.name }}{% else %}{{ 'member_no_role'|trans }}{% endif %}</dd>
+                                <dt>{{ 'member_previous_roles'|trans }}</dt><dd>{% if entity.previousroles is not empty %}{% for previousrole in entity.previousroles %}{{ previousrole.name }}{% if not loop.last %}, {% endif %}{% endfor %}{% else %}{{ 'No' }}{% endif %}</dd>
+                                <dt>{{ 'member_courses'|trans }}</dt><dd>{% if entity.courses is not empty %}{% for course in entity.courses %}{{ course.name }}{% if not loop.last %}, {% endif %}{% endfor %}{% else %}{{ 'No' }}{% endif %}</dd>
                                 <dt>{{ 'member_createdAt'|trans }}</dt><dd>{% if entity.createdAt %}{{ entity.createdAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y - HH:mm") }}{% endif %}</dd>
                                 <dt>{{ 'member_updatedAt'|trans }}</dt><dd>{% if entity.updatedAt %}{{ entity.updatedAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y - HH:mm") }}{% endif %}</dd>
                             </dl>

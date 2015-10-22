@@ -58,6 +58,27 @@ Uni\AdminBundle\Entity\Member:
         role:
             targetEntity: MemberRole
             inversedBy: member
+    manyToMany:
+        courses:
+            targetEntity: MemberCourse
+            joinTable:
+                name: Progress
+                joinColumns:
+                    member:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    membercourse:
+                        referencedColumnName: id
+        previous_roles:
+            targetEntity: MemberRole
+            joinTable:
+                name: PreviousRoles
+                joinColumns:
+                    member:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    memberrole:
+                        referencedColumnName: id
     gedmo:
         soft_deleteable:
             field_name: deletedAt
