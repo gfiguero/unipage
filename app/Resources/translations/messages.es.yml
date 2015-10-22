@@ -57,6 +57,7 @@ member_lastname: Apellido
 member_email: Email
 member_phonenumber: Teléfono
 member_birthdate: Fecha Nacimiento
+member_birthday: Cumpleaños
 member_admissiondate: Fecha Ingreso
 member_active: Activo
 member_file: Foto Perfil
