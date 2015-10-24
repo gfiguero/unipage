@@ -16,7 +16,7 @@ class PageController extends Controller
         $frontpage = $em->getRepository('UniAdminBundle:Frontpage')->findOneBy(array('active' => true), array('createdAt' => 'DESC'));
         $services = $em->getRepository('UniAdminBundle:Service')->findBy(array('published' => true), array('rank' => 'ASC'));
         $highlights = $em->getRepository('UniAdminBundle:Notice')->findBy(array('published' => true, 'highlight' => true), array('createdAt' => 'DESC'), 6);
-        $links = $em->getRepository('UniAdminBundle:Link')->findBy(array('active' => true), array('createdAt' => 'DESC'));
+        $links = $em->getRepository('UniAdminBundle:Link')->findBy(array('active' => true), array('createdAt' => 'ASC'));
         return $this->render('UniPageBundle:Page:index.html.twig', array(
             'frontpage' => $frontpage,
             'services' => $services,
