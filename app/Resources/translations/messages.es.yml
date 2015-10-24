@@ -308,6 +308,22 @@ Camera has been created.: La Cámara ha sido creada.
 Camera has been updated.: La Cámara ha sido actualizada.
 Camera has been deleted.: La Cámara ha sido borrada.
 
+# Camera
+link: Enlaces
+link_index: Enlaces
+link_new: Nuevo Enlace
+link_show: Ver Enlace
+link_edit: Editar Enlace
+link_delete: Borrar Enlace
+link_name: Nombre
+link_address: Dirección
+link_active: Activo
+link_createdAt: Fecha de Registro
+link_updatedAt: Última Actualización
+Link has been created.: El enlace ha sido creado.
+Link has been updated.: El enlace ha sido actualizado.
+Link has been deleted.: El enlace ha sido borrado.
+
 # Dashboard
 dashboard: Dashboard
 dashboard_index: Dashboard

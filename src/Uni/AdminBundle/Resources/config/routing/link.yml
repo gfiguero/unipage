@@ -1,0 +1,31 @@
+link:
+    path:     /
+    defaults: { _controller: "UniAdminBundle:Link:index" }
+    methods: [GET]
+
+link_show:
+    path:     /{id}/show
+    defaults: { _controller: "UniAdminBundle:Link:show" }
+
+link_new:
+    path:     /new
+    defaults: { _controller: "UniAdminBundle:Link:new" }
+
+link_create:
+    path:     /create
+    defaults: { _controller: "UniAdminBundle:Link:create" }
+    methods: [POST]
+
+link_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "UniAdminBundle:Link:edit" }
+
+link_update:
+    path:     /{id}/update
+    defaults: { _controller: "UniAdminBundle:Link:update" }
+    methods: [POST|PUT]
+
+link_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "UniAdminBundle:Link:delete" }
+    methods: [POST|DELETE]

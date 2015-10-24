@@ -6,6 +6,8 @@
 
 {% use 'UniPageBundle:Page:service.html.twig' %}
 
+{% use 'UniPageBundle:Page:link.html.twig' %}
+
 {% use 'UniPageBundle:Page:highlight.html.twig' %}
 
 {% use 'UniPageBundle:Page:missionvision.html.twig' %}
@@ -38,6 +40,8 @@
     {% block missionvision %}{{ parent() }}{% endblock %}
 
     {% block service %}{{ parent() }}{% endblock %}
+
+    {% block link %}{{ parent() }}{% endblock %}
 
     {% block contact %}{{ parent() }}{% endblock %}
 

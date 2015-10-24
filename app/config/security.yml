@@ -14,6 +14,8 @@ security:
         ROLE_NOTICE:      ROLE_USER
         ROLE_PUBLICATION: ROLE_USER
         ROLE_REPORT:      ROLE_USER
+        ROLE_DOCUMENT:    ROLE_USER
+        ROLE_LINK:        ROLE_USER
         ROLE_ACCESS:      ROLE_USER
         ROLE_ADMIN:       ROLE_USER
         ROLE_SUPER_ADMIN: ROLE_ADMIN
@@ -64,6 +66,8 @@ security:
         - { path: ^/admin/notice, roles: [ROLE_NOTICE, ROLE_ADMIN] }
         - { path: ^/admin/publication, roles: [ROLE_PUBLICATION, ROLE_ADMIN] }
         - { path: ^/admin/report, roles: [ROLE_REPORT, ROLE_ADMIN] }
+        - { path: ^/admin/document, roles: [ROLE_DOCUMENT, ROLE_ADMIN] }
+        - { path: ^/admin/link, roles: [ROLE_LINK, ROLE_ADMIN] }
         - { path: ^/user/manage, roles: [ROLE_ACCESS, ROLE_ADMIN] }
         - { path: ^/user/register, roles: [ROLE_ACCESS, ROLE_ADMIN] }
         - { path: ^/admin, roles: [ROLE_USER] }
