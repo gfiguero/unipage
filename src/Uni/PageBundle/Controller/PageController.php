@@ -107,7 +107,7 @@ class PageController extends Controller
                 'label' => 'noticecategory',
                 'class' => 'UniAdminBundle:NoticeCategory',
                 'choice_label' => 'name',
-                'placeholder' => 'noticecategory',
+                'placeholder' => 'noticecategory_all',
                 'required' => false,
                 'data' => $reference,
             ))
