@@ -1,8 +1,6 @@
 {% extends ':Page:base.html.twig' %}
 
-{% use 'UniPageBundle:Page:frontpage.html.twig' %}{% block stylesheet %}{{ parent() }}{% endblock %}
-
-{% use 'UniPageBundle:Page:footer.html.twig' %}{% block footer %}{{ parent() }}{% endblock %}
+{% use ':Page:footer.html.twig' %}{% block footer %}{{ parent() }}{% endblock %}
 
 {% block header %}
     <header class="intro-header header-image">

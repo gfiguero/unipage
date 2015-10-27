@@ -1,26 +1,6 @@
 {% extends ':Page:base.html.twig' %}
 
-{% use 'UniPageBundle:Page:frontpage.html.twig' %}{% block stylesheet %}{{ parent() }}{% endblock %}
-
-{% use 'UniPageBundle:Page:footer.html.twig' %}{% block footer %}{{ parent() }}{% endblock %}
-
-{% block header %}
-    <header class="intro-header header-image">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="site-heading">
-                        <h1>{{ "notice_index"|trans }}</h1>
-                        <hr class="small">
-                        <span class="subheading">{% if frontpage %}{{ frontpage.title }}{% endif %}</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-{% endblock %}
-
-{% block javascript %}{% endblock %}
+{% use ':Page:footer.html.twig' %}{% block footer %}{{ parent() }}{% endblock %}
 
 {% block body -%}
     <section id="noticeshow">
@@ -78,5 +58,3 @@
         </div>
     </section>
 {% endblock %}
-
-{% block title %}{% if frontpage %}{{ frontpage.title }}{% else %}Título{% endif %}{% endblock %}

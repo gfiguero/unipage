@@ -1,62 +1,13 @@
 {% extends ':Page:base.html.twig' %}
 
-{% use 'UniPageBundle:Page:frontpage.html.twig' %}
+{% use ':Page:highlight.html.twig' %}{% block highlight %}{{ parent() }}{% endblock %}
 
-{% use 'UniPageBundle:Page:contact.html.twig' %}
+{% use ':Page:missionvision.html.twig' %}{% block missionvision %}{{ parent() }}{% endblock %}
 
-{% use 'UniPageBundle:Page:service.html.twig' %}
+{% use ':Page:service.html.twig' %}{% block service %}{{ parent() }}{% endblock %}
 
-{% use 'UniPageBundle:Page:link.html.twig' %}
+{% use ':Page:link.html.twig' %}{% block link %}{{ parent() }}{% endblock %}
 
-{% use 'UniPageBundle:Page:highlight.html.twig' %}
+{% use ':Page:contact.html.twig' %}{% block contact %}{{ parent() }}{% endblock %}
 
-{% use 'UniPageBundle:Page:missionvision.html.twig' %}
-
-{% block stylesheet %}{{ parent() }}{% endblock %}
-
-{% block header %}
-    <header class="intro-header header-image">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="site-heading">
-                        <h1>{% if frontpage %}{{ frontpage.title }}
-                            {% else %}Título
-                            {% endif %}
-                        </h1>
-                        <hr class="small">
-                        <span class="subheading">{% if frontpage %}{{ frontpage.subtitle }}{% else %}subtítulo{% endif %}</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-{% endblock %}
-
-{% block body -%}
-
-    {% block highlight %}{{ parent() }}{% endblock %}
-
-    {% block missionvision %}{{ parent() }}{% endblock %}
-
-    {% block service %}{{ parent() }}{% endblock %}
-
-    {% block link %}{{ parent() }}{% endblock %}
-
-    {% block contact %}{{ parent() }}{% endblock %}
-
-{% endblock %}
-
-{% block footer %}
-    <footer class="footer contact-image">
-        <div class="container-fluid">
-            <div class="row">
-                <p>{% if frontpage %}{{ frontpage.title }}{% endif %} - 2015</p>
-            </div>
-        </div>
-    </footer>
-{% endblock %}
-
-{% block javascript %}{% endblock %}
-
-{% block title %}{% if frontpage %}{{ frontpage.title }}{% else %}Título{% endif %}{% endblock %}
+{% use ':Page:signature.html.twig' %}{% block signature %}{{ parent() }}{% endblock %}

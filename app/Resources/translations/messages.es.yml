@@ -334,3 +334,14 @@ gallery: Galería
 gallery_index: Galería
 gallery_photos: Fotos
 gallery_all: Todas las fotos
+
+uni_page_member: member_index
+uni_page_process: process_index
+uni_page_notice: notice_index
+uni_page_notice_show: notice_index
+uni_page_report: report_index
+uni_page_report_show: report_index
+uni_page_document: document_index
+uni_page_document_show: document_index
+uni_page_publication: publication_index
+uni_page_gallery: gallery_index
