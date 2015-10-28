@@ -4,6 +4,7 @@ namespace Uni\AdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\Util\SecureRandom;
+use Uni\AdminBundle\Lib\Globals;
 
 /**
  * FrontpagePhoto
@@ -112,6 +113,7 @@ class FrontpagePhoto
     public function upload() { if (null === $this->getFile()) { return; } $generator = new SecureRandom(); $random = $generator->nextBytes(10); $prefix = md5($random); $this->getFile()->move($this->getUploadRootDir(), $prefix.'_'.$this->getFile()->getClientOriginalName());$this->path = $prefix.'_'.$this->getFile()->getClientOriginalName();$this->file = null; }
     public function getAbsolutePath() { return null === $this->path ? null : $this->getUploadRootDir().'/'.$this->path; }
     public function getWebPath() { return null === $this->path ? 'default' : $this->getUploadDir().'/'.$this->path; }
-    protected function getUploadRootDir() { return __DIR__.'/../../../../web/'.$this->getUploadDir(); }
+    protected function getUploadRootDir() { return $this->getWebRootDir().$this->getUploadDir(); }
     protected function getUploadDir() { return '/uploads/frontpage'; }
+    protected function getWebRootDir() { return Globals::getWebRootDir(); }
 }
