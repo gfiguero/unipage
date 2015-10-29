@@ -115,6 +115,8 @@ assetic:
                 - js/scrollspy.js
                 - js/tab.js
                 - js/affix.js
-                - js/clean-blog.js
+#                - js/clean-blog.js
+                - js/cbpAnimatedHeader.js
+                - js/classie.js
                 - js/uniPage-main.js
             output: js/uniPage.js
