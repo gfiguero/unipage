@@ -1,4 +1,8 @@
 liip_imagine:
+    loaders:
+        default:
+            filesystem:
+                data_root: %webroot%
     resolvers:
         default:
             web_path:
@@ -11,8 +15,8 @@ liip_imagine:
             quality: 75
             default_image: /uploads/frontpage/default.png
             filters:
-                upscale: { min: [1920, 450] }
-                thumbnail: { size: [1920, 450], mode: outbound }
+                upscale: { min: [1920, 620] }
+                thumbnail: { size: [1920, 620], mode: outbound }
         page_contact:
             quality: 75
             default_image: /uploads/frontpage/default.png

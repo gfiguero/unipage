@@ -2,7 +2,7 @@ braincrafted_bootstrap:
     output_dir:
     assets_dir: %kernel.root_dir%/../vendor/components/bootstrap
     jquery_path: %kernel.root_dir%/../vendor/components/jquery/jquery.min.js
-    less_filter: less # "less", "lessphp", "sass" or "none"
+    css_preprocessor: less # "less", "lessphp", "sass" or "none"
     fonts_dir: %kernel.root_dir%/../web/fonts
     icon_prefix: fa
     fontawesome_dir: 

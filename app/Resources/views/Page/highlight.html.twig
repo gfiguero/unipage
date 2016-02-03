@@ -12,7 +12,7 @@
                             {% if photo %}<img class="img-circle img-responsive center-block" alt="{{ highlight.title }}" src="{{ asset(photo.webpath) | imagine_filter('page_highlight') }}">
                             {% else %}<img class="img-circle img-responsive center-block" alt="{{ highlight.title }}" src="{{ asset('/uploads/notice/default.png') | imagine_filter('page_highlight') }}">{% endif %}
                             <h3 class="highlight-heading">{{ highlight.title }}</h3>
-                            <div class="notice-content">{{ highlight.content|striptags|slice(0, 200)|raw }} (...)</div>
+                            <p>{{ highlight.content|striptags|slice(0, 200)|raw }} {{ icon('long-arrow-right') }}</p>
                         </div>
                     </a>
                     {% if loop.index is divisible by(3) %}<div class="clearfix"></div>{% endif %}

@@ -13,7 +13,7 @@
             <hr>
             <div class="row">
                 {% for notice in notices %}
-                    <a href="{{ path('uni_page_notice_show', { 'id': notice.id }) }}">
+                    <a href="{{ path('uni_page_notice_show', { 'id': notice.id }) }}#noticeshow">
                     <div class="col-md-4">
                         <div class="notice-preview">
                             {% set photo = notice.photos|first %}

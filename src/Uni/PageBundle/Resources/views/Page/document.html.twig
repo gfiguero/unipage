@@ -7,7 +7,7 @@
         <div class="container">
             <div class="row">
                 {% for document in documents %}
-                    <a href="{{ path('uni_page_document_show', { 'id': document.id }) }}">
+                    <a href="{{ path('uni_page_document_show', { 'id': document.id }) }}#documentshow">
                         <div class="col-xs-12">
                             <div class="report-preview">
                                 <div class="report-title">{{ document.title }}</div>
