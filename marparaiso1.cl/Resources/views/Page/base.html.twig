@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+
+<html lang="es">
+
+    <head>
+        {% use ':Page:meta.html.twig' %}{% block meta %}{{ parent() }}{% endblock %}
+        {% use ':Page:title.html.twig' %}{% block title %}{{ parent() }}{% endblock %}
+        {% use ':Page:stylesheet.html.twig' %}{% block stylesheet %}{{ parent() }}{% endblock %}
+    </head>
+
+    <body>
+        {% use ':Page:navbar.html.twig' %}{% block navbar %}{{ parent() }}{% endblock %}
+        {% use ':Page:header.html.twig' %}{% block header %}{{ parent() }}{% endblock %}
+        {% block highlight %}{% endblock %}
+        {% block missionvision %}{% endblock %}
+        {% block service %}{% endblock %}
+        {% block link %}{% endblock %}
+        {% block body %}{% endblock %}
+        {% block contact %}{% endblock %}
+        {% block footer %}{% endblock %}
+        {% block signature %}{% endblock %}
+        {% use ':Page:javascript.html.twig' %}{% block javascript %}{{ parent() }}{% endblock %}
+    </body>
+
+    {% include "GoogleBundle:Analytics:async_universal.html.twig" %}
+
+</html>

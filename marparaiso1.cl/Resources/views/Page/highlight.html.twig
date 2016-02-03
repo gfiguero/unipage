@@ -1,0 +1,23 @@
+{% block highlight %}
+    <section id="highlight">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">{{ "highlight_index"|trans }}</h2>
+                </div>
+                {% for highlight in highlights %}
+                    <a href="{{ path('uni_page_notice_show', { 'id': highlight.id }) }}">
+                        <div class="col-md-4 text-center">
+                            {% set photo = highlight.photos|first %}
+                            {% if photo %}<img class="img-circle img-responsive center-block" alt="{{ highlight.title }}" src="{{ asset(photo.webpath) | imagine_filter('page_highlight') }}">
+                            {% else %}<img class="img-circle img-responsive center-block" alt="{{ highlight.title }}" src="{{ asset('/uploads/notice/default.png') | imagine_filter('page_highlight') }}">{% endif %}
+                            <h3 class="highlight-heading">{{ highlight.title }}</h3>
+                            <p>{{ highlight.content|striptags|slice(0, 200)|raw }} {{ icon('long-arrow-right') }}</p>
+                        </div>
+                    </a>
+                    {% if loop.index is divisible by(3) %}<div class="clearfix"></div>{% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}
