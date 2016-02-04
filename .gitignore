@@ -15,7 +15,8 @@
 /app/phpunit.xml
 /app/config/parameters.yml
 !.gitkeep
+bootstrap.php.cache
 phpunit.xml
 parameters.yml
-cache/*
-logs/*
+*/cache/*
+*/logs/*
