@@ -18,5 +18,5 @@
 bootstrap.php.cache
 phpunit.xml
 parameters.yml
-cache/*
-logs/*
+/cache/*
+/logs/*
