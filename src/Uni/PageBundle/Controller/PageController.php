@@ -17,7 +17,8 @@ class PageController extends Controller
         $services = $em->getRepository('UniAdminBundle:Service')->findBy(array('published' => true), array('rank' => 'ASC'));
         $highlights = $em->getRepository('UniAdminBundle:Notice')->findBy(array('published' => true, 'highlight' => true), array('createdAt' => 'DESC'), 6);
         $links = $em->getRepository('UniAdminBundle:Link')->findBy(array('active' => true), array('createdAt' => 'ASC'));
-        return $this->render('UniPageBundle:Page:index.html.twig', array(
+//        return $this->render('UniPageBundle:Page:index.html.twig', array(
+        return $this->render(':Page:index.html.twig', array(
             'frontpage' => $frontpage,
             'services' => $services,
             'highlights' => $highlights,
@@ -41,7 +42,8 @@ class PageController extends Controller
             ->addOrderBy('mp.rank', 'ASC')
             ->getQuery()
             ->getResult();
-        return $this->render('UniPageBundle:Page:member.html.twig', array(
+//        return $this->render('UniPageBundle:Page:member.html.twig', array(
+        return $this->render(':Page:member.html.twig', array(
             'frontpage' => $frontpage,
             'members' => $members,
         ));
@@ -52,7 +54,8 @@ class PageController extends Controller
         $em = $this->getDoctrine()->getManager();
         $frontpage = $em->getRepository('UniAdminBundle:Frontpage')->findOneBy(array('active' => true), array('createdAt' => 'DESC'));
         $histories = $em->getRepository('UniAdminBundle:History')->findBy(array('published' => true), array('rank' => 'ASC'));
-        return $this->render('UniPageBundle:Page:history.html.twig', array(
+//        return $this->render('UniPageBundle:Page:history.html.twig', array(
+        return $this->render(':Page:history.html.twig', array(
             'frontpage' => $frontpage,
             'histories' => $histories,
         ));
@@ -63,7 +66,8 @@ class PageController extends Controller
         $em = $this->getDoctrine()->getManager();
         $frontpage = $em->getRepository('UniAdminBundle:Frontpage')->findOneBy(array('active' => true), array('createdAt' => 'DESC'));
         $process = $em->getRepository('UniAdminBundle:Process')->findBy(array('active' => true), array('rank' => 'ASC'));
-        return $this->render('UniPageBundle:Page:process.html.twig', array(
+//        return $this->render('UniPageBundle:Page:process.html.twig', array(
+        return $this->render(':Page:process.html.twig', array(
             'frontpage' => $frontpage,
             'process' => $process,
         ));
@@ -119,7 +123,8 @@ class PageController extends Controller
                 )
             ))
             ->getForm();
-        return $this->render('UniPageBundle:Page:notice.html.twig', array(
+//        return $this->render('UniPageBundle:Page:notice.html.twig', array(
+        return $this->render(':Page:notice.html.twig', array(
             'frontpage' => $frontpage,
             'notices' => $pagination,
             'categoryForm' => $categoryForm->createView(),
@@ -132,7 +137,8 @@ class PageController extends Controller
         $frontpage = $em->getRepository('UniAdminBundle:Frontpage')->findOneBy(array('active' => true), array('createdAt' => 'DESC'));
         $notices = $em->getRepository('UniAdminBundle:Notice')->findBy(array('published' => true), array('createdAt' => 'DESC'), 10);
         $notice = $em->getRepository('UniAdminBundle:Notice')->find($id);
-        return $this->render('UniPageBundle:Page:noticeshow.html.twig', array(
+//        return $this->render('UniPageBundle:Page:noticeshow.html.twig', array(
+        return $this->render(':Page:noticeshow.html.twig', array(
             'frontpage' => $frontpage,
             'notices' => $notices,
             'notice' => $notice,
@@ -146,7 +152,8 @@ class PageController extends Controller
         $reports = $em->getRepository('UniAdminBundle:Report')->findBy(array('published' => true), array('createdAt' => 'DESC'));
         $paginator = $this->get('knp_paginator');
         $pagination = $paginator->paginate($reports, $request->query->getInt('page', 1), 12);
-        return $this->render('UniPageBundle:Page:report.html.twig', array(
+//        return $this->render('UniPageBundle:Page:report.html.twig', array(
+        return $this->render(':Page:report.html.twig', array(
             'frontpage' => $frontpage,
             'reports' => $pagination,
         ));
@@ -158,7 +165,8 @@ class PageController extends Controller
         $frontpage = $em->getRepository('UniAdminBundle:Frontpage')->findOneBy(array('active' => true), array('createdAt' => 'DESC'));
         $reports = $em->getRepository('UniAdminBundle:Report')->findBy(array('published' => true), array('createdAt' => 'DESC'), 10);
         $report = $em->getRepository('UniAdminBundle:Report')->find($id);
-        return $this->render('UniPageBundle:Page:reportshow.html.twig', array(
+//        return $this->render('UniPageBundle:Page:reportshow.html.twig', array(
+        return $this->render(':Page:reportshow.html.twig', array(
             'frontpage' => $frontpage,
             'reports' => $reports,
             'report' => $report,
@@ -172,7 +180,8 @@ class PageController extends Controller
         $documents = $em->getRepository('UniAdminBundle:Document')->findBy(array('published' => true), array('createdAt' => 'DESC'));
         $paginator = $this->get('knp_paginator');
         $pagination = $paginator->paginate($documents, $request->query->getInt('page', 1), 12);
-        return $this->render('UniPageBundle:Page:document.html.twig', array(
+//        return $this->render('UniPageBundle:Page:document.html.twig', array(
+        return $this->render(':Page:document.html.twig', array(
             'frontpage' => $frontpage,
             'documents' => $pagination,
         ));
@@ -184,7 +193,8 @@ class PageController extends Controller
         $frontpage = $em->getRepository('UniAdminBundle:Frontpage')->findOneBy(array('active' => true), array('createdAt' => 'DESC'));
         $documents = $em->getRepository('UniAdminBundle:Document')->findBy(array('published' => true), array('createdAt' => 'DESC'), 10);
         $document = $em->getRepository('UniAdminBundle:Document')->find($id);
-        return $this->render('UniPageBundle:Page:documentshow.html.twig', array(
+//        return $this->render('UniPageBundle:Page:documentshow.html.twig', array(
+        return $this->render(':Page:documentshow.html.twig', array(
             'frontpage' => $frontpage,
             'documents' => $documents,
             'document' => $document,
@@ -195,7 +205,8 @@ class PageController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $frontpage = $em->getRepository('UniAdminBundle:Frontpage')->findOneBy(array('active' => true), array('createdAt' => 'DESC'));
-        return $this->render('UniPageBundle:Page:role.html.twig', array(
+//        return $this->render('UniPageBundle:Page:role.html.twig', array(
+        return $this->render(':Page:role.html.twig', array(
             'frontpage' => $frontpage
         ));
     }
@@ -205,7 +216,8 @@ class PageController extends Controller
         $em = $this->getDoctrine()->getManager();
         $frontpage = $em->getRepository('UniAdminBundle:Frontpage')->findOneBy(array('active' => true), array('createdAt' => 'DESC'));
         $publications = $em->getRepository('UniAdminBundle:Publication')->findBy(array('active' => true), array('rank' => 'ASC'));
-        return $this->render('UniPageBundle:Page:publication.html.twig', array(
+//        return $this->render('UniPageBundle:Page:publication.html.twig', array(
+        return $this->render(':Page:publication.html.twig', array(
             'frontpage' => $frontpage,
             'publications' => $publications,
         ));
@@ -215,7 +227,8 @@ class PageController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $cameras = $em->getRepository('UniAdminBundle:Camera')->findBy(array('active' => true), array('name' => 'ASC'));
-        return $this->render('UniPageBundle:Page:camera.html.twig', array(
+//        return $this->render('UniPageBundle:Page:camera.html.twig', array(
+        return $this->render(':Page:camera.html.twig', array(
             'cameras' => $cameras,
         ));
     }
@@ -269,7 +282,8 @@ class PageController extends Controller
                 )
             ))
             ->getForm();
-        return $this->render('UniPageBundle:Page:gallery.html.twig', array(
+//        return $this->render('UniPageBundle:Page:gallery.html.twig', array(
+        return $this->render(':Page:gallery.html.twig', array(
             'frontpage' => $frontpage,
             'photos' => $pagination,
             'categoryForm' => $categoryForm->createView(),
