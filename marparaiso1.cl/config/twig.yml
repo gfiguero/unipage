@@ -1,8 +1,0 @@
-# Twig Configuration
-twig:
-    debug:            "%kernel.debug%"
-    strict_variables: "%kernel.debug%"
-    form:
-        resources:
-            - :Form:form_div_layout.html.twig
-

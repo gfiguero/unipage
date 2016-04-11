@@ -22,3 +22,9 @@ parameters.yml
 !*/cache/.gitkeep
 */logs/*
 !*/logs/.gitkeep
+*/bundles/
+*/fonts/*
+*/js/
+*/css/
+*/uploads/*
+*/media/*
