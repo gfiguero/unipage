@@ -1,0 +1,20 @@
+{% block header %}
+    <header class="intro-header header-image">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        {% if 'uni_page' == app.request.attributes.get('_route') %}
+                            <h1>{% use ':Page:brand.html.twig' %}{% block brand %}{{ parent() }}{% endblock %}</h1>
+                            <hr class="small"><span class="subheading">{% if frontpage %}{{ frontpage.subtitle }}{% else %}subtítulo{% endif %}</span>
+                        {% else %}
+                            <h2>{{ app.request.attributes.get('_route')|trans|trans }}</h2>
+                            <hr class="small">
+                            <span class="subheading">{% if frontpage %}{{ frontpage.title }}{% endif %}</span>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+{% endblock %}
