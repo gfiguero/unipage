@@ -46,8 +46,8 @@ Frontpage has been deleted.: La portada ha sido borrada.
 
 # Member
 member: Integrante
-member_control: Control de Integrantes
-member_index: Integrantes
+member_control: Control de Equipo
+member_index: Equipo
 member_new: Nuevo Integrante
 member_show: Ver Integrante
 member_edit: Editar Integrante
@@ -200,13 +200,13 @@ History has been updated.: La historia ha sido actualizada.
 History has been deleted.: La historia ha sido borrada.
 
 # Process
-process: Proceso
-process_index: Proceso
-process_stages: Etapas de proceso
-process_new: Nueva Etapa
-process_show: Ver Etapa
-process_edit: Editar Etapa
-process_delete: Borrar Etapa
+process: Historia
+process_index: Historia
+process_stages: Eventos
+process_new: Nuevo Evento
+process_show: Ver Evento
+process_edit: Editar Evento
+process_delete: Borrar Evento
 process_title: Título
 process_name: Nombre
 process_abstract: Resumen
@@ -216,27 +216,27 @@ process_active: Activo
 process_file: Foto
 process_createdAt: Fecha de Registro
 process_updatedAt: Última Actualización
-Process has been created.: La etapa ha sido creada.
-Process has been updated.: La etapa ha sido actualizada.
-Process has been deleted.: La etapa ha sido borrada.
+Process has been created.: El evento ha sido creado.
+Process has been updated.: El evento ha sido actualizado.
+Process has been deleted.: El evento ha sido borrado.
 
 # Publication
-publication: Publicación
-publication_index: Publicaciones
-publication_new: Nueva Publicación
-publication_show: Ver Publicación
-publication_edit: Editar Publicación
-publication_delete: Borrar Publicación
+publication: Aviso
+publication_index: Avisos
+publication_new: Nueva Aviso
+publication_show: Ver Aviso
+publication_edit: Editar Aviso
+publication_delete: Borrar Aviso
 publication_title: Título
 publication_content: Descripción
 publication_rank: Orden
-publication_active: Activa
+publication_active: Activo
 publication_file: Archivo
 publication_createdAt: Fecha de Registro
 publication_updatedAt: Última Actualización
-Publication has been created.: La publicación ha sido creada.
-Publication has been updated.: La publicación ha sido actualizada.
-Publication has been deleted.: La publicación ha sido borrada.
+Publication has been created.: El aviso ha sido creado.
+Publication has been updated.: El aviso ha sido actualizado.
+Publication has been deleted.: El aviso ha sido borrado.
 
 # Service
 service: Servicio

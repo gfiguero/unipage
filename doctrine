@@ -1,0 +1,4 @@
+php app.unisign.cl/console doctrine:schema:update --force
+php app.altoplaceres.cl/console doctrine:schema:update --force
+php app.marparaiso1.cl/console doctrine:schema:update --force
+php app.lago-calafquen.cl/console doctrine:schema:update --force

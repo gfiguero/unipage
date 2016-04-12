@@ -1,0 +1,4 @@
+php app.unisign.cl/console assetic:dump
+php app.altoplaceres.cl/console assetic:dump
+php app.marparaiso1.cl/console assetic:dump
+php app.lago-calafquen.cl/console assetic:dump
