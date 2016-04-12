@@ -334,7 +334,7 @@ class Process
     {
         return $this->deletedAt;
     }
-    public function upload() { if (null === $this->getFile()) { return; } $generator = new SecureRandom(); $random = $generator->nextBytes(10); $prefix = md5($random); $this->getFile()->move($this->getUploadRootDir(), $prefix.'_'.$this->getFile()->getClientOriginalName());$this->path = $prefix.'_'.$this->getFile()->getClientOriginalName();$this->file = null; }
+    public function upload() { if (null === $this->getFile()) { return; } $generator = new SecureRandom(); $random = $generator->nextBytes(10); $path = md5($random).'_'.str_replace(' ','_',$this->getFile()->getClientOriginalName()); $this->getFile()->move($this->getUploadRootDir(), $path); $this->path = $path; $this->file = null; }
     public function getAbsolutePath() { return null === $this->path ? null : $this->getUploadRootDir().'/'.$this->path; }
     public function getWebPath() { return null === $this->path ? 'default' : $this->getUploadDir().'/'.$this->path; }
     protected function getUploadRootDir() { return $this->getWebRootDir().$this->getUploadDir(); }
