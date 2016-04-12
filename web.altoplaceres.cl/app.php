@@ -1,7 +1,5 @@
 <?php
 
-require_once __DIR__.'/../mantencion/index.php'; exit();
-
 use Symfony\Component\ClassLoader\ApcClassLoader;
 use Symfony\Component\HttpFoundation\Request;
 

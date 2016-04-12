@@ -18,6 +18,7 @@
 bootstrap.php.cache
 phpunit.xml
 parameters.yml
+error_log
 */cache/*
 !*/cache/.gitkeep
 */logs/*
@@ -28,3 +29,5 @@ parameters.yml
 */css/
 */uploads/*
 */media/*
+*/icon/*
+*/img/*
