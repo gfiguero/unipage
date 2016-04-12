@@ -1,11 +1,11 @@
 <?php
 
-require_once __DIR__.'/../mantencion/index.php'; exit();
+//require_once __DIR__.'/../mantencion/index.php'; exit();
 
 use Symfony\Component\ClassLoader\ApcClassLoader;
 use Symfony\Component\HttpFoundation\Request;
 
-$loader = require_once __DIR__.'/../../unipage/unisign.cl/bootstrap.php.cache';
+$loader = require_once __DIR__.'/../app.unisign.cl/bootstrap.php.cache';
 
 // Enable APC for autoloading to improve performance.
 // You should change the ApcClassLoader first argument to a unique prefix
@@ -17,7 +17,7 @@ $loader->unregister();
 $apcLoader->register(true);
 */
 
-require_once __DIR__.'/../../unipage/unisign.cl/AppKernel.php';
+require_once __DIR__.'/../app.unisign.cl/AppKernel.php';
 //require_once __DIR__.'/../app/AppCache.php';
 
 $kernel = new AppKernel('prod', false);
