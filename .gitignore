@@ -19,6 +19,7 @@ bootstrap.php.cache
 phpunit.xml
 parameters.yml
 error_log
+.ftpquota
 */cache/*
 !*/cache/.gitkeep
 */logs/*

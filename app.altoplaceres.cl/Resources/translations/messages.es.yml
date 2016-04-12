@@ -104,16 +104,16 @@ MemberCourse has been updated.: El curso ha sido actualizado.
 MemberCourse has been deleted.: El curso ha sido borrado.
 
 # Highlight
-highlight_index: Noticias Destacadas
+highlight_index: Gestiones Destacadas
 
 # Notice
-notice: Noticia
-notice_control: Control de Noticias
-notice_index: Noticias
-notice_new: Nueva Noticia
-notice_show: Ver Noticia
-notice_edit: Editar Noticia
-notice_delete: Borrar Noticia
+notice: Gestión
+notice_control: Control de Gestiones
+notice_index: Gestiones
+notice_new: Nueva Gestión
+notice_show: Ver Gestión
+notice_edit: Editar Gestión
+notice_delete: Borrar Gestión
 notice_title: Título
 notice_content: Contenido
 notice_published: Publicada
@@ -124,9 +124,9 @@ notice_photo_delete: Borrar Foto
 notice_category: Categoría
 notice_createdAt: Publicado
 notice_updatedAt: Actualizado
-Notice has been created.: La noticia ha sido creada.
-Notice has been updated.: La noticia ha sido actualizada.
-Notice has been deleted.: La noticia ha sido borrada.
+Notice has been created.: La gestión ha sido creada.
+Notice has been updated.: La gestión ha sido actualizada.
+Notice has been deleted.: La gestión ha sido borrada.
 
 # NoticeCategory
 noticecategory: Categoría de noticias
@@ -258,12 +258,12 @@ Service has been updated.: El servicio ha sido actualizado.
 Service has been deleted.: El servicio ha sido borrado.
 
 # Report
-report: Reportes
-report_index: Reportes
-report_new: Nuevo Reporte
-report_show: Ver Reporte
-report_edit: Editar Reporte
-report_delete: Borrar Reporte
+report: Gasto Común
+report_index: Gastos Comunes
+report_new: Nuevo Gasto Común
+report_show: Ver Gasto Común
+report_edit: Editar Gasto Común
+report_delete: Borrar Gasto Común
 report_title: Título
 report_content: Contenido
 report_published: Publicado
@@ -271,9 +271,9 @@ report_file: Archivo
 report_download: Descargar
 report_createdAt: Fecha de Registro
 report_updatedAt: Última Actualización
-Report has been created.: El reporte ha sido creado.
-Report has been updated.: El reporte ha sido actualizado.
-Report has been deleted.: El reporte ha sido borrado.
+Report has been created.: El Gasto Común ha sido creado.
+Report has been updated.: El Gasto Común ha sido actualizado.
+Report has been deleted.: El Gasto Común ha sido borrado.
 
 # Document
 document: Documentos
