@@ -1,0 +1,27 @@
+uniSign
+
+php app.unisign.cl/console doctrine:schema:update --force
+php app.unisign.cl/console assetic:dump
+php app.unisign.cl/console cache:clear --env=dev
+php app.unisign.cl/console cache:clear --env=prod
+
+Alto Placeres
+
+php app.altoplaceres.cl/console doctrine:schema:update --force
+php app.altoplaceres.cl/console assetic:dump
+php app.altoplaceres.cl/console cache:clear --env=dev
+php app.altoplaceres.cl/console cache:clear --env=prod
+
+Marparaiso 1
+
+php app.marparaiso1.cl/console doctrine:schema:update --force
+php app.marparaiso1.cl/console assetic:dump
+php app.marparaiso1.cl/console cache:clear --env=dev
+php app.marparaiso1.cl/console cache:clear --env=prod
+
+Lago Calafquén
+
+php app.lago-calafquen.cl/console doctrine:schema:update --force
+php app.lago-calafquen.cl/console assetic:dump
+php app.lago-calafquen.cl/console cache:clear --env=dev
+php app.lago-calafquen.cl/console cache:clear --env=prod
