@@ -7,7 +7,7 @@
                 </div>
                 {% for highlight in highlights %}
                     <a href="{{ path('uni_page_notice_show', { 'id': highlight.id }) }}">
-                        <div class="col-md-4 text-center">
+                        <div class="col-md-4 text-center highlight">
                             {% set photo = highlight.photos|first %}
                             {% if photo %}<img class="img-circle img-responsive center-block" alt="{{ highlight.title }}" src="{{ asset(photo.webpath) | imagine_filter('page_highlight') }}">
                             {% else %}<img class="img-circle img-responsive center-block" alt="{{ highlight.title }}" src="{{ asset('/uploads/notice/default.png') | imagine_filter('page_highlight') }}">{% endif %}

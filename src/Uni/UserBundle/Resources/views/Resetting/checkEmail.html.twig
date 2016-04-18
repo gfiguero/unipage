@@ -18,6 +18,7 @@
                 </div>
                 <div class="panel-body">
                     {{ 'resetting.check_email'|trans({'%email%': email}, 'FOSUserBundle') }}
+                    <a href="{{ path('user_security_login') }}">{{ 'resetting.back_to_login'|trans({}, 'FOSUserBundle') }}</a>
                 </div>
             </div>
         </div>

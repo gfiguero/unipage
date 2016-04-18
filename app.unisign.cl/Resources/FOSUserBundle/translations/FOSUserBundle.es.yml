@@ -67,6 +67,7 @@ resetting:
         submit: Cambiar contraseña
     flash:
         success: La contraseña se ha cambiado con éxito
+    back_to_login: Volver
     email:
         subject: Bienvenido %username%!
         message : |
