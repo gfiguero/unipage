@@ -239,23 +239,23 @@ Publication has been updated.: El aviso ha sido actualizado.
 Publication has been deleted.: El aviso ha sido borrado.
 
 # Service
-service: Servicio
-service_index: Servicios
-service_new: Nuevo Servicio
-service_show: Ver Servicio
-service_edit: Editar Servicio
-service_delete: Borrar Servicio
+service: Característica
+service_index: Características
+service_new: Nuevo Característica
+service_show: Ver Característica
+service_edit: Editar Característica
+service_delete: Borrar Característica
 service_title: Título
-service_abstract: Abstract
+service_abstract: Resumen
 service_content: Descripción
 service_rank: Orden
 service_published: Publicado
 service_file: Foto
 service_createdAt: Fecha de Registro
 service_updatedAt: Última Actualización
-Service has been created.: El servicio ha sido creado.
-Service has been updated.: El servicio ha sido actualizado.
-Service has been deleted.: El servicio ha sido borrado.
+Service has been created.: La característica ha sido creada.
+Service has been updated.: La característica ha sido actualizada.
+Service has been deleted.: La característica ha sido borrada.
 
 # Report
 report: Gasto Común

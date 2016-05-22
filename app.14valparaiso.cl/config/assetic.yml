@@ -1,0 +1,122 @@
+# Assetic Configuration
+assetic:
+    debug:          "%kernel.debug%"
+    use_controller: false
+    bundles:        [ ]
+    #java: /usr/bin/java
+    filters:
+        less:
+            node: %node%
+            node_paths: [%node_modules%]
+            apply_to: "\.less$"
+        cssrewrite: ~
+    read_from: %kernel.root_dir%/Resources/
+    write_to: %webroot%/
+    assets:
+        font-awesome-otf:
+            inputs:
+                - fonts/FontAwesome.otf
+            output: fonts/FontAwesome.otf
+        font-awesome-eot:
+            inputs:
+                - fonts/fontawesome-webfont.eot
+            output: fonts/fontawesome-webfont.eot
+        font-awesome-svg:
+            inputs:
+                - fonts/fontawesome-webfont.svg
+            output: fonts/fontawesome-webfont.svg
+        font-awesome-ttf:
+            inputs:
+                - fonts/fontawesome-webfont.ttf
+            output: fonts/fontawesome-webfont.ttf
+        font-awesome-woff:
+            inputs:
+                - fonts/fontawesome-webfont.woff
+            output: fonts/fontawesome-webfont.woff
+        font-awesome-woff2:
+            inputs:
+                - fonts/fontawesome-webfont.woff2
+            output: fonts/fontawesome-webfont.woff2
+        font_awesome_css:
+            inputs:
+                - css/font-awesome.min.css
+            output: css/font-awesome.min.css
+        jquery_js:
+            inputs:
+                - js/jquery.min.js
+            output: js/jquery.min.js
+        jqueryui_js:
+            inputs:
+                - js/jquery-ui.min.js
+            output: js/jquery-ui.min.js
+        jqueryui_css:
+            inputs:
+                - css/jquery-ui.min.css
+            output: css/jquery-ui.min.css
+        fileinput_js:
+            inputs:
+                - js/fileinput.min.js
+            output: js/fileinput.min.js
+        fileinput_css:
+            inputs:
+                - css/fileinput.min.css
+            output: css/fileinput.min.css
+        analytics_js:
+            inputs:
+                - js/analytics.js
+            output: js/analytics.js
+        uniAdmin_css:
+            inputs:
+                - less/switch/build.less
+                - less/uniAdmin/build.less
+                - less/uniAdmin/form.less
+            filters:
+                - less
+                - cssrewrite
+            output: css/uniAdmin.css
+        uniPage_css:
+            inputs:
+                - less/uniPage/build.less
+            filters:
+                - less
+                - cssrewrite
+            output: css/uniPage.css
+        uniAdmin_js:
+            inputs:
+                - js/transition.js
+                - js/alert.js
+                - js/button.js
+                - js/carousel.js
+                - js/collapse.js
+                - js/dropdown.js
+                - js/modal.js
+                - js/tooltip.js
+                - js/popover.js
+                - js/scrollspy.js
+                - js/tab.js
+                - js/affix.js
+                - js/bootstrap-switch.js
+                - js/sb-admin-2.js
+                - js/metisMenu.js
+                - js/uniAdmin-main.js
+                - js/bc-bootstrap-collection.js
+            output: js/uniAdmin.js
+        uniPage_js:
+            inputs:
+                - js/transition.js
+                - js/alert.js
+                - js/button.js
+                - js/carousel.js
+                - js/collapse.js
+                - js/dropdown.js
+                - js/modal.js
+                - js/tooltip.js
+                - js/popover.js
+                - js/scrollspy.js
+                - js/tab.js
+                - js/affix.js
+#                - js/clean-blog.js
+                - js/cbpAnimatedHeader.js
+                - js/classie.js
+                - js/uniPage-main.js
+            output: js/uniPage.js
