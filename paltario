@@ -30,15 +30,17 @@ php app/console cache:clear --env=dev
 php app/console cache:clear --env=prod
 
 HTTPDUSER=`ps aux | grep -E '[a]pache|[h]ttpd|[_]www|[w]ww-data|[n]ginx' | grep -v root | head -1 | cut -d\  -f1`
-setfacl -Rn -m u:"$HTTPDUSER":rwX -m u:`whoami`:rwX app/cache app/logs
-setfacl -dRn -m u:"$HTTPDUSER":rwX -m u:`whoami`:rwX app/cache app/logs
-setfacl -Rn -m u:"$HTTPDUSER":rwX -m u:`whoami`:rwX web/uploads web/media
-setfacl -dRn -m u:"$HTTPDUSER":rwX -m u:`whoami`:rwX web/uploads web/media
+setfacl -Rn -m u:"$HTTPDUSER":rwX -m u:`whoami`:rwX app.hvg.cl/cache app.hvg.cl/logs
+setfacl -dRn -m u:"$HTTPDUSER":rwX -m u:`whoami`:rwX app.hvg.cl/cache app.hvg.cl/logs
+setfacl -Rn -m u:"$HTTPDUSER":rwX -m u:`whoami`:rwX web.hvg.cl/uploads web.hvg.cl/media
+setfacl -dRn -m u:"$HTTPDUSER":rwX -m u:`whoami`:rwX web.hvg.cl/uploads web.hvg.cl/media
 
 
 php app/console doctrine:schema:update --force
 php app/console cache:clear --env=dev
 php app/console cache:clear --env=prod
+
+php ./vendor/sensio/distribution-bundle/Sensio/Bundle/DistributionBundle/Resources/bin/build_bootstrap.php
 
 Comiteo
 ---------
