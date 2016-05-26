@@ -1,8 +1,10 @@
 {% extends ':Page:base.html.twig' %}
 
-{% use ':Page:highlight.html.twig' %}{% block highlight %}{{ parent() }}{% endblock %}
+{#}{% use ':Page:highlight.html.twig' %}{% block highlight %}{{ parent() }}{% endblock %}{#}
 
-{% use ':Page:missionvision.html.twig' %}{% block missionvision %}{{ parent() }}{% endblock %}
+{#}{% use ':Page:missionvision.html.twig' %}{% block missionvision %}{{ parent() }}{% endblock %}{#}
+
+{% use ':Page:team.html.twig' %}{% block team %}{{ parent() }}{% endblock %}
 
 {% use ':Page:service.html.twig' %}{% block service %}{{ parent() }}{% endblock %}
 

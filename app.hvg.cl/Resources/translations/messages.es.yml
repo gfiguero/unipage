@@ -276,12 +276,12 @@ Report has been updated.: El reporte ha sido actualizado.
 Report has been deleted.: El reporte ha sido borrado.
 
 # Document
-document: Documentos
-document_index: Documentos
-document_new: Nuevo Documento
-document_show: Ver Documento
-document_edit: Editar Documento
-document_delete: Borrar Documento
+document: Normativa
+document_index: Normativa
+document_new: Nuevo Normativa
+document_show: Ver Normativa
+document_edit: Editar Normativa
+document_delete: Borrar Normativa
 document_title: Título
 document_content: Contenido
 document_published: Publicado
@@ -289,9 +289,9 @@ document_file: Archivo
 document_download: Descargar
 document_createdAt: Fecha de Registro
 document_updatedAt: Última Actualización
-Document has been created.: El documento ha sido creado.
-Document has been updated.: El documento ha sido actualizado.
-Document has been deleted.: El documento ha sido borrado.
+Document has been created.: La normativa ha sido creada.
+Document has been updated.: La normativa ha sido actualizada.
+Document has been deleted.: La normativa ha sido borrada.
 
 # Camera
 camera: Cámaras
@@ -309,21 +309,21 @@ Camera has been created.: La Cámara ha sido creada.
 Camera has been updated.: La Cámara ha sido actualizada.
 Camera has been deleted.: La Cámara ha sido borrada.
 
-# Camera
-link: Enlaces
-link_index: Enlaces
-link_new: Nuevo Enlace
-link_show: Ver Enlace
-link_edit: Editar Enlace
-link_delete: Borrar Enlace
+# Links
+link: Resultado
+link_index: Nuestros resultados nos avalan
+link_new: Nuevo Resultado
+link_show: Ver Resultado
+link_edit: Editar Resultado
+link_delete: Borrar Resultado
 link_name: Nombre
 link_address: Dirección
 link_active: Activo
 link_createdAt: Fecha de Registro
 link_updatedAt: Última Actualización
-Link has been created.: El enlace ha sido creado.
-Link has been updated.: El enlace ha sido actualizado.
-Link has been deleted.: El enlace ha sido borrado.
+Link has been created.: El resultado ha sido creado.
+Link has been updated.: El resultado ha sido actualizado.
+Link has been deleted.: El resultado ha sido borrado.
 
 # Dashboard
 dashboard: Dashboard
