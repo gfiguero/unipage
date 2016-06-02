@@ -6,6 +6,9 @@
     <section id="note">
         <div class="container">
             <div class="row text-center">
+                <div class="col-lg-12">
+                    <h2 class="section-heading">Datos de Transferencia</h2>
+                </div>
                 <p>Agradecemos pagar vía transferencia a la cuenta corriente del Banco BCI N° 86788116 a nombre de "Comunidad Edificio Alto Placeres" RUT: 65.044.037-4 , antes del 30 de cada mes enviando comprobante al e-mail <strong>contabilidad@altoplaceres.cl</strong></p>
                 <p><strong>No olvide indicar el número de su departamento en el comprobante o en el e-mail.</strong></p>
                 <div class="col-sm-8 col-sm-offset-2">
@@ -40,6 +43,9 @@
     <section id="report">
         <div class="container">
             <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Emisiones</h2>
+                </div>
                 {% for report in reports %}
                     <a href="{{ path('uni_page_report_show', { 'id': report.id }) }}">
                         <div class="col-xs-12">
