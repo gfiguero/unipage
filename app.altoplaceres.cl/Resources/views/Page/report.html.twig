@@ -3,6 +3,39 @@
 {% use ':Page:footer.html.twig' %}{% block footer %}{{ parent() }}{% endblock %}
 
 {% block body -%}
+    <section id="note">
+        <div class="container">
+            <div class="row text-center">
+                <p>Agradecemos pagar vía transferencia a la cuenta corriente del Banco BCI N° 86788116 a nombre de "Comunidad Edificio Alto Placeres" RUT: 65.044.037-4 , antes del 30 de cada mes enviando comprobante al e-mail <strong>contabilidad@altoplaceres.cl</strong></p>
+                <div class="col-sm-8 col-sm-offset-2">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3 text-left">{{ icon('bank fa-2x') }}</div>
+                                <div class="col-xs-9 text-right"><div class="huge"><strong>BCI Cuenta Corriente 86788116</strong></div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3 text-left">{{ icon('users fa-2x') }}</div>
+                                <div class="col-xs-9 text-right"><div class="huge"><strong>Comunidad Edificio Alto Placeres 65.044.037-4</strong></div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3 text-left">{{ icon('envelope fa-2x') }}</div>
+                                <div class="col-xs-9 text-right"><div class="huge"><strong>contabilidad@altoplaceres.cl</strong></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <section id="report">
         <div class="container">
             <div class="row">
