@@ -29,7 +29,7 @@
         "braincrafted/bootstrap-bundle": "dev-develop",
         "friendsofsymfony/user-bundle": "1.3.*",
         "liip/imagine-bundle": "^1.3",
-        "stfalcon/tinymce-bundle": "dev-master",
+        "stfalcon/tinymce-bundle": "1.*",
         "antimattr/google-bundle": "~2.0@stable"
     },
     "require-dev": {
