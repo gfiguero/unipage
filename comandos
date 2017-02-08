@@ -25,3 +25,11 @@ php app.lago-calafquen.cl/console doctrine:schema:update --force
 php app.lago-calafquen.cl/console assetic:dump
 php app.lago-calafquen.cl/console cache:clear --env=dev
 php app.lago-calafquen.cl/console cache:clear --env=prod
+
+Condominio Mallén
+
+php app.condominiomallen.cl/console doctrine:schema:update --force
+php app.condominiomallen.cl/console assetic:dump
+php app.condominiomallen.cl/console cache:clear --env=dev
+php app.condominiomallen.cl/console cache:clear --env=prod
+

@@ -1,0 +1,16 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: 127.0.0.1
+    database_port: null
+    database_name: gfiguero_unisign
+    database_user: gfiguero_unisign
+    database_password: hyrubu9et
+    mailer_transport: smtp
+    mailer_host: mail.unisign.cl
+    mailer_user: soporte@unisign.cl
+    mailer_password: zzhxNJZEr!3v
+    secret: 71045a541db89e443a47199d2a38746dd5ccaecd
+    locale: es
+    webpath: %kernel.root_dir%/../web
+    node: %kernel.root_dir%/../../../node/bin/node
+    node_modules: %kernel.root_dir%/../../../node/lib/node_modules
