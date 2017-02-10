@@ -1,5 +1,8 @@
 <?php
 
+header("Location: https://lagocalafquen.edifacil.com/");
+die();
+
 use Symfony\Component\ClassLoader\ApcClassLoader;
 use Symfony\Component\HttpFoundation\Request;
 
