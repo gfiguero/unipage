@@ -45,13 +45,13 @@ Frontpage has been updated.: La portada ha sido actualizada.
 Frontpage has been deleted.: La portada ha sido borrada.
 
 # Member
-member: Integrante
-member_control: Control de Integrantes
-member_index: Integrantes
-member_new: Nuevo Integrante
-member_show: Ver Integrante
-member_edit: Editar Integrante
-member_delete: Borrar Integrante
+member: Colaborador
+member_control: Control de Equipo
+member_index: Equipo
+member_new: Nuevo Colaborador
+member_show: Ver Colaborador
+member_edit: Editar Colaborador
+member_delete: Borrar Colaborador
 member_firstname: Nombre
 member_lastname: Apellido
 member_email: Email
@@ -67,9 +67,9 @@ member_previous_roles: Cargos Anteriores
 member_courses: Cursos
 member_createdAt: Fecha de Registro
 member_updatedAt: Última Actualización
-Member has been created.: El integrante ha sido creado.
-Member has been updated.: El integrante ha sido actualizado.
-Member has been deleted.: El integrante ha sido borrado.
+Member has been created.: El colaborador ha sido creado.
+Member has been updated.: El colaborador ha sido actualizado.
+Member has been deleted.: El colaborador ha sido borrado.
 
 # Member Role
 memberrole: Cargo
@@ -104,16 +104,16 @@ MemberCourse has been updated.: El curso ha sido actualizado.
 MemberCourse has been deleted.: El curso ha sido borrado.
 
 # Highlight
-highlight_index: Noticias Destacadas
+highlight_index: Obras Destacadas
 
 # Notice
-notice: Noticia
-notice_control: Control de Noticias
-notice_index: Noticias
-notice_new: Nueva Noticia
-notice_show: Ver Noticia
-notice_edit: Editar Noticia
-notice_delete: Borrar Noticia
+notice: Obra
+notice_control: Control de Obras
+notice_index: Obras
+notice_new: Nueva Obra
+notice_show: Ver Obra
+notice_edit: Editar Obra
+notice_delete: Borrar Obra
 notice_title: Título
 notice_content: Contenido
 notice_published: Publicada
@@ -124,13 +124,13 @@ notice_photo_delete: Borrar Foto
 notice_category: Categoría
 notice_createdAt: Publicado
 notice_updatedAt: Actualizado
-Notice has been created.: La noticia ha sido creada.
-Notice has been updated.: La noticia ha sido actualizada.
-Notice has been deleted.: La noticia ha sido borrada.
+Notice has been created.: La obra ha sido creada.
+Notice has been updated.: La obra ha sido actualizada.
+Notice has been deleted.: La obra ha sido borrada.
 
 # NoticeCategory
-noticecategory: Categoría de noticias
-noticecategory_index: Categorías de noticias
+noticecategory: Categoría de obras
+noticecategory_index: Categorías de obras
 noticecategory_all: Todas las Categorías
 noticecategory_new: Nueva Categoría
 noticecategory_show: Ver Categoría
@@ -140,9 +140,9 @@ noticecategory_name: Nombre
 noticecategory_submit: Filtrar
 noticecategory_createdAt: Fecha de Registro
 noticecategory_updatedAt: Última Actualización
-NoticeCategory has been created.: La categoría de noticias ha sido creada.
-NoticeCategory has been updated.: La categoría de noticias ha sido actualizada.
-NoticeCategory has been deleted.: La categoría de noticias ha sido borrada.
+NoticeCategory has been created.: La categoría de obras ha sido creada.
+NoticeCategory has been updated.: La categoría de obras ha sido actualizada.
+NoticeCategory has been deleted.: La categoría de obras ha sido borrada.
 
 # Product
 product: Producto
@@ -200,13 +200,13 @@ History has been updated.: La historia ha sido actualizada.
 History has been deleted.: La historia ha sido borrada.
 
 # Process
-process: Proceso
-process_index: Proceso
-process_stages: Etapas de proceso
-process_new: Nueva Etapa
-process_show: Ver Etapa
-process_edit: Editar Etapa
-process_delete: Borrar Etapa
+process: Historia
+process_index: Historia
+process_stages: Historias
+process_new: Nueva Historia
+process_show: Ver Historia
+process_edit: Editar Historia
+process_delete: Borrar Historia
 process_title: Título
 process_name: Nombre
 process_abstract: Resumen
@@ -216,17 +216,17 @@ process_active: Activo
 process_file: Foto
 process_createdAt: Fecha de Registro
 process_updatedAt: Última Actualización
-Process has been created.: La etapa ha sido creada.
-Process has been updated.: La etapa ha sido actualizada.
-Process has been deleted.: La etapa ha sido borrada.
+Process has been created.: La historia ha sido creada.
+Process has been updated.: La historia ha sido actualizada.
+Process has been deleted.: La historia ha sido borrada.
 
 # Publication
-publication: Publicación
-publication_index: Publicaciones
-publication_new: Nueva Publicación
-publication_show: Ver Publicación
-publication_edit: Editar Publicación
-publication_delete: Borrar Publicación
+publication: Aviso
+publication_index: Avisos
+publication_new: Nueva Aviso
+publication_show: Ver Aviso
+publication_edit: Editar Aviso
+publication_delete: Borrar Aviso
 publication_title: Título
 publication_content: Descripción
 publication_rank: Orden
@@ -234,9 +234,9 @@ publication_active: Activa
 publication_file: Archivo
 publication_createdAt: Fecha de Registro
 publication_updatedAt: Última Actualización
-Publication has been created.: La publicación ha sido creada.
-Publication has been updated.: La publicación ha sido actualizada.
-Publication has been deleted.: La publicación ha sido borrada.
+Publication has been created.: El aviso ha sido creada.
+Publication has been updated.: El aviso ha sido actualizada.
+Publication has been deleted.: El aviso ha sido borrada.
 
 # Service
 service: Servicio
