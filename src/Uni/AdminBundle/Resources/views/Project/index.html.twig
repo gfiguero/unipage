@@ -1,6 +1,6 @@
 {% extends ':Admin:base.html.twig' %}
 
-{% block title %}{{ 'notice_index'|trans }}{% endblock %}
+{% block title %}{{ 'project_index'|trans }}{% endblock %}
 
 {% block body -%}
 
@@ -8,7 +8,7 @@
 
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">{% include ':Admin:icon.html.twig' %}{{ 'notice_index'|trans }}</h1>
+                <h1 class="page-header">{% include ':Admin:icon.html.twig' %}{{ 'project_index'|trans }}</h1>
                 {% for type, messages in app.session.flashBag.all %}
                     {% for message in messages %}
                         <div class="alert alert-{{ type }} alert-dismissible fade in" role="alert">
@@ -17,6 +17,7 @@
                         </div>
                     {% endfor %}
                 {% endfor %}
+
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -26,10 +27,10 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <div class="btn-group">
-                            <a class="btn btn-primary" href="{{ path('notice_new') }}">{{ icon('file') }}&nbsp;{{ 'notice_new'|trans }}</a>
+                            <a class="btn btn-primary" href="{{ path('project_new') }}">{{ icon('file') }}&nbsp;{{ 'project_new'|trans }}</a>
                         </div>
                         <div class="btn-group">
-                            <a class="btn btn-primary" href="{{ path('project') }}">{{ icon('share') }}&nbsp;{{ 'project_link'|trans }}</a>
+                            <a class="btn btn-primary" href="{{ path('notice') }}">{{ icon('share fa-flip-horizontal') }}&nbsp;{{ 'notice_link'|trans }}</a>
                         </div>
                         <div class="clearfix"></div>
                     </div>
@@ -37,19 +38,17 @@
                         <table class="records_list table table-striped table-hover">
                             <thead>
                                 <tr>
-                                    <th>{{ knp_pagination_sortable(pagination, 'notice_title'|trans, 'title') }}{% if sort == 'title' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
-                                    <th>{{ knp_pagination_sortable(pagination, 'notice_published'|trans, 'published') }}{% if sort == 'published' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
-                                    <th>{{ knp_pagination_sortable(pagination, 'notice_highlight'|trans, 'highlight') }}{% if sort == 'highlight' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
-                                    <th>{{ knp_pagination_sortable(pagination, 'notice_createdAt'|trans, 'createdAt') }}{% if sort == 'createdAt' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
-                                    <th>{{ knp_pagination_sortable(pagination, 'notice_updatedAt'|trans, 'updatedAt') }}{% if sort == 'updatedAt' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(pagination, 'project_title'|trans, 'title') }}{% if sort == 'title' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(pagination, 'project_published'|trans, 'published') }}{% if sort == 'published' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(pagination, 'project_createdAt'|trans, 'createdAt') }}{% if sort == 'createdAt' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(pagination, 'project_updatedAt'|trans, 'updatedAt') }}{% if sort == 'updatedAt' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                 </tr>
                             </thead>
                             <tbody>
                             {% for entity in pagination %}
-                                <tr class='clickableRow' href="{{ path('notice_show', { 'id': entity.id }) }}">
+                                <tr class='clickableRow' href="{{ path('project_show', { 'id': entity.id }) }}">
                                     <td>{% if entity.title %}{{ entity.title }}{% endif %}</td>
                                     <td>{% if entity.published %}{{ 'Si' }}{% else %}{{ 'No' }}{% endif %}</td>
-                                    <td>{% if entity.highlight %}{{ 'Si' }}{% else %}{{ 'No' }}{% endif %}</td>
                                     <td>{% if entity.createdAt %}{{ entity.createdAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd-LLL-Y - HH:mm") }}{% endif %}</td>
                                     <td>{% if entity.updatedAt %}{{ entity.updatedAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd-LLL-Y - HH:mm") }}{% endif %}</td>
                                 </tr>

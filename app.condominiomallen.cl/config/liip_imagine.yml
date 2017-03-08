@@ -141,6 +141,12 @@ liip_imagine:
             filters:
                 upscale: { min: [200, 150] }
                 thumbnail: { size: [200, 150], mode: outbound }
+        admin_project:
+            quality: 50
+            default_image: /uploads/project/default.png
+            filters:
+                upscale: { min: [200, 150] }
+                thumbnail: { size: [200, 150], mode: outbound }
         admin_product:
             quality: 50
             default_image: /uploads/product/default.png

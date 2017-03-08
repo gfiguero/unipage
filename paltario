@@ -11,6 +11,9 @@ php app/console doctrine:generate:entities UniAdminBundle:NoticePhoto --path="sr
 php app/console doctrine:generate:entities UniAdminBundle:Member --path="src"
 php app/console doctrine:generate:entities UniAdminBundle:Role --path="src"
 
+php app/console doctrine:generate:entities UniAdminBundle:Project --path="src"
+php app/console doctrine:generate:entities UniAdminBundle:ProjectPhoto --path="src"
+
 CRUD
 ---------------------
 rm -rf src/Uni/AdminBundle/Controller/*
@@ -23,6 +26,9 @@ php app/console generate:doctrine:crud --entity=UniAdminBundle:NoticePhoto --for
 php app/console generate:doctrine:crud --entity=UniAdminBundle:Member --format=yml --with-write --overwrite --no-interaction --route-prefix=member
 php app/console generate:doctrine:crud --entity=UniAdminBundle:Role --format=yml --with-write --overwrite --no-interaction --route-prefix=role
 
+php app/console generate:doctrine:crud --entity=UniAdminBundle:Project --format=yml --with-write --overwrite --no-interaction --route-prefix=project
+php app/console generate:doctrine:crud --entity=UniAdminBundle:ProjectPhoto --format=yml --with-write --overwrite --no-interaction --route-prefix=projectphoto
+
 Base Datos y Chache
 ---------------------
 php app/console doctrine:schema:update --force
@@ -34,6 +40,9 @@ setfacl -Rn -m u:"$HTTPDUSER":rwX -m u:`whoami`:rwX app.condominiomallen.cl/cach
 setfacl -dRn -m u:"$HTTPDUSER":rwX -m u:`whoami`:rwX app.condominiomallen.cl/cache app.condominiomallen.cl/logs
 setfacl -Rn -m u:"$HTTPDUSER":rwX -m u:`whoami`:rwX web.condominiomallen.cl/uploads web.condominiomallen.cl/media
 setfacl -dRn -m u:"$HTTPDUSER":rwX -m u:`whoami`:rwX web.condominiomallen.cl/uploads web.condominiomallen.cl/media
+
+setfacl -Rn -m u:"$HTTPDUSER":rwX -m u:`whoami`:rwX web.condominiomallen.cl/uploads/project
+setfacl -dRn -m u:"$HTTPDUSER":rwX -m u:`whoami`:rwX web.condominiomallen.cl/uploads/project
 
 
 php app/console doctrine:schema:update --force

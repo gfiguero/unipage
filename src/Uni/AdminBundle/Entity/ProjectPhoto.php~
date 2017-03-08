@@ -1,0 +1,111 @@
+<?php
+
+namespace Uni\AdminBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * ProjectPhoto
+ */
+class ProjectPhoto
+{
+    /**
+     * @var integer
+     */
+    private $id;
+
+    /**
+     * @var string
+     */
+    private $path;
+
+    /**
+     * @var string
+     */
+    private $file;
+
+    /**
+     * @var \Uni\AdminBundle\Entity\Project
+     */
+    private $project;
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set path
+     *
+     * @param string $path
+     * @return ProjectPhoto
+     */
+    public function setPath($path)
+    {
+        $this->path = $path;
+
+        return $this;
+    }
+
+    /**
+     * Get path
+     *
+     * @return string 
+     */
+    public function getPath()
+    {
+        return $this->path;
+    }
+
+    /**
+     * Set file
+     *
+     * @param string $file
+     * @return ProjectPhoto
+     */
+    public function setFile($file)
+    {
+        $this->file = $file;
+
+        return $this;
+    }
+
+    /**
+     * Get file
+     *
+     * @return string 
+     */
+    public function getFile()
+    {
+        return $this->file;
+    }
+
+    /**
+     * Set project
+     *
+     * @param \Uni\AdminBundle\Entity\Project $project
+     * @return ProjectPhoto
+     */
+    public function setProject(\Uni\AdminBundle\Entity\Project $project = null)
+    {
+        $this->project = $project;
+
+        return $this;
+    }
+
+    /**
+     * Get project
+     *
+     * @return \Uni\AdminBundle\Entity\Project 
+     */
+    public function getProject()
+    {
+        return $this->project;
+    }
+}

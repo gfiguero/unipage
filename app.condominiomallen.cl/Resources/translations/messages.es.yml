@@ -104,16 +104,17 @@ MemberCourse has been updated.: El curso ha sido actualizado.
 MemberCourse has been deleted.: El curso ha sido borrado.
 
 # Highlight
-highlight_index: Obras Destacadas
+highlight_index: Gestiones Destacadas
 
 # Notice
-notice: Obra
-notice_control: Control de Obras
-notice_index: Obras
-notice_new: Nueva Obra
-notice_show: Ver Obra
-notice_edit: Editar Obra
-notice_delete: Borrar Obra
+notice: Gestiones
+notice_control: Control de Gestiones
+notice_link: volver a Gestiones
+notice_index: Gestiones
+notice_new: Nueva Gestión
+notice_show: Ver Gestión
+notice_edit: Editar Gestión
+notice_delete: Borrar Gestión
 notice_title: Título
 notice_content: Contenido
 notice_published: Publicada
@@ -124,13 +125,13 @@ notice_photo_delete: Borrar Foto
 notice_category: Categoría
 notice_createdAt: Publicado
 notice_updatedAt: Actualizado
-Notice has been created.: La obra ha sido creada.
-Notice has been updated.: La obra ha sido actualizada.
-Notice has been deleted.: La obra ha sido borrada.
+Notice has been created.: La gestión ha sido creada.
+Notice has been updated.: La gestión ha sido actualizada.
+Notice has been deleted.: La gestión ha sido borrada.
 
 # NoticeCategory
-noticecategory: Categoría de obras
-noticecategory_index: Categorías de obras
+noticecategory: Categoría de gestiones
+noticecategory_index: Categorías de gestiones
 noticecategory_all: Todas las Categorías
 noticecategory_new: Nueva Categoría
 noticecategory_show: Ver Categoría
@@ -140,9 +141,30 @@ noticecategory_name: Nombre
 noticecategory_submit: Filtrar
 noticecategory_createdAt: Fecha de Registro
 noticecategory_updatedAt: Última Actualización
-NoticeCategory has been created.: La categoría de obras ha sido creada.
-NoticeCategory has been updated.: La categoría de obras ha sido actualizada.
-NoticeCategory has been deleted.: La categoría de obras ha sido borrada.
+NoticeCategory has been created.: La categoría de gestiones ha sido creada.
+NoticeCategory has been updated.: La categoría de gestiones ha sido actualizada.
+NoticeCategory has been deleted.: La categoría de gestiones ha sido borrada.
+
+# Project
+project: Proyecto
+project_control: Control de Proyectos
+project_link: ir a Proyectos
+project_index: Proyectos
+project_new: Nuevo Proyecto
+project_show: Ver Proyecto
+project_edit: Editar Proyecto
+project_delete: Borrar Proyecto
+project_title: Título
+project_content: Contenido
+project_published: Publicado
+project_photos: Fotos
+project_photo_add: Agregar Foto
+project_photo_delete: Borrar Foto
+project_createdAt: Publicado
+project_updatedAt: Actualizado
+Notice has been created.: El proyecto ha sido creado.
+Notice has been updated.: El proyecto ha sido actualizado.
+Notice has been deleted.: El proyecto ha sido borrado.
 
 # Product
 product: Producto

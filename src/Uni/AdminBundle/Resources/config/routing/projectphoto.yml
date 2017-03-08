@@ -1,0 +1,31 @@
+projectphoto:
+    path:     /
+    defaults: { _controller: "UniAdminBundle:ProjectPhoto:index" }
+    methods: [GET]
+
+projectphoto_show:
+    path:     /{id}/show
+    defaults: { _controller: "UniAdminBundle:ProjectPhoto:show" }
+
+projectphoto_new:
+    path:     /new
+    defaults: { _controller: "UniAdminBundle:ProjectPhoto:new" }
+
+projectphoto_create:
+    path:     /create
+    defaults: { _controller: "UniAdminBundle:ProjectPhoto:create" }
+    methods: [POST]
+
+projectphoto_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "UniAdminBundle:ProjectPhoto:edit" }
+
+projectphoto_update:
+    path:     /{id}/update
+    defaults: { _controller: "UniAdminBundle:ProjectPhoto:update" }
+    methods: [POST|PUT]
+
+projectphoto_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "UniAdminBundle:ProjectPhoto:delete" }
+    methods: [POST|DELETE]

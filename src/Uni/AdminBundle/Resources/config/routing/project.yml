@@ -1,0 +1,31 @@
+project:
+    path:     /
+    defaults: { _controller: "UniAdminBundle:Project:index" }
+    methods: [GET]
+
+project_show:
+    path:     /{id}/show
+    defaults: { _controller: "UniAdminBundle:Project:show" }
+
+project_new:
+    path:     /new
+    defaults: { _controller: "UniAdminBundle:Project:new" }
+
+project_create:
+    path:     /create
+    defaults: { _controller: "UniAdminBundle:Project:create" }
+    methods: [POST]
+
+project_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "UniAdminBundle:Project:edit" }
+
+project_update:
+    path:     /{id}/update
+    defaults: { _controller: "UniAdminBundle:Project:update" }
+    methods: [POST|PUT]
+
+project_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "UniAdminBundle:Project:delete" }
+    methods: [POST|DELETE]
