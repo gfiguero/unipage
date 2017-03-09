@@ -18,6 +18,10 @@ uni_page_notice:
     path:   /notice
     defaults: { _controller: UniPageBundle:Page:notice }
 
+uni_page_project:
+    path:   /project
+    defaults: { _controller: UniPageBundle:Page:project }
+
 uni_page_camera:
     path:   /camera
     defaults: { _controller: UniPageBundle:Page:camera }
@@ -25,6 +29,10 @@ uni_page_camera:
 uni_page_notice_show:
     path:     /{id}/noticeshow
     defaults: { _controller: UniPageBundle:Page:noticeshow }
+
+uni_page_project_show:
+    path:     /{id}/projectshow
+    defaults: { _controller: UniPageBundle:Page:projectshow }
 
 uni_page_report:
     path:   /report

@@ -145,6 +145,40 @@ class PageController extends Controller
         ));
     }
 
+    public function projectAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $frontpage = $em->getRepository('UniAdminBundle:Frontpage')->findOneBy(array('active' => true), array('createdAt' => 'DESC'));
+        $projects = $em->getRepository('UniAdminBundle:Project')
+            ->createQueryBuilder('p')
+            ->select('p', 'pp')
+            ->leftJoin('p.photos', 'pp')
+            ->where('p.published = TRUE')
+            ->orderBy('p.createdAt', 'DESC')
+            ->getQuery()
+            ->getResult();
+        $paginator = $this->get('knp_paginator');
+        $pagination = $paginator->paginate($projects, $request->query->getInt('page', 1), 12);
+        return $this->render(':Page:project.html.twig', array(
+            'frontpage' => $frontpage,
+            'projects' => $pagination,
+        ));
+    }
+
+    public function projectshowAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $frontpage = $em->getRepository('UniAdminBundle:Frontpage')->findOneBy(array('active' => true), array('createdAt' => 'DESC'));
+        $projects = $em->getRepository('UniAdminBundle:Project')->findBy(array('published' => true), array('createdAt' => 'DESC'), 10);
+        $project = $em->getRepository('UniAdminBundle:Project')->find($id);
+//        return $this->render('UniPageBundle:Page:projectshow.html.twig', array(
+        return $this->render(':Page:projectshow.html.twig', array(
+            'frontpage' => $frontpage,
+            'projects' => $projects,
+            'project' => $project,
+        ));
+    }
+
     public function reportAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();

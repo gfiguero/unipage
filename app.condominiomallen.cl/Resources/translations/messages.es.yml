@@ -361,6 +361,8 @@ uni_page_member: member_index
 uni_page_process: process_index
 uni_page_notice: notice_index
 uni_page_notice_show: notice_index
+uni_page_project: project_index
+uni_page_project_show: project_index
 uni_page_report: report_index
 uni_page_report_show: report_index
 uni_page_document: document_index

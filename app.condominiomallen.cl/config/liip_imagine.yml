@@ -71,6 +71,18 @@ liip_imagine:
             filters:
                 upscale: { min: [1280, 720] }
                 thumbnail: { size: [1280, 720], mode: outbound }
+        page_project_preview:
+            quality: 75
+            default_image: /uploads/project/default.png
+            filters:
+                upscale: { min: [360, 170] }
+                thumbnail: { size: [360, 170], mode: outbound }
+        page_project:
+            quality: 75
+            default_image: /uploads/project/default.png
+            filters:
+                upscale: { min: [1280, 720] }
+                thumbnail: { size: [1280, 720], mode: outbound }
         page_gallery_preview:
             quality: 75
             default_image: /uploads/notice/default.png
