@@ -23,6 +23,14 @@ class ProjectType extends AbstractType
                 'required' => false,
                 'attr'  =>  array( 'class' =>  'tinymce', 'data-theme' => 'advanced' ),
             ))
+            ->add('progress', null, array(
+                'label' =>  'project_progress',
+                'required' => false,
+            ))
+            ->add('createdAt', null, array(
+                'label' =>  'project_createdAt',
+                'required' => false,
+            ))
             ->add('published', null, array(
                 'label' => 'project_published',
                 'required' => false,

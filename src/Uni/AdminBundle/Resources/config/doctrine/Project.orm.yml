@@ -14,6 +14,8 @@ Uni\AdminBundle\Entity\Project:
         content:
             type: text
             nullable: true
+        progress:
+            type: integer
         published:
             type: boolean
             options:

@@ -156,6 +156,7 @@ project_edit: Editar Proyecto
 project_delete: Borrar Proyecto
 project_title: Título
 project_content: Contenido
+project_progress: Porcentaje de avance
 project_published: Publicado
 project_photos: Fotos
 project_photo_add: Agregar Foto

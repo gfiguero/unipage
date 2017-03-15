@@ -41,6 +41,7 @@
                         <dl class="dl-horizontal dl-horizontal-sm dl-horizontal-md dl-horizontal-lg">
                             <dt>{{ 'project_title'|trans }}</dt><dd>{% if entity.title %}{{ entity.title }}{% endif %}</dd>
                             <dt>{{ 'project_content'|trans }}</dt><dd>{% if entity.content %}{{ entity.content|raw }}{% endif %}</dd>
+                            <dt>{{ 'project_progress'|trans }}</dt><dd>{% if entity.progress %}{{ entity.progress|raw }}{% endif %}</dd>
                             <dt>{{ 'project_published'|trans }}</dt><dd>{% if entity.published %}{{ 'Si' }}{% else %}{{ 'No' }}{% endif %}</dd>
                             <dt>{{ 'project_createdAt'|trans }}</dt><dd>{% if entity.createdAt %}{{ entity.createdAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y - HH:mm") }}{% endif %}</dd>
                             <dt>{{ 'project_updatedAt'|trans }}</dt><dd>{% if entity.updatedAt %}{{ entity.updatedAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y - HH:mm") }}{% endif %}</dd>

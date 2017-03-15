@@ -25,6 +25,11 @@ class Project
     private $content;
 
     /**
+     * @var integer
+     */
+    private $progress;
+
+    /**
      * @var boolean
      */
     private $published = false;
@@ -116,6 +121,29 @@ class Project
     public function getContent()
     {
         return $this->content;
+    }
+
+    /**
+     * Set progress
+     *
+     * @param integer $progress
+     * @return Project
+     */
+    public function setProgress($progress)
+    {
+        $this->progress = $progress;
+
+        return $this;
+    }
+
+    /**
+     * Get progress
+     *
+     * @return integer 
+     */
+    public function getProgress()
+    {
+        return $this->progress;
     }
 
     /**
