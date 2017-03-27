@@ -1,0 +1,78 @@
+// Navigation
+
+.navbar-custom {
+    border: 0px solid;
+    position: fixed;
+    z-index: 100;
+    border: 0px solid transparent;
+    width: 100%;
+    font-family: @font-family-sans-serif;
+    background-color: fade(white, 90%);
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    .navbar-brand,
+    .nav li a {
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        transition: all 0.3s;
+        line-height: 20px;
+        font-weight: 800;
+        color: @gray;
+        &:hover,
+        &:focus {
+            background-color: fade(@gray, 90%);
+            color: @gray-lighter;
+        }
+    }
+    .navbar-brand {
+        font-size: 18px;
+    }
+    .nav li a {
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    @media only screen and (min-width: 768px) {
+        background: transparent;
+        .navbar-brand,
+        .nav li a {
+            color: @gray-lighter;
+            padding: 20px;
+            &:hover,
+            &:focus {
+                background-color: fade(@gray-lighter, 90%);
+                color: @gray;
+            }
+        }
+        .navbar-brand {
+            padding: 20px;
+        }        
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .cbp-af-header {
+        &.cbp-af-header-shrink {
+            .navbar-custom {
+                background-color: fade(white, 90%);
+            }
+            .navbar-brand,
+            .nav li a {
+                color: @gray;
+                &:hover,
+                &:focus {
+                    background-color: fade(@gray, 90%);
+                    color: @gray-lighter;
+                }
+            }
+            .navbar-brand {
+                padding: 20px;
+                font-size: 18px;
+            }
+            .nav li a {
+                padding: 20px;
+            }
+        }
+    }
+}

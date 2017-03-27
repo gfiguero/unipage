@@ -59,3 +59,12 @@ git remote add origin git@github.com:gfiguero/unipage.git
 git clone git@github.com:gfiguero/unipage.git
 git clone git@github.com:IronSummitMedia/startbootstrap-clean-blog
 git ls-files --deleted -z | xargs -0 git rm 
+
+----------
+Condominio Travesía
+HTTPDUSER=`ps aux | grep -E '[a]pache|[h]ttpd|[_]www|[w]ww-data|[n]ginx' | grep -v root | head -1 | cut -d\  -f1`
+setfacl -Rn -m u:"$HTTPDUSER":rwX -m u:`whoami`:rwX app.condominiotravesia.cl/cache app.condominiotravesia.cl/logs
+setfacl -dRn -m u:"$HTTPDUSER":rwX -m u:`whoami`:rwX app.condominiotravesia.cl/cache app.condominiotravesia.cl/logs
+setfacl -Rn -m u:"$HTTPDUSER":rwX -m u:`whoami`:rwX web.condominiotravesia.cl/uploads web.condominiotravesia.cl/media
+setfacl -dRn -m u:"$HTTPDUSER":rwX -m u:`whoami`:rwX web.condominiotravesia.cl/uploads web.condominiotravesia.cl/media
+

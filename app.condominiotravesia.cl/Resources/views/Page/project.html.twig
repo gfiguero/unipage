@@ -1,0 +1,31 @@
+{% extends ':Page:base.html.twig' %}
+
+{% use ':Page:footer.html.twig' %}{% block footer %}{{ parent() }}{% endblock %}
+
+{% block body -%}
+    <section id="project">
+        <div class="container">
+            <div class="row">
+                {% for project in projects %}
+                    <a href="{{ path('uni_page_project_show', { 'id': project.id }) }}#projectshow">
+                    <div class="col-md-4">
+                        <div class="project-preview">
+                            {% set photo = project.photos|first %}
+                            {% if photo %}<div class="project-photo-preview"><img class="img-responsive" alt="{{ project.title }}" src={{ asset(photo.webpath) | imagine_filter('page_project_preview') }}></div>{% endif %}
+                            <div class="project-progress"><div class="progress"><div class="progress-bar {% if project.progress == 100 %}progress-bar-success{% else %}progress-bar-warning{% endif %}" role="progressbar" aria-valuenow="{% if project.progress %}{{ project.progress }}{% else %}0{% endif %}" aria-valuemin="0" aria-valuemax="100" style="width: {% if project.progress %}{{ project.progress }}{% else %}0{% endif %}%">{{ project.progress }}%</div></div></div>
+                            <div class="project-title">{{ project.title }}</div>
+                            <div class="project-createdat">{{ project.createdAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y - HH:mm") }}</div>
+                            <div class="project-content">{{ project.content | striptags | slice(0, 700) | raw }}</div>
+                        </div>
+                    </div>
+                    </a>
+                {% endfor %}
+            </div>
+            <div class="row">
+                <div class="text-center">
+                    {{ knp_pagination_render(projects) }}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
