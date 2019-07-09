@@ -22,4 +22,18 @@
     {% endif %}
     <style type="text/css">.header-image { background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url('{{ asset(headerimage) | imagine_filter('page_frontpage') }}'); }</style>
     <style type="text/css">.contact-image { background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url('{{ asset(contactimage) | imagine_filter('page_frontpage') }}'); }</style>
+    <style type="text/css">
+        @media only screen and (min-width: 768px) {
+          .intro-header .site-heading,
+          .intro-header .post-heading,
+          .intro-header .page-heading {
+            padding: 140px 0;
+          }
+        }
+        @media (min-width: 768px) {
+            section {
+                padding: 60px 0;
+            }
+        }
+    </style>
 {% endblock %}
